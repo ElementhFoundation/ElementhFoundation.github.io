@@ -113,4 +113,23 @@ $(function () {
     $('#tabs_container_profile').addClass('disblock')
   })
 
+  $(document).on("scroll", onScroll);
+
+  function onScroll(event){
+      var scrollPos = $(document).scrollTop() + document.documentElement.clientHeight / 4;
+      $('nav ul li').each(function () {
+          var currLink = $(this);
+          if (currLink.attr('id')) {
+            var refElement = $('#' + currLink.attr('id').replace('to_', ''));
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('nav ul li').removeClass('active');
+                currLink.addClass("active");
+            }
+            else{
+                currLink.removeClass("active");
+            }
+          }
+      });
+  }
+
 })
