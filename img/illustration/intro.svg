@@ -1,0 +1,41 @@
+<svg  width="288" height="288" viewBox="0 0 288 288" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st0{opacity:5.000000e-02;}
+	.st1{fill:#212121;}
+	.st2{fill:none;stroke:#212121;stroke-width:2;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#212121;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+	.st4{opacity:0.1;}
+</style>
+<g class="st0">
+	<rect x="200" y="32" class="st1" width="32" height="8"/>
+	<rect x="240" y="32" class="st1" width="32" height="8"/>
+	<rect x="160" y="56" class="st1" width="112" height="24"/>
+	<rect x="160" y="88" class="st1" width="112" height="24"/>
+	<rect x="160" y="120" class="st1" width="112" height="40"/>
+	<rect x="40" y="152" class="st1" width="88" height="8"/>
+	<rect x="40" y="136" class="st1" width="104" height="8"/>
+	<rect x="40" y="120" class="st1" width="56" height="8"/>
+	<rect x="40" y="104" class="st1" width="104" height="8"/>
+	<rect x="40" y="88" class="st1" width="104" height="8"/>
+	<rect x="40" y="72" class="st1" width="72" height="8"/>
+	<rect x="40" y="56" class="st1" width="104" height="8"/>
+</g>
+<g>
+	<path class="st2" d="M287,207c0,4.4-3.6,8-8,8H9c-4.4,0-8-3.6-8-8V25c0-4.4,3.6-8,8-8h270c4.4,0,8,3.6,8,8V207z"/>
+	<line class="st2" x1="1" y1="183" x2="287" y2="183"/>
+	<path class="st2" d="M149,255h47c1.7,0,3-1.3,3-3s-1.3-3-3-3h-47"/>
+	<line class="st3" x1="120" y1="216" x2="115.2" y2="235"/>
+	<line class="st3" x1="168" y1="216" x2="176" y2="248"/>
+	<path class="st2" d="M149,282c0,2.8-2.2,5-5,5H22c-2.8,0-5-2.2-5-5v-42c0-2.8,2.2-5,5-5h122c2.8,0,5,2.2,5,5V282z"/>
+</g>
+<g class="st4">
+	<rect x="160" y="32" class="st1" width="32" height="8"/>
+	<rect x="40" y="32" class="st1" width="32" height="8"/>
+	<circle class="st1" cx="24" cy="36" r="8"/>
+</g>
+<g class="st0">
+	<circle class="st1" cx="172" cy="132" r="6"/>
+	<circle class="st1" cx="172" cy="100" r="6"/>
+	<circle class="st1" cx="172" cy="68" r="6"/>
+</g>
+</svg>

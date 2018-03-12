@@ -1,0 +1,59 @@
+<svg  width="288" height="288" viewBox="0 0 288 288" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st0{fill:none;stroke:#00E5FF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st2{opacity:5.000000e-02;}
+	.st3{fill:#FFFFFF;}
+	.st4{opacity:0.1;}
+</style>
+<g>
+	<path class="st0" d="M93,118c0,2.2-1.8,4-4,4h0c-2.2,0-4-1.8-4-4v-15.7l-4-4V110c0,2.2-1.8,4-4,4h0c-2.2,0-4-1.8-4-4V98h-3.5"/>
+	<path class="st0" d="M83.7,80c-1.6,1.6-1.6,4.1,0,5.7l13.1,13.1c2.1,2.1,2.1,5.5,0,7.7l0,0c-2.1,2.1-5.5,2.1-7.7,0L74.8,92.1
+		c-2.8,4.7-7.9,7.9-13.8,7.9c-8.8,0-16-7.2-16-16H29"/>
+	<line class="st0" x1="93" y1="95" x2="93" y2="84"/>
+	<path class="st0" d="M101,81v39c0,2.2-1.8,4-4,4h0c-2.2,0-4-1.8-4-4v-12"/>
+	<path class="st0" d="M200,140c0,2.2,1.8,4,4,4h0c2.2,0,4-1.8,4-4v-20l4,0v12c0,2.2,1.8,4,4,4l0,0c2.2,0,4-1.8,4-4v-12h3.5"/>
+	<path class="st0" d="M215,104c0,2.2-1.8,4-4,4h-18c-3.3,0-6,2.7-6,6v0c0,3.3,2.7,6,6,6h30"/>
+	<path class="st0" d="M287,96H151v4c0,2.2,1.8,4,4,4h53"/>
+	<path class="st0" d="M223,116c0,8.8,7.2,16,16,16s16-7.2,16-16h16"/>
+	<path class="st0" d="M249.6,127.9c1.4,1.3,3.3,2.1,5.4,2.1c4.4,0,8-3.6,8-8h24"/>
+	<path class="st0" d="M192,120v22c0,2.2,1.8,4,4,4l0,0c2.2,0,4-1.8,4-4v-22"/>
+	<line class="st0" x1="192" y1="104" x2="192" y2="108"/>
+	<path class="st0" d="M1,89.2l24.1-24.1c0.8-0.8,1.8-1.2,2.8-1.2h67.4l42.7,42.7l-2.8,2.8c-1.6,1.6-4.1,1.6-5.7,0L92,72"/>
+	<path class="st0" d="M50.4,95.9C48.9,97.2,47.1,98,45,98c-4.4,0-8-3.6-8-8L1,126"/>
+</g>
+<g>
+	<path class="st1" d="M25,215H9c-4.4,0-8-3.6-8-8V25c0-4.4,3.6-8,8-8h270c4.4,0,8,3.6,8,8v182c0,4.4-3.6,8-8,8h-88"/>
+	<line class="st1" x1="191" y1="183" x2="287" y2="183"/>
+	<line class="st1" x1="1" y1="183" x2="25" y2="183"/>
+	<path class="st1" d="M191,255h5c1.7,0,3-1.3,3-3s-1.3-3-3-3h-5"/>
+	<path class="st1" d="M204,273H12c-1.7,0-3,1.3-3,3s1.3,3,3,3h192c1.7,0,3-1.3,3-3S205.7,273,204,273z"/>
+	<path class="st1" d="M183,169c4.4,0,8,3.6,8,8v96H25v-96c0-4.4,3.6-8,8-8H183z"/>
+</g>
+<g class="st2">
+	<rect x="112" y="248" class="st3" width="64" height="12"/>
+	<rect x="112" y="232" class="st3" width="64" height="12"/>
+	<rect x="112" y="216" class="st3" width="64" height="12"/>
+	<rect x="112" y="200" class="st3" width="64" height="12"/>
+	<rect x="112" y="181" class="st3" width="16" height="6"/>
+	<rect x="136" y="181" class="st3" width="16" height="6"/>
+	<rect x="48" y="256" class="st3" width="56" height="4"/>
+	<rect x="48" y="248" class="st3" width="48" height="4"/>
+	<rect x="48" y="240" class="st3" width="56" height="4"/>
+	<rect x="48" y="232" class="st3" width="56" height="4"/>
+	<rect x="48" y="224" class="st3" width="40" height="4"/>
+	<rect x="48" y="216" class="st3" width="56" height="4"/>
+	<rect x="48" y="208" class="st3" width="48" height="4"/>
+	<rect x="48" y="200" class="st3" width="56" height="4"/>
+	<rect x="160" y="32" class="st3" width="32" height="8"/>
+	<rect x="240" y="32" class="st3" width="32" height="8"/>
+</g>
+<g class="st4">
+	<rect x="160" y="181" class="st3" width="16" height="6"/>
+	<rect x="52" y="181" class="st3" width="24" height="6"/>
+	<circle class="st3" cx="40" cy="184" r="6"/>
+	<rect x="40" y="32" class="st3" width="32" height="8"/>
+	<rect x="200" y="32" class="st3" width="32" height="8"/>
+	<circle class="st3" cx="24" cy="36" r="8"/>
+</g>
+</svg>

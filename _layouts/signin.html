@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<div class="sign">
+    <p class="title" data-i18n="Sign in">Sing in</p>
+    <form id="signin_form">
+        <p class="input_name"><span data-i18n="YourEmail">Your Email</span>:</p>
+        <input type="email" form="signin_form" name="email" maxlength="100" placeholder="johndoe@site.com" required>
+        <p class="input_name"><span data-i18n="Password">Password</span>:</p>
+        <input type="password" form="signin_form" name="password" maxlength="100" placeholder="" required>
+        <p class="body or" data-i18n="or">or</p>
+        <div class="fb-login-button" onlogin="checkLoginState();" scope="public_profile,email" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        <div class="error disnone"></div>
+        <button class="primary_btn" type="submit" form="signin_form">
+            <span data-i18n="Sign in">Sign in</span>
+        </button>
+        <div class="link_block">
+            <p class="body"><span data-i18n="NotAMemberYet">Not a member yet</span>?</p>
+            <a href="signup" class="link" data-i18n="Sign up">Sign up</a>
+        </div>
+        <div class="link_block">
+            <p class="body"><span data-i18n="ForgottenYourPassword">Forgotten your password</span>?</p>
+            <a href="resetpass" class="link" data-i18n="ResetPassword">Reset password</a>
+        </div>
+    </form>
+</div>

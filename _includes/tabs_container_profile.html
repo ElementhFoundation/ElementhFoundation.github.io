@@ -1,0 +1,86 @@
+<div id="tabs_container_profile" class="tabs_container disblock">
+    <p class="title">Profile</p>
+    <div id="profile">
+    <div class="data_block">
+        <div class="data">
+            <div class="data_name">Your Name:</div>
+            <div class="data_user">
+                <span id="user_username"></span>
+                <form id="user_username_edit_form" class="disnone ajaxForm" action="setUsername">
+                    <input id="user_username_input" name="username" type="text" value="" placeholder="John Doe">
+                    <span class="cancel data_btn">Cansel</span><span class="done data_btn">Done</span>
+                </form>
+                <span id="user_username_edit" class="edit data_btn">Edit</span>
+            </div>
+        </div>
+        <div class="data">
+            <div class="data_name">Telegram account:</div>
+            <div class="data_user">
+                <span id="user_telegram"></span>
+                <form id="user_telegram_edit_form" class="disnone ajaxForm" action="setTelegramUsername">
+                    <input id="user_telegram_input" name="telegram_username" type="text" value="" placeholder="@johndoe">
+                    <span class="cancel data_btn">Cansel</span><span class="done data_btn">Done</span>
+                </form>
+                <span id="user_telegram_edit" class="edit data_btn">Edit</span>
+            </div>
+        </div>
+        <div class="data">
+            <div class="data_name">BTC address:</div>
+            <div class="data_user">
+                <span id="user_wallet_btc" class="wallet_address"></span>
+                <form id="wallet_btc_edit_form" class="disnone ajaxForm" action="setWalletBTC">
+                    <input id="user_wallet_btc_input" name="BTC_wallet" type="text" value="" placeholder="">
+                    <span class="cancel data_btn">Cansel</span><span class="done data_btn">Done</span>
+                </form>
+                <span id="user_wallet_btc_edit" class="edit data_btn">Edit</span>
+            </div>
+        </div>
+        <div class="data">
+            <div class="data_name">ETH address:</div>
+            <div class="data_user">
+                <span id="user_wallet_eth" class="wallet_address"></span>
+                <form id="wallet_eth_edit_form" class="disnone ajaxForm" action="setWalletETH">
+                    <input id="user_wallet_eth_input" name="ETH_wallet" type="text" value="" placeholder="0x0000000000000000000000000000000000000000">
+                    <span class="cancel data_btn">Cansel</span><span class="done data_btn">Done</span>
+                </form>
+                <span id="user_wallet_eth_edit" class="edit data_btn">Edit</span>
+            </div>
+        </div>
+        <div class="data">
+            <div class="data_name">Country:</div>
+            <div class="data_user">
+                <span id="user_country"></span>
+                <form id="wallet_country_form" class="disnone ajaxForm" action="setCountry">
+                    <input id="user_country_input" name="country" type="text" value="">
+                    <span class="cancel data_btn">Cansel</span><span class="done data_btn">Done</span>
+                </form>
+                <span id="user_country_edit" class="edit data_btn">Edit</span>
+            </div>
+        </div>
+    </div>
+    <div id="questionnaire" class="block">
+        <p class="title">Survey:</p>
+        <form id="questionnaire_form">
+            <div class="inline_form">
+                <span>I would like to purchase tokens equal to</span>
+                <span><input class="amount" form="questionnaire_form" name="info8" maxlength="1000" placeholder="amount" required></span>
+                <span>
+                    <select form="questionnaire_form" name="info9" required>
+                        <option value="ETH">ETH</option>
+                        <option value="BTC">BTC</option>
+                    </select>
+                </span>
+            </div>
+            <textarea form="questionnaire_form" name="info1" maxlength="1000" placeholder="What is your business?" required></textarea>
+            <textarea form="questionnaire_form" name="info2" maxlength="1000" placeholder="Why do you like Elementh ICO?" required></textarea>
+            <textarea form="questionnaire_form" name="info3" maxlength="1000" placeholder="How can you help our project?" required></textarea>
+            <textarea form="questionnaire_form" name="info4" maxlength="1000" placeholder="How can Elementh help you?" required></textarea>
+            <textarea form="questionnaire_form" name="info5" maxlength="1000" placeholder="Your Telegram / Kakaotalk / QQ / WeChat / Whatsup?" required></textarea>
+            <textarea form="questionnaire_form" name="info6" maxlength="1000" placeholder="Where did you know about Elementh?" required></textarea>
+            <textarea form="questionnaire_form" name="info7" maxlength="1000" placeholder="Do you know any local chats / websites / boards / channels etc. in your country, that we can use to attract investors? Please send links here" required></textarea>
+            <div class="error disnone"></div>
+            <button class="primary_btn" type="submit" form="questionnaire_form">Save</button>
+        </form>
+    </div>
+    </div>
+</div>

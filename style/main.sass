@@ -1,0 +1,1006 @@
+@charset "utf-8"
+*
+    padding: 0
+    border: 0
+    margin: 0
+    -webkit-margin-after: 0
+    -webkit-margin-before: 0
+    -webkit-margin-start: 0
+    -webkit-margin-end: 0
+    outline: 0
+    list-style-type: none
+a:active,
+a:hover,
+a:link,
+a:visited
+    border: none
+    color: inherit
+    text-decoration: none
+/* DECORATION
+.pointer
+    cursor: pointer
+/* COLOR
+/* #29b6f6
+/* #40c4ff
+$color_black: #212121
+$color_gray: #757575
+$color_active: #0d47a1
+$color_bg_dark: #212121
+$color_bg_light: #292929
+$color_light: #f0f0f0
+$color_white: #fff
+$color_red: #f44336
+$color_green: #00c853
+$shadow: 0 0 8px rgba(0,0,0,.25)
+.red
+    color: $color_red !important
+.green
+    color: $color_green !important
+.blue
+    color: $color_active !important
+.light
+    color: $color_white
+    background-color: $color_bg_light
+.dark
+    color: $color_white
+    background-color: $color_bg_dark
+/* IMAGE
+.svg
+    display: block
+    background: center center no-repeat
+.illustration
+    width: 288px
+    height: 288px
+    margin: 0 auto
+.intro
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/intro.svg")
+.rating
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/rating.svg")
+.partners
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/partners.svg")
+.rewards
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/rewards.svg")
+.features
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/features.svg")
+.roadmap
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/roadmap.svg")
+.team
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/team.svg")
+.advisors
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/advisors.svg")
+.cases
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/cases.svg")
+.dapps
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/dapps.svg")
+.mvp
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/mvp.svg")
+/* ICONS
+.icon
+    width: 24px
+    height: 24px
+    padding: 8px
+    margin: 8px
+.icons
+    display: block
+    width: 40px
+    height: 40px
+    float: left
+    background: center center no-repeat
+.icon,
+.icons
+    @extend .pointer
+    border-radius: 50%
+    &:hover
+        background-color: rgba(0,0,0,.05)
+    &:active
+        background-color: rgba(0,0,0,.1)
+.behance
+    @extend .icons
+    background-image: url("../img/icon/ic_behance.svg")
+.bitcointalk
+    @extend .icons
+    background-image: url("../img/icon/ic_bitcointalk.svg")
+.bounty
+    @extend .icons
+    background-image: url("../img/icon/ic_bounty.svg")
+.facebook
+    @extend .icons
+    background-image: url("../img/icon/ic_facebook.svg")
+.github
+    @extend .icons
+    background-image: url("../img/icon/ic_github.svg")
+.instagram
+    @extend .icons
+    background-image: url("../img/icon/ic_instagram.svg")
+.linkedin
+    @extend .icons
+    background-image: url("../img/icon/ic_linkedin.svg")
+.medium
+    @extend .icons
+    background-image: url("../img/icon/ic_medium.svg")
+.reddit
+    @extend .icons
+    background-image: url("../img/icon/ic_reddit.svg")
+.steemit
+    @extend .icons
+    background-image: url("../img/icon/ic_steemit.svg")
+.telegram
+    @extend .icons
+    background-image: url("../img/icon/ic_telegram.svg")
+.twitter
+    @extend .icons
+    background-image: url("../img/icon/ic_twitter.svg")
+.youtube
+    @extend .icons
+    background-image: url("../img/icon/ic_youtube.svg")
+/* RATING
+.rating_logo
+    background: center center no-repeat
+.foxico
+    @extend .rating_logo
+    background-image: url("../img/rating/foxico.svg")
+.trackico
+    @extend .rating_logo
+    background-image: url("../img/rating/trackico.svg")
+.icomarks
+    @extend .rating_logo
+    background-image: url("../img/rating/icomarks.svg")
+.foundico
+    @extend .rating_logo
+    background-size: 104px,auto
+    background-image: url("../img/rating/foundico.png")
+.wiserico
+    @extend .rating_logo
+    background-size: 104px,auto
+    background-image: url("../img/rating/wiserico.png")
+/* PARTNERS
+.partners_logo
+    background: center center no-repeat
+.sap
+    @extend .partners_logo
+    background-image: url("../img/partners/sap.svg")
+.bitrewards
+    @extend .partners_logo
+    background-image: url("../img/partners/bitrewards.svg")
+.sberbank
+    @extend .partners_logo
+    background-size: contain
+    background-image: url("../img/partners/sberbank.png")
+.gmtlegal
+    @extend .partners_logo
+    background-size: contain
+    background-image: url("../img/partners/gmtlegal.png")
+/* REWARDS
+.winner
+    @extend .svg
+    background-image: url("/img/rewards/winner.svg")
+.finalist
+    @extend .svg
+    background-image: url("/img/rewards/finalist.svg")
+/* TEAM
+.photo
+    background: center center no-repeat
+    background-size: cover
+.ryabov
+    @extend .photo
+    background-image: url("../img/team/ryabov.jpg")
+.bereznitskiy
+    @extend .photo
+    background-image: url("../img/team/bereznitskiy.jpg")
+.mengeshev
+    @extend .photo
+    background-image: url("../img/team/mengeshev.jpg")
+.vasilev
+    @extend .photo
+    background-image: url("../img/team/vasilev.jpg")
+.morozov
+    @extend .photo
+    background-image: url("../img/team/morozov.jpg")
+.prigornitskiy
+    @extend .photo
+    background-image: url("../img/team/prigornitskiy.jpg")
+.miheev
+    @extend .photo
+    background-image: url("../img/team/miheev.jpg")
+.gashitsky
+    @extend .photo
+    background-image: url("../img/team/gashitsky.jpg")
+.kholodnykh
+    @extend .photo
+    background-image: url("../img/team/kholodnykh.jpg")
+.kirillov
+    @extend .photo
+    background-image: url("../img/team/kirillov.jpg")
+
+/* ADVISORS
+.yannam
+    @extend .photo
+    background-image: url("../img/advisors/yannam.png")
+.aurel
+    @extend .photo
+    background-image: url("../img/advisors/aurel.png")
+.averbach
+    @extend .photo
+    background-image: url("../img/advisors/averbach.png")
+.fradkov
+    @extend .photo
+    background-image: url("../img/advisors/fradkov.png")
+/* FONTS
+body
+    font-family: 'Roboto Mono', monospace
+    font-size: 14px
+    letter-spacing: .1px
+    line-height: 24px
+    color: $color_black
+h1
+    font-size: 32px
+    line-height: 56px
+    text-transform: uppercase
+    font-weight: 400
+.body
+    margin-bottom: 0
+.title
+    font-size: 20px
+    line-height: 32px
+.subhead
+    color: $color_gray
+.description
+    font-size: 16px
+    letter-spacing: .2px
+.title.active
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    color: $color_active
+/* LAYOUT
+.disnone
+    display: none !important
+.disblock
+    display: block !important
+html,
+body
+    height: 100%
+header
+    position: fixed
+    width: 100%
+    height: 56px
+    top: 0
+    background-color: $color_active
+    box-shadow: $shadow
+    z-index: 1
+    .logo
+        @extend .svg
+        position: absolute
+        width: 40px
+        height: 40px
+        top: 8px
+        left: 8px
+        background-image: url("/img/logo_small.svg")
+    ul
+        position: absolute
+        max-width: 1280px
+        right: 8px
+        li
+            float: right
+            a
+                display: block
+                height: 56px
+                padding: 0 12px
+            i
+                padding: 0 8px
+            a,
+            i
+                @extend .pointer
+                line-height: 56px !important
+                &:hover
+                    background-color: rgba(0,0,0,.05)
+                &:active
+                    background-color: rgba(0,0,0,.1)
+nav
+    position: fixed
+    width: 100%
+    height: 100%
+    top: 0
+    background-color: $color_white
+    box-shadow: $shadow
+    margin-left: calc(-100% - 8px)
+    transition: all .25s ease
+    z-index: 2
+    &.active
+        -webkit-transform: translateX(calc(100% + 8px))
+        -moz-transform: translateX(calc(100% + 8px))
+        -o-transform: translateX(calc(100% + 8px))
+        transform: translateX(calc(100% + 8px))
+    .close
+        @extend .icon
+        float: right
+    ul
+        margin-top: 8px
+        .devider
+            margin: 8px 0
+            border-top: 1px solid $color_light
+        li
+            @extend .pointer
+            padding: 0 56px
+            line-height: 40px
+            text-transform: capitalize
+            &:hover
+                background-color: rgba(0,0,0,.05)
+            &.subhead,
+            &.devider
+                cursor: auto
+                &:hover
+                    background-color: rgba(0,0,0,0)
+            &.active
+                color: $color_active
+section
+    position: relative
+    min-height: 100%
+h1
+    margin: 24px 16px
+.image
+    @extend .illustration
+    padding: 64px 0 0 0
+.content
+    height: 100%
+    padding: 0 16px 16px
+.wrapper
+    height: 100%
+ul.list
+    li
+        position: relative
+        padding-left: 24px
+        margin: 8px 0
+        &::before
+            content: "◦"
+            position: absolute
+            left: 0
+.link_block
+    height: 100%
+    overflow: hidden
+    margin: 0
+    p
+        display: inline
+    .link
+        text-decoration: underline
+        color: $color_active
+    .primary_link,
+    .secondary_link
+        @extend .pointer
+        display: block
+        margin: 0 8px 16px 0
+        line-height: 32px
+        float: left
+    .primary_link
+        min-width: 52px
+        height: 32px
+        padding: 0 12px
+        border: 2px solid $color_white
+        text-transform: uppercase
+        text-align: center
+        &:hover
+            color: $color_active
+            border-color: $color_active
+        &:active
+            color: $color_white
+            background-color: $color_active
+        &.disabled
+            opacity: .3
+            &:hover,
+            &:active
+                color: $color_white
+                border-color: $color_white
+                background-color: rgba(0,0,0,0)
+    &.black
+        .primary_link
+            border-color: $color_black
+            &:hover
+                color: $color_black
+                box-shadow: 0 5px 8px rgba(0,0,0,.25)
+            &:active
+                background-color: rgba(0,0,0,.1)
+            &.disabled
+                opacity: .3
+                cursor: default
+                &:hover,
+                &:active
+                    color: $color_black
+                    border-color: $color_black
+                    background-color: rgba(0,0,0,0)
+                    box-shadow: none
+    .secondary_link
+        border-bottom: 2px solid $color_white
+        &:hover
+            height: 40px
+            margin-bottom: 8px
+            border-bottom-color: $color_active
+.primary_btn
+    @extend .pointer
+    display: block
+    max-width: 488px
+    padding: 12px
+    margin-bottom: 16px
+    text-align: center
+    font-family: "Montserrat", sans-serif
+    font-size: 20px
+    font-weight: 700
+    line-height: 32px
+    color: $color_white !important
+    background-color: $color_active
+    &:hover
+        box-shadow: 0 5px 8px rgba(0,0,0,.2)
+.timer
+    max-width: 480px
+    margin: 24px 0 8px
+    padding: 16px
+    background: repeat url(../img/details/line.svg)
+    .time
+        margin: 0
+        font-size: 32px
+        line-height: 32px
+.rating_block
+    margin: 0 -8px
+    width: 100%
+    a
+        display: block
+        width: 100%
+        height: 84px
+        border: 2px solid $color_white
+        margin: 8px
+        &:hover
+            border-color: $color_active
+            background-color: $color_active
+            .rating_logo
+                border-color: $color_active
+        .rating_logo
+            width: 132px
+            height: 84px
+            float: left
+            border-right: 2px solid $color_white
+        p
+            margin: 0 16px 0 152px
+            &.body
+                margin-top: 15px
+.partners_list
+    width: 100%
+    .partners_block
+        .partners_logo
+            display: block
+            width: 284px
+            height: 84px
+            border: 2px solid $color_white
+            margin-bottom: 8px
+            &:hover
+                border-color: $color_active
+                background-color: $color_active
+        p
+            margin-bottom: 32px
+.rewards_block
+    margin: 16px 0
+    .svg
+        width: 81px
+        height: 81px
+        margin-bottom: 8px
+        background-size: contain
+    p
+        margin-bottom: 0
+    .title
+        font-family: 'Montserrat', sans-serif
+        font-weight: 700
+.roadmap_block
+    position: relative
+    height: 100%
+    overflow: hidden
+    .timeline
+        position: absolute
+        height: 100%
+        overflow: hidden
+        float: left
+        .circle
+            width: 28px
+            height: 28px
+            border: 2px solid $color_active
+            border-radius: 50%
+        .line
+            width: 0
+            height: 100%
+            border-right: 2px solid $color_active
+            margin-left: 15px
+        &.past
+            .circle,
+            .line
+                background-color: $color_active
+    .roadmap_info
+        padding-bottom: 24px
+        margin-left: 48px
+        p
+            margin-bottom: 0
+        .date,
+        .title
+            font-family: Montserrat, sans-serif
+            font-weight: 700
+            font-size: 20px
+            line-height: 32px
+        .date
+            opacity: .5
+.person_block
+    .lines
+        width: 100%
+        border-bottom: 2px dotted $color_white
+        margin: 32px 0
+    .photo
+        width: 288px
+        height: 288px
+    .name
+        @extend .title
+        margin: 16px 0 8px
+    .caption
+        opacity: .5
+        margin-bottom: 16px
+    .body
+        height: 72px
+        overflow: hidden
+        &.active
+            height: 100%
+.sign,
+.profile_page
+    padding-top: 72px
+    margin: 0 16px
+.profile_page
+    padding-bottom: 72px
+.or
+    margin: 16px 0
+form
+    margin-bottom: 16px
+.input_name
+    opacity: .5
+    line-height: 32px
+input,
+textarea,
+select
+    width: calc(100% - 16px)
+    height: 24px
+    border: 1px solid $color-active
+    padding: 7px
+    font-size: 16px
+    line-height: 24px
+    &:hover,
+    &:focus
+        box-shadow: 0 5px 10px rgba(0,0,0,.2)
+input.amount
+    width: 84px
+textarea
+    height: 92px
+select
+    width: 72px
+    height: 40px
+    background-color: $color-white
+.inline_form
+    margin-bottom: 16px
+    span
+        line-height: 40px
+        margin-right: 8px
+.error,
+.allok
+    margin-top: 16px
+.error
+    @extend .red
+.allok
+    @extend .green
+button
+    width: 100%
+    margin-top: 16px
+.text_block
+    padding-bottom: 32px
+    .block
+        margin: 32px 0
+        padding-bottom: 8px
+    .lines
+        width: 100%
+        border-bottom: 1px solid $color_white
+        margin: 32px 0
+.block
+    margin-top: 32px
+    .title
+        margin-bottom: 16px
+.modal
+    position: fixed
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: 10
+    background-color: rgba(255,255,255,.9)
+    .message
+        position: absolute
+        width: 288px
+        top: 50%
+        left: 50%
+        -webkit-transform: translate(-50%,-50%)
+        -moz-transform: translate(-50%,-50%)
+        -ms-transform: translate(-50%,-50%)
+        -o-transform: translate(-50%,-50%)
+        transform: translate(-50%,-50%)
+        .title
+            margin-bottom: 16px
+.tabs
+    li
+        @extend .pointer
+        &.active
+            color: $color-active
+        &::before
+            content: "→"
+            margin-right: 16px
+.tabs_container
+    display: none
+    padding-top: 16px
+    margin-bottom: 32px
+    .title
+        font-family: Montserrat, sans-serif
+        font-weight: 700
+        margin: 32px 0
+    .description
+        margin: 16px 0
+.data_block
+    margin: 32px 0
+.data
+    height: 100%
+    overflow: hidden
+    padding-bottom: 16px
+    border-bottom: 1px dotted $color-active
+    margin-bottom: 16px
+    .data_name,
+    .data_user
+        height: 16px
+        font-size: 14px
+        line-height: 16px
+    .data_name
+        opacity: .5
+    .data_user
+        margin-top: 16px
+        .wallet_address
+            font-size: 9px
+            line-height: 12px
+        form
+            margin: 8px 0
+            input
+                width: calc(100% - 134px)
+            .data_btn
+                margin: 12px 0 12px 16px
+        .data_btn
+            @extend .pointer
+            float: right
+            color: $color-active
+            margin-left: 16px
+            &:hover
+                text-decoration: underline
+/* INTRO
+#intro
+    .content
+        padding-top: 72px
+    .image
+        display: none
+@media screen and (min-width: 768px)
+    header
+        height: 72px
+        z-index: 3
+        .logo
+            top: 16px
+            left: 16px
+        ul
+            li
+                a
+                    height: 72px
+                a,
+                i
+                    line-height: 72px !important
+                    padding: 0 16px
+    nav
+        width: 256px
+        height: calc(100% - 72px)
+        margin-top: 72px
+        margin-left: -264px
+        &.active
+            -webkit-transform: translateX(264px)
+            -moz-transform: translateX(264px)
+            -o-transform: translateX(264px)
+            transform: translateX(264px)
+        .close
+            margin: 16px
+        ul li
+            padding: 0 72px
+            line-height: 56px
+    .image
+        position: absolute
+        height: 100%
+        padding: 0
+        margin: 0 24px
+        .illustration
+            height: 100%
+            background-attachment: fixed
+            background-position-x: 24px
+    h1
+        position: absolute
+        top: 80px
+        left: 336px
+        margin: 0
+    .content
+        padding: 0 24px 0 336px
+        .wrapper
+            padding-top: 256px
+        &.center
+            position: absolute
+            .wrapper
+                position: relative
+                height: auto
+                top: 50%
+                -webkit-transform: translateY(-50%)
+                -moz-transform: translateY(-50%)
+                -o-transform: translateY(-50%)
+                transform: translateY(-50%)
+                margin: 0
+                padding-top: 0
+    #intro
+        .image
+            display: block
+    .timer
+        padding: 24px
+    .primary_btn
+        padding: 20px
+    .rewards_list,
+    .roadmap_list,
+    .person_list
+        margin-bottom: 64px
+    .sign,
+    .profile_page
+        width: 480px
+        padding-top: 120px
+        margin: 0 auto
+    .profile_page
+        width: 700px
+    .text_block
+        padding-bottom: 40px
+        .lines
+            margin: 48px 0
+    .tabs
+        margin: 32px 0
+        height: 56px
+        li
+            width: 20%
+            height: 56px
+            float: left
+            line-height: 56px
+            text-align: center
+            color: $color-white
+            background-color: $color-black
+            padding: 0
+            margin: 0
+            &.active
+                width: calc(20% - 2px)
+                height: 55px
+                color: $color-black
+                line-height: 54px
+                border: 1px solid $color-black
+                border-bottom: none
+                background-color: $color-white
+                &:hover
+                    background-color: $color-white
+            &:hover
+                background-color: rgba(33,33,33,.9)
+            &::before
+                content: ""
+                margin: 0
+@media screen and (min-width: 1024px)
+    header
+        .logo
+            width: 144px
+            top: 14px
+            left: 72px
+            background-image: url("/img/logo_big.svg")
+    .image
+        margin-left: 72px
+        .illustration
+            background-position-x: 72px
+    h1
+        left: 384px
+    .content
+        padding-left: 384px
+    .rating_block
+        height: 100%
+        overflow: hidden
+        a
+            width: 288px
+            float: left
+    .partners_list
+        height: 100%
+        overflow: hidden
+        .partners_block
+            float: left
+            width: 286px
+            margin: 16px 16px 16px 0
+            p
+                margin-bottom: 0
+    .rewards_block
+        height: 100%
+        overflow: hidden
+        margin-bottom: 32px
+        .svg
+            float: left
+        p,
+        .link_block
+            margin-left: 96px
+    .roadmap_block
+        .roadmap_info
+            padding-bottom: 48px
+            margin-left: 64px
+    .profile_page
+        width: 800px
+@media screen and (min-width: 1280px)
+    #open_navigation
+        display: none
+    nav
+        margin-left: 0
+        .close,
+        .subhead,
+        .devider
+            display: none
+    section
+        margin-left: 256px
+    .image
+        margin-left: 24px
+        .illustration
+            background-position-x: 280px
+    h1
+        left: 336px
+    .content
+        padding-left: 336px
+    .rating_block
+        a
+            margin: 16px
+    .partners_list
+        .partners_block
+            width: calc(50% - 16px)
+    .rewards_block
+        .title
+            margin-bottom: 16px
+@media screen and (min-width: 1360px)
+    header
+        width: calc(100% - 288px)
+        padding-left: 288px
+        ul
+            position: relative
+            width: calc(100% - 16px)
+            max-width: 1280px
+            height: 100%
+            overflow: hidden
+            right: 0
+            padding: 0 8px
+            margin: 0 auto
+    nav
+        width: 288px
+        ul
+            margin-top: 16px
+    section
+        margin-left: 288px
+    .image
+        .illustration
+            background-position-x: 312px
+    .rewards_block
+        margin-bottom: 48px
+        .svg
+            float: left
+        p,
+        .link_block
+            margin-left: 120px
+    .person_block
+        .lines
+            margin: 64px 0
+    .text_block
+        padding-bottom: 56px
+@media screen and (min-width: 1440px)
+    header
+        height: 88px
+        .logo
+            top: 22px
+        ul
+            li
+                a
+                    height: 88px
+                a,
+                i
+                    line-height: 88px !important
+    nav
+        height: calc(100% - 88px)
+        margin-top: 88px
+    .image
+        margin: 0 40px
+        .illustration
+            background-position-x: 328px
+    h1
+        top: 96px
+        left: 368px
+    .content
+        padding-left: 368px
+        .wrapper
+            padding-top: 320px
+    .title.active
+        font-size: 32px
+        line-height: 48px
+    .rewards_list,
+    .roadmap_list,
+    .person_list
+        margin-bottom: 96px
+    .roadmap_block
+        .roadmap_info
+            padding-bottom: 64px
+            margin-left: 96px
+@media screen and (min-width: 1600px)
+    .image
+        margin: 0 120px
+        .illustration
+            background-position-x: 408px
+    h1
+        left: 528px
+    .content
+        padding-left: 528px
+@media screen and (min-width: 1920px)
+    .image
+        margin: 0 200px
+        .illustration
+            background-position-x: 488px
+    h1
+        position: relative
+        max-width: 780px
+        top: 120px
+        left: 0
+        padding: 0 24px 0 500px
+        margin: 0 auto
+    .content
+        max-width: 780px
+        padding: 0 24px 0 500px
+        margin: 0 auto
+        &.center
+            padding-left: 664px
+            margin-top: -56px
+        .wrapper
+            padding-top: 344px
+    #intro
+        .content.center
+            margin-top: -72px
+    .text_block
+        padding-bottom: 64px
+        .lines
+            margin: 56px 0
+@media screen and (min-width: 2560px)
+    .image
+        margin: 0 344px
+        .illustration
+            background-position-x: 632px
+    h1
+        top: 144px
+    .content
+        &.center
+            padding-left: 984px
+        .wrapper
+            padding-top: 440px

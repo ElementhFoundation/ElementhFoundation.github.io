@@ -1,0 +1,74 @@
+<svg  width="288" height="288" viewBox="0 0 288 288" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st0{opacity:5.000000e-02;}
+	.st1{fill:#FFFFFF;}
+	.st2{opacity:0.1;}
+	.st3{fill:none;stroke:#212121;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#00E5FF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g class="st0">
+	<rect x="53" y="248" class="st1" width="124" height="12"/>
+	<rect x="53" y="232" class="st1" width="124" height="12"/>
+	<rect x="53" y="216" class="st1" width="124" height="12"/>
+	<rect x="53" y="200" class="st1" width="124" height="12"/>
+	<rect x="113" y="181" class="st1" width="16" height="6"/>
+	<rect x="137" y="181" class="st1" width="16" height="6"/>
+	<rect x="161" y="181" class="st1" width="16" height="6"/>
+</g>
+<g class="st2">
+	<rect x="53" y="181" class="st1" width="24" height="6"/>
+	<circle class="st1" cx="41" cy="184" r="6"/>
+</g>
+<line class="st3" x1="169" y1="263" x2="145" y2="263"/>
+<g>
+	<path class="st4" d="M241,216v3c0,19.9-16.1,36-36,36h-84"/>
+	<path class="st4" d="M249,208v12.5c0,23.5-19,42.5-42.5,42.5H177"/>
+	<path class="st4" d="M233,208v12.5c0,14.6-11.9,26.5-26.5,26.5H169"/>
+	<line class="st4" x1="161" y1="247" x2="153" y2="247"/>
+	<line class="st4" x1="169" y1="263" x2="145" y2="263"/>
+	<line class="st4" x1="145" y1="247" x2="129" y2="247"/>
+	<line class="st4" x1="113" y1="255" x2="81" y2="255"/>
+	<line class="st4" x1="73" y1="255" x2="57" y2="255"/>
+	<line class="st4" x1="137" y1="263" x2="105" y2="263"/>
+	<line class="st4" x1="157" y1="64" x2="157" y2="56"/>
+	<line class="st4" x1="153" y1="60" x2="161" y2="60"/>
+	<line class="st4" x1="125" y1="112" x2="125" y2="104"/>
+	<line class="st4" x1="121" y1="108" x2="129" y2="108"/>
+	<line class="st4" x1="53" y1="144" x2="53" y2="136"/>
+	<line class="st4" x1="49" y1="140" x2="57" y2="140"/>
+	<line class="st4" x1="181" y1="152" x2="181" y2="144"/>
+	<line class="st4" x1="177" y1="148" x2="185" y2="148"/>
+	<line class="st4" x1="109" y1="16" x2="109" y2="8"/>
+	<line class="st4" x1="105" y1="12" x2="113" y2="12"/>
+	<line class="st4" x1="197" y1="48" x2="197" y2="40"/>
+	<line class="st4" x1="193" y1="44" x2="201" y2="44"/>
+	<line class="st4" x1="269" y1="240" x2="269" y2="232"/>
+	<line class="st4" x1="265" y1="236" x2="273" y2="236"/>
+	<line class="st4" x1="13" y1="256" x2="13" y2="248"/>
+	<line class="st4" x1="9" y1="252" x2="17" y2="252"/>
+</g>
+<g>
+	<circle class="st5" cx="240" cy="80" r="20"/>
+	<circle class="st5" cx="240" cy="80" r="16"/>
+	<path class="st5" d="M204,273H12c-1.7,0-3,1.3-3,3s1.3,3,3,3h192c1.7,0,3-1.3,3-3S205.7,273,204,273z"/>
+	<path class="st5" d="M25,273v-96c0-4.4,3.6-8,8-8h150c4.4,0,8,3.6,8,8v96H25z"/>
+	<path class="st5" d="M243,192h3.7c1.3,0,2.6-0.7,3.3-1.8c16.4-24.7,26-54.3,26-86.2c0-37-12.9-71-34.4-97.8c-0.8-1-2.3-1-3.1,0
+		C216.9,33,204,67,204,104c0,31.9,9.6,61.5,26,86.2c0.7,1.1,2,1.8,3.3,1.8h3.7"/>
+	<path class="st5" d="M237,161v35c0,1.7,1.3,3,3,3s3-1.3,3-3v-35c0-1.7-1.3-3-3-3S237,159.3,237,161z"/>
+	<path class="st5" d="M266.5,157.7c-4.3,11.7-9.9,22.7-16.7,32.9l22.7,8.4c4.1-4.9,6.6-11.1,6.6-18C279,171.3,274,162.7,266.5,157.7
+		z"/>
+	<path class="st5" d="M213.5,157.7c-7.5,5-12.5,13.6-12.5,23.3c0,6.9,2.5,13.1,6.6,18l22.7-8.4C223.4,180.4,217.8,169.4,213.5,157.7
+		z"/>
+	<line class="st5" x1="256" y1="112" x2="204.2" y2="112"/>
+	<line class="st5" x1="248" y1="48" x2="214.4" y2="48"/>
+	<line class="st5" x1="264" y1="112" x2="275.8" y2="112"/>
+	<line class="st5" x1="256" y1="48" x2="265.6" y2="48"/>
+	<circle class="st5" cx="49" cy="49" r="40"/>
+	<line class="st5" x1="68" y1="52" x2="56" y2="44"/>
+	<line class="st5" x1="68" y1="36" x2="56" y2="44"/>
+	<line class="st5" x1="28" y1="52" x2="40" y2="44"/>
+	<line class="st5" x1="28" y1="36" x2="40" y2="44"/>
+	<path class="st5" d="M48,76c6.6,0,12-3.6,12-8H36C36,72.4,41.4,76,48,76z"/>
+</g>
+</svg>

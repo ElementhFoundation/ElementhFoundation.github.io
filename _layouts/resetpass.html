@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<div class="sign">
+    <p class="title" data-i18n="ResetPassword">Reset password</p>
+    <form id="resetpass_form">
+        <p class="input_name"><span data-i18n="YourEmail">Your Email</span>:</p>
+        <input type="email" form="resetpass_form" name="email" maxlength="100" placeholder="johndoe@site.com" required>
+        <div class="error disnone"></div>
+        <div class="allok disnone">Check your email and follow the instructions!</div>
+        <button class="primary_btn" type="submit" form="resetpass_form">
+            <span data-i18n="ResetPassword">Reset password</span>
+        </button>
+        <div class="link_block">
+            <p class="body"><span data-i18n="RememberedIt">Remembered it</span>?</p>
+            <a href="signin" class="link" data-i18n="Sign in">Sign in</a>
+        </div>
+    </form>
+</div>

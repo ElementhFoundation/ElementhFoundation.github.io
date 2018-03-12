@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{% include header.html %}
+<div class="sign">
+    <p class="title" data-i18n="Sign up">Sing up</p>
+    <form id="signup_form">
+        <p class="input_name"><span data-i18n="YourName">Your name</span>:<span class="blue">*</span></p>
+        <input type="text" form="signup_form" name="username" maxlength="100" placeholder="John Doe" required>
+        <p class="input_name"><span data-i18n="YourEmail">Your Email</span>:<span class="blue">*</span></p>
+        <input type="email" form="signup_form" name="email" maxlength="100" placeholder="johndoe@site.com" required>
+
+        <p class="body red" data-i18n="yahooDescription">We have troubles to send emails to @yahoo.com, please use another email!</p>
+
+        <p class="input_name"><span data-i18n="Password">Password</span>:<span class="blue">*</span></p>
+        <input type="password" form="signup_form" name="password" maxlength="100" placeholder="minimum 8 symbols" required>
+        <p class="input_name"><span data-i18n="ConfirmYourPassword">Confirm your Password</span>:<span class="blue">*</span></p>
+        <input type="password" form="signup_form" name="confirm_password" maxlength="100" placeholder="" required>
+        <p class="input_name"><span data-i18n="YourETHAddress">Your ETH address</span>:<span class="blue">*</span></p>
+        <input type="text" form="signup_form" name="ETH_wallet" maxlength="100" placeholder="0x0000000000000000000000000000000000000000" required>
+        <p class="input_name"><span data-i18n="YourCountry">Your country</span>:<span class="blue">*</span></p>
+        <input type="text" form="signup_form" name="country" maxlength="100" placeholder="" required>
+        <p class="input_name"><span data-i18n="YourTelegramAccount">Your Telegram account</span>:</p>
+        <input type="text" form="signup_form" name="telegram_username" maxlength="100" placeholder="@johndoe">
+
+        <p class="body or" data-i18n="or">or</p>
+        <div class="fb-login-button" onlogin="checkLoginState();" scope="public_profile,email" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        <div class="error disnone"></div>
+        <button class="primary_btn" type="submit" form="signup_form">
+            <span data-i18n="Sign up">Sign up</span>
+        </button>
+        <div class="link_block">
+            <p class="body"><span data-i18n="AlreadyRegistered">Already registered</span>?</p>
+            <a href="signin" class="link" data-i18n="Sign in">Sign in</a>
+        </div>
+    </form>
+</div>

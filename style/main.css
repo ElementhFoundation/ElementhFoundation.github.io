@@ -1,0 +1,1120 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  outline: 0;
+  list-style-type: none; }
+
+a:active,
+a:hover,
+a:link,
+a:visited {
+  border: none;
+  color: inherit;
+  text-decoration: none; }
+
+/* DECORATION */
+.pointer, .icon, nav .close,
+.icons,
+.behance,
+.bitcointalk,
+.bounty,
+.facebook,
+.github,
+.instagram,
+.linkedin,
+.medium,
+.reddit,
+.steemit,
+.telegram,
+.twitter,
+.youtube, header ul li a,
+header ul li i, nav ul li, .link_block .primary_link,
+.link_block .secondary_link, .primary_btn, .tabs li, .data .data_user .data_btn {
+  cursor: pointer; }
+
+/* COLOR */
+/* #29b6f6 */
+/* #40c4ff */
+.red, .error {
+  color: #f44336 !important; }
+
+.green, .allok {
+  color: #00c853 !important; }
+
+.blue {
+  color: #0d47a1 !important; }
+
+.light {
+  color: #fff;
+  background-color: #292929; }
+
+.dark {
+  color: #fff;
+  background-color: #212121; }
+
+/* IMAGE */
+.svg, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .winner, .finalist, header .logo {
+  display: block;
+  background: center center no-repeat; }
+
+.illustration, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .image {
+  width: 288px;
+  height: 288px;
+  margin: 0 auto; }
+
+.intro {
+  background-image: url("/img/illustration/intro.svg"); }
+
+.rating {
+  background-image: url("/img/illustration/rating.svg"); }
+
+.partners {
+  background-image: url("/img/illustration/partners.svg"); }
+
+.rewards {
+  background-image: url("/img/illustration/rewards.svg"); }
+
+.features {
+  background-image: url("/img/illustration/features.svg"); }
+
+.roadmap {
+  background-image: url("/img/illustration/roadmap.svg"); }
+
+.team {
+  background-image: url("/img/illustration/team.svg"); }
+
+.advisors {
+  background-image: url("/img/illustration/advisors.svg"); }
+
+.cases {
+  background-image: url("/img/illustration/cases.svg"); }
+
+.dapps {
+  background-image: url("/img/illustration/dapps.svg"); }
+
+.mvp {
+  background-image: url("/img/illustration/mvp.svg"); }
+
+/* ICONS */
+.icon, nav .close {
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  margin: 8px; }
+
+.icons, .behance, .bitcointalk, .bounty, .facebook, .github, .instagram, .linkedin, .medium, .reddit, .steemit, .telegram, .twitter, .youtube {
+  display: block;
+  width: 40px;
+  height: 40px;
+  float: left;
+  background: center center no-repeat; }
+
+.icon, nav .close,
+.icons,
+.behance,
+.bitcointalk,
+.bounty,
+.facebook,
+.github,
+.instagram,
+.linkedin,
+.medium,
+.reddit,
+.steemit,
+.telegram,
+.twitter,
+.youtube {
+  border-radius: 50%; }
+  .icon:hover, nav .close:hover,
+  .icons:hover,
+  .behance:hover,
+  .bitcointalk:hover,
+  .bounty:hover,
+  .facebook:hover,
+  .github:hover,
+  .instagram:hover,
+  .linkedin:hover,
+  .medium:hover,
+  .reddit:hover,
+  .steemit:hover,
+  .telegram:hover,
+  .twitter:hover,
+  .youtube:hover {
+    background-color: rgba(0, 0, 0, 0.05); }
+  .icon:active, nav .close:active,
+  .icons:active,
+  .behance:active,
+  .bitcointalk:active,
+  .bounty:active,
+  .facebook:active,
+  .github:active,
+  .instagram:active,
+  .linkedin:active,
+  .medium:active,
+  .reddit:active,
+  .steemit:active,
+  .telegram:active,
+  .twitter:active,
+  .youtube:active {
+    background-color: rgba(0, 0, 0, 0.1); }
+
+.behance {
+  background-image: url("../img/icon/ic_behance.svg"); }
+
+.bitcointalk {
+  background-image: url("../img/icon/ic_bitcointalk.svg"); }
+
+.bounty {
+  background-image: url("../img/icon/ic_bounty.svg"); }
+
+.facebook {
+  background-image: url("../img/icon/ic_facebook.svg"); }
+
+.github {
+  background-image: url("../img/icon/ic_github.svg"); }
+
+.instagram {
+  background-image: url("../img/icon/ic_instagram.svg"); }
+
+.linkedin {
+  background-image: url("../img/icon/ic_linkedin.svg"); }
+
+.medium {
+  background-image: url("../img/icon/ic_medium.svg"); }
+
+.reddit {
+  background-image: url("../img/icon/ic_reddit.svg"); }
+
+.steemit {
+  background-image: url("../img/icon/ic_steemit.svg"); }
+
+.telegram {
+  background-image: url("../img/icon/ic_telegram.svg"); }
+
+.twitter {
+  background-image: url("../img/icon/ic_twitter.svg"); }
+
+.youtube {
+  background-image: url("../img/icon/ic_youtube.svg"); }
+
+/* RATING */
+.rating_logo, .foxico, .trackico, .icomarks, .foundico, .wiserico {
+  background: center center no-repeat; }
+
+.foxico {
+  background-image: url("../img/rating/foxico.svg"); }
+
+.trackico {
+  background-image: url("../img/rating/trackico.svg"); }
+
+.icomarks {
+  background-image: url("../img/rating/icomarks.svg"); }
+
+.foundico {
+  background-size: 104px, auto;
+  background-image: url("../img/rating/foundico.png"); }
+
+.wiserico {
+  background-size: 104px, auto;
+  background-image: url("../img/rating/wiserico.png"); }
+
+/* PARTNERS */
+.partners_logo, .sap, .bitrewards, .sberbank, .gmtlegal {
+  background: center center no-repeat; }
+
+.sap {
+  background-image: url("../img/partners/sap.svg"); }
+
+.bitrewards {
+  background-image: url("../img/partners/bitrewards.svg"); }
+
+.sberbank {
+  background-size: contain;
+  background-image: url("../img/partners/sberbank.png"); }
+
+.gmtlegal {
+  background-size: contain;
+  background-image: url("../img/partners/gmtlegal.png"); }
+
+/* REWARDS */
+.winner {
+  background-image: url("/img/rewards/winner.svg"); }
+
+.finalist {
+  background-image: url("/img/rewards/finalist.svg"); }
+
+/* TEAM */
+.photo, .ryabov, .bereznitskiy, .mengeshev, .vasilev, .morozov, .prigornitskiy, .miheev, .gashitsky, .kholodnykh, .kirillov, .yannam, .aurel, .averbach, .fradkov {
+  background: center center no-repeat;
+  background-size: cover; }
+
+.ryabov {
+  background-image: url("../img/team/ryabov.jpg"); }
+
+.bereznitskiy {
+  background-image: url("../img/team/bereznitskiy.jpg"); }
+
+.mengeshev {
+  background-image: url("../img/team/mengeshev.jpg"); }
+
+.vasilev {
+  background-image: url("../img/team/vasilev.jpg"); }
+
+.morozov {
+  background-image: url("../img/team/morozov.jpg"); }
+
+.prigornitskiy {
+  background-image: url("../img/team/prigornitskiy.jpg"); }
+
+.miheev {
+  background-image: url("../img/team/miheev.jpg"); }
+
+.gashitsky {
+  background-image: url("../img/team/gashitsky.jpg"); }
+
+.kholodnykh {
+  background-image: url("../img/team/kholodnykh.jpg"); }
+
+.kirillov {
+  background-image: url("../img/team/kirillov.jpg"); }
+
+/* ADVISORS */
+.yannam {
+  background-image: url("../img/advisors/yannam.png"); }
+
+.aurel {
+  background-image: url("../img/advisors/aurel.png"); }
+
+.averbach {
+  background-image: url("../img/advisors/averbach.png"); }
+
+.fradkov {
+  background-image: url("../img/advisors/fradkov.png"); }
+
+/* FONTS */
+body {
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  line-height: 24px;
+  color: #212121; }
+
+h1 {
+  font-size: 32px;
+  line-height: 56px;
+  text-transform: uppercase;
+  font-weight: 400; }
+
+.body {
+  margin-bottom: 0; }
+
+.title, .person_block .name {
+  font-size: 20px;
+  line-height: 32px; }
+
+.subhead {
+  color: #757575; }
+
+.description {
+  font-size: 16px;
+  letter-spacing: 0.2px; }
+
+.title.active, .person_block .active.name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #0d47a1; }
+
+/* LAYOUT */
+.disnone {
+  display: none !important; }
+
+.disblock {
+  display: block !important; }
+
+html,
+body {
+  height: 100%; }
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 56px;
+  top: 0;
+  background-color: #0d47a1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  z-index: 1; }
+  header .logo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 8px;
+    left: 8px;
+    background-image: url("/img/logo_small.svg"); }
+  header ul {
+    position: absolute;
+    max-width: 1280px;
+    right: 8px; }
+    header ul li {
+      float: right; }
+      header ul li a {
+        display: block;
+        height: 56px;
+        padding: 0 12px; }
+      header ul li i {
+        padding: 0 8px; }
+      header ul li a,
+      header ul li i {
+        line-height: 56px !important; }
+        header ul li a:hover,
+        header ul li i:hover {
+          background-color: rgba(0, 0, 0, 0.05); }
+        header ul li a:active,
+        header ul li i:active {
+          background-color: rgba(0, 0, 0, 0.1); }
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  margin-left: calc(-100% - 8px);
+  transition: all 0.25s ease;
+  z-index: 2; }
+  nav.active {
+    -webkit-transform: translateX(calc(100% + 8px));
+    -moz-transform: translateX(calc(100% + 8px));
+    -o-transform: translateX(calc(100% + 8px));
+    transform: translateX(calc(100% + 8px)); }
+  nav .close {
+    float: right; }
+  nav ul {
+    margin-top: 8px; }
+    nav ul .devider {
+      margin: 8px 0;
+      border-top: 1px solid #f0f0f0; }
+    nav ul li {
+      padding: 0 56px;
+      line-height: 40px;
+      text-transform: capitalize; }
+      nav ul li:hover {
+        background-color: rgba(0, 0, 0, 0.05); }
+      nav ul li.subhead, nav ul li.devider {
+        cursor: auto; }
+        nav ul li.subhead:hover, nav ul li.devider:hover {
+          background-color: rgba(0, 0, 0, 0); }
+      nav ul li.active {
+        color: #0d47a1; }
+
+section {
+  position: relative;
+  min-height: 100%; }
+
+h1 {
+  margin: 24px 16px; }
+
+.image {
+  padding: 64px 0 0 0; }
+
+.content {
+  height: 100%;
+  padding: 0 16px 16px; }
+
+.wrapper {
+  height: 100%; }
+
+ul.list li {
+  position: relative;
+  padding-left: 24px;
+  margin: 8px 0; }
+  ul.list li::before {
+    content: "◦";
+    position: absolute;
+    left: 0; }
+
+.link_block {
+  height: 100%;
+  overflow: hidden;
+  margin: 0; }
+  .link_block p {
+    display: inline; }
+  .link_block .link {
+    text-decoration: underline;
+    color: #0d47a1; }
+  .link_block .primary_link,
+  .link_block .secondary_link {
+    display: block;
+    margin: 0 8px 16px 0;
+    line-height: 32px;
+    float: left; }
+  .link_block .primary_link {
+    min-width: 52px;
+    height: 32px;
+    padding: 0 12px;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    text-align: center; }
+    .link_block .primary_link:hover {
+      color: #0d47a1;
+      border-color: #0d47a1; }
+    .link_block .primary_link:active {
+      color: #fff;
+      background-color: #0d47a1; }
+    .link_block .primary_link.disabled {
+      opacity: 0.3; }
+      .link_block .primary_link.disabled:hover, .link_block .primary_link.disabled:active {
+        color: #fff;
+        border-color: #fff;
+        background-color: rgba(0, 0, 0, 0); }
+  .link_block.black .primary_link {
+    border-color: #212121; }
+    .link_block.black .primary_link:hover {
+      color: #212121;
+      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25); }
+    .link_block.black .primary_link:active {
+      background-color: rgba(0, 0, 0, 0.1); }
+    .link_block.black .primary_link.disabled {
+      opacity: 0.3;
+      cursor: default; }
+      .link_block.black .primary_link.disabled:hover, .link_block.black .primary_link.disabled:active {
+        color: #212121;
+        border-color: #212121;
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: none; }
+  .link_block .secondary_link {
+    border-bottom: 2px solid #fff; }
+    .link_block .secondary_link:hover {
+      height: 40px;
+      margin-bottom: 8px;
+      border-bottom-color: #0d47a1; }
+
+.primary_btn {
+  display: block;
+  max-width: 488px;
+  padding: 12px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #fff !important;
+  background-color: #0d47a1; }
+  .primary_btn:hover {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2); }
+
+.timer {
+  max-width: 480px;
+  margin: 24px 0 8px;
+  padding: 16px;
+  background: repeat url(../img/details/line.svg); }
+  .timer .time {
+    margin: 0;
+    font-size: 32px;
+    line-height: 32px; }
+
+.rating_block {
+  margin: 0 -8px;
+  width: 100%; }
+  .rating_block a {
+    display: block;
+    width: 100%;
+    height: 84px;
+    border: 2px solid #fff;
+    margin: 8px; }
+    .rating_block a:hover {
+      border-color: #0d47a1;
+      background-color: #0d47a1; }
+      .rating_block a:hover .rating_logo, .rating_block a:hover .foxico, .rating_block a:hover .trackico, .rating_block a:hover .icomarks, .rating_block a:hover .foundico, .rating_block a:hover .wiserico {
+        border-color: #0d47a1; }
+    .rating_block a .rating_logo, .rating_block a .foxico, .rating_block a .trackico, .rating_block a .icomarks, .rating_block a .foundico, .rating_block a .wiserico {
+      width: 132px;
+      height: 84px;
+      float: left;
+      border-right: 2px solid #fff; }
+    .rating_block a p {
+      margin: 0 16px 0 152px; }
+      .rating_block a p.body {
+        margin-top: 15px; }
+
+.partners_list {
+  width: 100%; }
+  .partners_list .partners_block .partners_logo, .partners_list .partners_block .sap, .partners_list .partners_block .bitrewards, .partners_list .partners_block .sberbank, .partners_list .partners_block .gmtlegal {
+    display: block;
+    width: 284px;
+    height: 84px;
+    border: 2px solid #fff;
+    margin-bottom: 8px; }
+    .partners_list .partners_block .partners_logo:hover, .partners_list .partners_block .sap:hover, .partners_list .partners_block .bitrewards:hover, .partners_list .partners_block .sberbank:hover, .partners_list .partners_block .gmtlegal:hover {
+      border-color: #0d47a1;
+      background-color: #0d47a1; }
+  .partners_list .partners_block p {
+    margin-bottom: 32px; }
+
+.rewards_block {
+  margin: 16px 0; }
+  .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .winner, .rewards_block .finalist, .rewards_block header .logo, header .rewards_block .logo {
+    width: 81px;
+    height: 81px;
+    margin-bottom: 8px;
+    background-size: contain; }
+  .rewards_block p {
+    margin-bottom: 0; }
+  .rewards_block .title, .rewards_block .person_block .name, .person_block .rewards_block .name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700; }
+
+.roadmap_block {
+  position: relative;
+  height: 100%;
+  overflow: hidden; }
+  .roadmap_block .timeline {
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+    float: left; }
+    .roadmap_block .timeline .circle {
+      width: 28px;
+      height: 28px;
+      border: 2px solid #0d47a1;
+      border-radius: 50%; }
+    .roadmap_block .timeline .line {
+      width: 0;
+      height: 100%;
+      border-right: 2px solid #0d47a1;
+      margin-left: 15px; }
+    .roadmap_block .timeline.past .circle,
+    .roadmap_block .timeline.past .line {
+      background-color: #0d47a1; }
+  .roadmap_block .roadmap_info {
+    padding-bottom: 24px;
+    margin-left: 48px; }
+    .roadmap_block .roadmap_info p {
+      margin-bottom: 0; }
+    .roadmap_block .roadmap_info .date,
+    .roadmap_block .roadmap_info .title,
+    .roadmap_block .roadmap_info .person_block .name,
+    .person_block .roadmap_block .roadmap_info .name {
+      font-family: Montserrat, sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 32px; }
+    .roadmap_block .roadmap_info .date {
+      opacity: 0.5; }
+
+.person_block .lines {
+  width: 100%;
+  border-bottom: 2px dotted #fff;
+  margin: 32px 0; }
+.person_block .photo, .person_block .ryabov, .person_block .bereznitskiy, .person_block .mengeshev, .person_block .vasilev, .person_block .morozov, .person_block .prigornitskiy, .person_block .miheev, .person_block .gashitsky, .person_block .kholodnykh, .person_block .kirillov, .person_block .yannam, .person_block .aurel, .person_block .averbach, .person_block .fradkov {
+  width: 288px;
+  height: 288px; }
+.person_block .name {
+  margin: 16px 0 8px; }
+.person_block .caption {
+  opacity: 0.5;
+  margin-bottom: 16px; }
+.person_block .body {
+  height: 72px;
+  overflow: hidden; }
+  .person_block .body.active {
+    height: 100%; }
+
+.sign,
+.profile_page {
+  padding-top: 72px;
+  margin: 0 16px; }
+
+.profile_page {
+  padding-bottom: 72px; }
+
+.or {
+  margin: 16px 0; }
+
+form {
+  margin-bottom: 16px; }
+
+.input_name {
+  opacity: 0.5;
+  line-height: 32px; }
+
+input,
+textarea,
+select {
+  width: calc(100% - 16px);
+  height: 24px;
+  border: 1px solid #0d47a1;
+  padding: 7px;
+  font-size: 16px;
+  line-height: 24px; }
+  input:hover, input:focus,
+  textarea:hover,
+  textarea:focus,
+  select:hover,
+  select:focus {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+
+input.amount {
+  width: 84px; }
+
+textarea {
+  height: 92px; }
+
+select {
+  width: 72px;
+  height: 40px;
+  background-color: #fff; }
+
+.inline_form {
+  margin-bottom: 16px; }
+  .inline_form span {
+    line-height: 40px;
+    margin-right: 8px; }
+
+.error,
+.allok {
+  margin-top: 16px; }
+
+button {
+  width: 100%;
+  margin-top: 16px; }
+
+.text_block {
+  padding-bottom: 32px; }
+  .text_block .block {
+    margin: 32px 0;
+    padding-bottom: 8px; }
+  .text_block .lines {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    margin: 32px 0; }
+
+.block {
+  margin-top: 32px; }
+  .block .title, .block .person_block .name, .person_block .block .name {
+    margin-bottom: 16px; }
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.9); }
+  .modal .message {
+    position: absolute;
+    width: 288px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    .modal .message .title, .modal .message .person_block .name, .person_block .modal .message .name {
+      margin-bottom: 16px; }
+
+.tabs li.active {
+  color: #0d47a1; }
+.tabs li::before {
+  content: "→";
+  margin-right: 16px; }
+
+.tabs_container {
+  display: none;
+  padding-top: 16px;
+  margin-bottom: 32px; }
+  .tabs_container .title, .tabs_container .person_block .name, .person_block .tabs_container .name {
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    margin: 32px 0; }
+  .tabs_container .description {
+    margin: 16px 0; }
+
+.data_block {
+  margin: 32px 0; }
+
+.data {
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 16px;
+  border-bottom: 1px dotted #0d47a1;
+  margin-bottom: 16px; }
+  .data .data_name,
+  .data .data_user {
+    height: 16px;
+    font-size: 14px;
+    line-height: 16px; }
+  .data .data_name {
+    opacity: 0.5; }
+  .data .data_user {
+    margin-top: 16px; }
+    .data .data_user .wallet_address {
+      font-size: 9px;
+      line-height: 12px; }
+    .data .data_user form {
+      margin: 8px 0; }
+      .data .data_user form input {
+        width: calc(100% - 134px); }
+      .data .data_user form .data_btn {
+        margin: 12px 0 12px 16px; }
+    .data .data_user .data_btn {
+      float: right;
+      color: #0d47a1;
+      margin-left: 16px; }
+      .data .data_user .data_btn:hover {
+        text-decoration: underline; }
+
+/* INTRO */
+#intro .content {
+  padding-top: 72px; }
+#intro .image {
+  display: none; }
+
+@media screen and (min-width: 768px) {
+  header {
+    height: 72px;
+    z-index: 3; }
+    header .logo {
+      top: 16px;
+      left: 16px; }
+    header ul li a {
+      height: 72px; }
+    header ul li a,
+    header ul li i {
+      line-height: 72px !important;
+      padding: 0 16px; }
+
+  nav {
+    width: 256px;
+    height: calc(100% - 72px);
+    margin-top: 72px;
+    margin-left: -264px; }
+    nav.active {
+      -webkit-transform: translateX(264px);
+      -moz-transform: translateX(264px);
+      -o-transform: translateX(264px);
+      transform: translateX(264px); }
+    nav .close {
+      margin: 16px; }
+    nav ul li {
+      padding: 0 72px;
+      line-height: 56px; }
+
+  .image {
+    position: absolute;
+    height: 100%;
+    padding: 0;
+    margin: 0 24px; }
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .image {
+      height: 100%;
+      background-attachment: fixed;
+      background-position-x: 24px; }
+
+  h1 {
+    position: absolute;
+    top: 80px;
+    left: 336px;
+    margin: 0; }
+
+  .content {
+    padding: 0 24px 0 336px; }
+    .content .wrapper {
+      padding-top: 256px; }
+    .content.center {
+      position: absolute; }
+      .content.center .wrapper {
+        position: relative;
+        height: auto;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        margin: 0;
+        padding-top: 0; }
+
+  #intro .image {
+    display: block; }
+
+  .timer {
+    padding: 24px; }
+
+  .primary_btn {
+    padding: 20px; }
+
+  .rewards_list,
+  .roadmap_list,
+  .person_list {
+    margin-bottom: 64px; }
+
+  .sign,
+  .profile_page {
+    width: 480px;
+    padding-top: 120px;
+    margin: 0 auto; }
+
+  .profile_page {
+    width: 700px; }
+
+  .text_block {
+    padding-bottom: 40px; }
+    .text_block .lines {
+      margin: 48px 0; }
+
+  .tabs {
+    margin: 32px 0;
+    height: 56px; }
+    .tabs li {
+      width: 20%;
+      height: 56px;
+      float: left;
+      line-height: 56px;
+      text-align: center;
+      color: #fff;
+      background-color: #212121;
+      padding: 0;
+      margin: 0; }
+      .tabs li.active {
+        width: calc(20% - 2px);
+        height: 55px;
+        color: #212121;
+        line-height: 54px;
+        border: 1px solid #212121;
+        border-bottom: none;
+        background-color: #fff; }
+        .tabs li.active:hover {
+          background-color: #fff; }
+      .tabs li:hover {
+        background-color: rgba(33, 33, 33, 0.9); }
+      .tabs li::before {
+        content: "";
+        margin: 0; } }
+@media screen and (min-width: 1024px) {
+  header .logo {
+    width: 144px;
+    top: 14px;
+    left: 72px;
+    background-image: url("/img/logo_big.svg"); }
+
+  .image {
+    margin-left: 72px; }
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .image {
+      background-position-x: 72px; }
+
+  h1 {
+    left: 384px; }
+
+  .content {
+    padding-left: 384px; }
+
+  .rating_block {
+    height: 100%;
+    overflow: hidden; }
+    .rating_block a {
+      width: 288px;
+      float: left; }
+
+  .partners_list {
+    height: 100%;
+    overflow: hidden; }
+    .partners_list .partners_block {
+      float: left;
+      width: 286px;
+      margin: 16px 16px 16px 0; }
+      .partners_list .partners_block p {
+        margin-bottom: 0; }
+
+  .rewards_block {
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 32px; }
+    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .winner, .rewards_block .finalist, .rewards_block header .logo, header .rewards_block .logo {
+      float: left; }
+    .rewards_block p,
+    .rewards_block .link_block {
+      margin-left: 96px; }
+
+  .roadmap_block .roadmap_info {
+    padding-bottom: 48px;
+    margin-left: 64px; }
+
+  .profile_page {
+    width: 800px; } }
+@media screen and (min-width: 1280px) {
+  #open_navigation {
+    display: none; }
+
+  nav {
+    margin-left: 0; }
+    nav .close,
+    nav .subhead,
+    nav .devider {
+      display: none; }
+
+  section {
+    margin-left: 256px; }
+
+  .image {
+    margin-left: 24px; }
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .image {
+      background-position-x: 280px; }
+
+  h1 {
+    left: 336px; }
+
+  .content {
+    padding-left: 336px; }
+
+  .rating_block a {
+    margin: 16px; }
+
+  .partners_list .partners_block {
+    width: calc(50% - 16px); }
+
+  .rewards_block .title, .rewards_block .person_block .name, .person_block .rewards_block .name {
+    margin-bottom: 16px; } }
+@media screen and (min-width: 1360px) {
+  header {
+    width: calc(100% - 288px);
+    padding-left: 288px; }
+    header ul {
+      position: relative;
+      width: calc(100% - 16px);
+      max-width: 1280px;
+      height: 100%;
+      overflow: hidden;
+      right: 0;
+      padding: 0 8px;
+      margin: 0 auto; }
+
+  nav {
+    width: 288px; }
+    nav ul {
+      margin-top: 16px; }
+
+  section {
+    margin-left: 288px; }
+
+  .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .image {
+    background-position-x: 312px; }
+
+  .rewards_block {
+    margin-bottom: 48px; }
+    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .winner, .rewards_block .finalist, .rewards_block header .logo, header .rewards_block .logo {
+      float: left; }
+    .rewards_block p,
+    .rewards_block .link_block {
+      margin-left: 120px; }
+
+  .person_block .lines {
+    margin: 64px 0; }
+
+  .text_block {
+    padding-bottom: 56px; } }
+@media screen and (min-width: 1440px) {
+  header {
+    height: 88px; }
+    header .logo {
+      top: 22px; }
+    header ul li a {
+      height: 88px; }
+    header ul li a,
+    header ul li i {
+      line-height: 88px !important; }
+
+  nav {
+    height: calc(100% - 88px);
+    margin-top: 88px; }
+
+  .image {
+    margin: 0 40px; }
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .image {
+      background-position-x: 328px; }
+
+  h1 {
+    top: 96px;
+    left: 368px; }
+
+  .content {
+    padding-left: 368px; }
+    .content .wrapper {
+      padding-top: 320px; }
+
+  .title.active, .person_block .active.name {
+    font-size: 32px;
+    line-height: 48px; }
+
+  .rewards_list,
+  .roadmap_list,
+  .person_list {
+    margin-bottom: 96px; }
+
+  .roadmap_block .roadmap_info {
+    padding-bottom: 64px;
+    margin-left: 96px; } }
+@media screen and (min-width: 1600px) {
+  .image {
+    margin: 0 120px; }
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .image {
+      background-position-x: 408px; }
+
+  h1 {
+    left: 528px; }
+
+  .content {
+    padding-left: 528px; } }
+@media screen and (min-width: 1920px) {
+  .image {
+    margin: 0 200px; }
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .image {
+      background-position-x: 488px; }
+
+  h1 {
+    position: relative;
+    max-width: 780px;
+    top: 120px;
+    left: 0;
+    padding: 0 24px 0 500px;
+    margin: 0 auto; }
+
+  .content {
+    max-width: 780px;
+    padding: 0 24px 0 500px;
+    margin: 0 auto; }
+    .content.center {
+      padding-left: 664px;
+      margin-top: -56px; }
+    .content .wrapper {
+      padding-top: 344px; }
+
+  #intro .content.center {
+    margin-top: -72px; }
+
+  .text_block {
+    padding-bottom: 64px; }
+    .text_block .lines {
+      margin: 56px 0; } }
+@media screen and (min-width: 2560px) {
+  .image {
+    margin: 0 344px; }
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .image {
+      background-position-x: 632px; }
+
+  h1 {
+    top: 144px; }
+
+  .content.center {
+    padding-left: 984px; }
+  .content .wrapper {
+    padding-top: 440px; } }
+
+/*# sourceMappingURL=main.css.map */

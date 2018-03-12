@@ -1,0 +1,45 @@
+<svg  width="288" height="288" viewBox="0 0 288 288" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st0{fill:none;stroke:#00E5FF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#00E5FF;stroke-width:2;stroke-miterlimit:10;}
+	.st4{fill:#00E5FF;}
+</style>
+<path class="st0" d="M128,100h128c2.2,0,4,1.8,4,4v64c0,2.2-1.8,4-4,4H128c-2.2,0-4-1.8-4-4v-64C124,101.8,125.8,100,128,100z"/>
+<path class="st0" d="M124,154h-20c-2.2,0-4-1.8-4-4V86c0-2.2,1.8-4,4-4h128c2.2,0,4,1.8,4,4v14"/>
+<g>
+	<path class="st1" d="M279,17c4.4,0,8,3.6,8,8v182c0,4.4-3.6,8-8,8H9c-4.4,0-8-3.6-8-8V25c0-4.4,3.6-8,8-8H279z"/>
+	<line class="st1" x1="1" y1="183" x2="287" y2="183"/>
+	<path class="st1" d="M196,249H92c-1.7,0-3,1.3-3,3s1.3,3,3,3h104c1.7,0,3-1.3,3-3S197.7,249,196,249z"/>
+	<line class="st2" x1="120" y1="216" x2="112" y2="248"/>
+	<line class="st2" x1="168" y1="216" x2="176" y2="248"/>
+	<path class="st1" d="M232,249c-6.1,0-11,4.9-11,11v16c0,6.1,4.9,11,11,11s11-4.9,11-11v-16C243,253.9,238.1,249,232,249z"/>
+	<line class="st2" x1="271" y1="273" x2="243" y2="273"/>
+	<line class="st2" x1="221" y1="273" x2="161" y2="273"/>
+	<line class="st2" x1="232" y1="256" x2="232" y2="264"/>
+</g>
+<line class="st0" x1="100" y1="94" x2="236" y2="94"/>
+<line class="st3" x1="124" y1="112" x2="260" y2="112"/>
+<circle class="st4" cx="142" cy="106" r="2"/>
+<circle class="st4" cx="136" cy="106" r="2"/>
+<circle class="st4" cx="130" cy="106" r="2"/>
+<circle class="st4" cx="118" cy="88" r="2"/>
+<circle class="st4" cx="112" cy="88" r="2"/>
+<circle class="st4" cx="106" cy="88" r="2"/>
+<path class="st0" d="M100,136H80c-2.2,0-4-1.8-4-4V68c0-2.2,1.8-4,4-4h128c2.2,0,4,1.8,4,4v14"/>
+<line class="st0" x1="76" y1="76" x2="212" y2="76"/>
+<circle class="st4" cx="94" cy="70" r="2"/>
+<circle class="st4" cx="88" cy="70" r="2"/>
+<circle class="st4" cx="82" cy="70" r="2"/>
+<path class="st0" d="M76,118H56c-2.2,0-4-1.8-4-4V50c0-2.2,1.8-4,4-4h128c2.2,0,4,1.8,4,4v14"/>
+<line class="st0" x1="52" y1="58" x2="188" y2="58"/>
+<circle class="st4" cx="70" cy="52" r="2"/>
+<circle class="st4" cx="64" cy="52" r="2"/>
+<circle class="st4" cx="58" cy="52" r="2"/>
+<path class="st0" d="M52,100H32c-2.2,0-4-1.8-4-4V32c0-2.2,1.8-4,4-4h128c2.2,0,4,1.8,4,4v14"/>
+<line class="st0" x1="28" y1="40" x2="164" y2="40"/>
+<circle class="st4" cx="46" cy="34" r="2"/>
+<circle class="st4" cx="40" cy="34" r="2"/>
+<circle class="st4" cx="34" cy="34" r="2"/>
+</svg>

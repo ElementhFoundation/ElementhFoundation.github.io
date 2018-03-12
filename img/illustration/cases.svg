@@ -1,0 +1,47 @@
+<svg  width="288" height="288" viewBox="0 0 288 288" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st0{opacity:5.000000e-02;}
+	.st1{fill:#FFFFFF;}
+	.st2{opacity:0.1;}
+	.st3{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#00E5FF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g class="st0">
+	<rect x="112" y="181" class="st1" width="16" height="6"/>
+	<rect x="136" y="181" class="st1" width="16" height="6"/>
+	<rect x="160" y="32" class="st1" width="32" height="8"/>
+	<rect x="240" y="32" class="st1" width="32" height="8"/>
+	<rect x="160" y="152" class="st1" width="88" height="8"/>
+	<rect x="160" y="136" class="st1" width="104" height="8"/>
+	<rect x="160" y="120" class="st1" width="56" height="8"/>
+	<rect x="160" y="104" class="st1" width="104" height="8"/>
+	<rect x="160" y="88" class="st1" width="104" height="8"/>
+	<rect x="160" y="72" class="st1" width="72" height="8"/>
+	<rect x="160" y="56" class="st1" width="104" height="8"/>
+	<path class="st1" d="M40,56v104h104V56H40z M104,152H48v-8h56V152z M136,136H48V64h88V136z"/>
+</g>
+<g class="st2">
+	<rect x="160" y="181" class="st1" width="16" height="6"/>
+	<rect x="52" y="181" class="st1" width="24" height="6"/>
+	<circle class="st1" cx="40" cy="184" r="6"/>
+	<rect x="40" y="32" class="st1" width="32" height="8"/>
+	<rect x="200" y="32" class="st1" width="32" height="8"/>
+	<circle class="st1" cx="24" cy="36" r="8"/>
+</g>
+<g>
+	<path class="st3" d="M25,215H9c-4.4,0-8-3.6-8-8V25c0-4.4,3.6-8,8-8h270c4.4,0,8,3.6,8,8v182c0,4.4-3.6,8-8,8h-88"/>
+	<line class="st3" x1="191" y1="183" x2="287" y2="183"/>
+	<line class="st3" x1="1" y1="183" x2="25" y2="183"/>
+	<path class="st3" d="M191,255h5c1.7,0,3-1.3,3-3s-1.3-3-3-3h-5"/>
+	<path class="st3" d="M204,273H12c-1.7,0-3,1.3-3,3s1.3,3,3,3h192c1.7,0,3-1.3,3-3S205.7,273,204,273z"/>
+	<path class="st3" d="M183,169c4.4,0,8,3.6,8,8v96H25v-96c0-4.4,3.6-8,8-8H183z"/>
+</g>
+<g>
+	<rect x="48" y="252" class="st4" width="120" height="8"/>
+	<path class="st4" d="M168,248h-40v-20h24c8.8,0,16,7.2,16,16V248z"/>
+	<path class="st4" d="M116,228c-8.8,0-16-7.2-16-16v-12c0-2.2-1.8-4-4-4h0c-2.2,0-4,1.8-4,4"/>
+	<path class="st4" d="M128,228h-16c-8.8,0-16-7.2-16-16v-8c0-2.2-1.8-4-4-4H48l0,48l80,0V228z"/>
+	<path class="st4" d="M48,224L48,224c13.3,0,24,10.7,24,24v0"/>
+	<circle class="st4" cx="72" cy="216" r="7"/>
+</g>
+</svg>
