@@ -390,6 +390,8 @@ header {
           float: left; }
     header ul li {
       float: right; }
+      header ul li .lngSelect {
+        display: none; }
       header ul li i {
         padding: 0 8px; }
       header ul li a,
@@ -431,6 +433,8 @@ nav {
     nav ul .devider {
       margin: 8px 0;
       border-top: 1px solid #f0f0f0; }
+    nav ul .userblock ul {
+      margin: 0; }
     nav ul li {
       padding: 0 56px;
       line-height: 40px;
@@ -443,6 +447,10 @@ nav {
           background-color: rgba(0, 0, 0, 0); }
       nav ul li.active {
         color: #00b0ff; }
+      nav ul li .lngSelect {
+        width: 100%;
+        margin-top: 8px;
+        border-radius: 0; }
 
 section {
   position: relative;
@@ -1032,11 +1040,18 @@ button {
   #open_navigation {
     display: none; }
 
+  header ul li .lngSelect {
+    display: block;
+    width: 120px;
+    margin: 16px 8px; }
+
   nav {
     margin-left: 0; }
     nav .close,
     nav .subhead,
     nav .devider {
+      display: none; }
+    nav ul li .lngSelect {
       display: none; }
 
   section {
@@ -1106,6 +1121,8 @@ button {
     height: 88px; }
     header .logo {
       top: 22px; }
+    header ul li .lngSelect {
+      margin: 24px 8px; }
     header ul li a,
     header ul li span {
       height: 88px; }

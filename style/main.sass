@@ -335,6 +335,8 @@ header
                 li
                     float: left
         li
+            .lngSelect
+                display: none
             float: right
             i
                 padding: 0 8px
@@ -374,6 +376,9 @@ nav
         .devider
             margin: 8px 0
             border-top: 1px solid $color_light
+        .userblock
+            ul
+                margin: 0
         li
             @extend .pointer
             padding: 0 56px
@@ -388,6 +393,10 @@ nav
                     background-color: rgba(0,0,0,0)
             &.active
                 color: $color_active
+            .lngSelect
+                width: 100%
+                margin-top: 8px
+                border-radius: 0
 section
     position: relative
     min-height: 100%
@@ -934,12 +943,23 @@ button
 @media screen and (min-width: 1280px)
     #open_navigation
         display: none
+    header
+        ul
+            li
+                .lngSelect
+                    display: block
+                    width: 120px
+                    margin: 16px 8px
     nav
         margin-left: 0
         .close,
         .subhead,
         .devider
             display: none
+        ul
+            li
+                .lngSelect
+                    display: none
     section
         margin-left: 256px
     .image
@@ -1003,6 +1023,8 @@ button
             top: 22px
         ul
             li
+                .lngSelect
+                    margin: 24px 8px
                 a,
                 span
                     height: 88px
