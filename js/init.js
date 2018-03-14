@@ -93,6 +93,11 @@ $(function () {
   $('#to_faq').on('click', function () {
     document.getElementById('faq').scrollIntoView();
   });
+  $('#logout_link').on('click', function () {
+    signOut(function (err, data) {
+      window.location.href = "/"
+    })
+  });
 
   $('#open_navigation').on('click', function () {
     $('nav').addClass('active');
