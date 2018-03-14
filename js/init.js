@@ -1,6 +1,6 @@
 $(function () {
   if ($(window).width() < 1280) {
-    $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_contacts, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
+    $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_meetus, #to_contacts, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
       $('nav').removeClass('active');
     });
   }
@@ -73,6 +73,9 @@ $(function () {
   });
   $('#to_contacts').on('click', function () {
       document.getElementById('contacts').scrollIntoView();
+  });
+  $('#to_meetus').on('click', function () {
+      document.getElementById('meetus').scrollIntoView();
   });
 
   $('#open_navigation').on('click', function () {
