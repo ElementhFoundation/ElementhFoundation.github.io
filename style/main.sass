@@ -100,6 +100,10 @@ $shadow: 0 0 8px rgba(0,0,0,.25)
     @extend .svg
     @extend .illustration
     background-image: url("/img/illustration/mission.svg")
+.contacts
+    @extend .svg
+    @extend .illustration
+    background-image: url("/img/illustration/contacts.svg")
 /* ICONS
 .icon
     width: 24px
@@ -402,6 +406,8 @@ ul.list
     margin: 0
     p
         display: inline
+    span
+        line-height: 32px
     .link
         text-decoration: underline
         color: $color_active
@@ -432,6 +438,12 @@ ul.list
                 color: $color_white
                 border-color: $color_white
                 background-color: rgba(0,0,0,0)
+    .secondary_link
+        border-bottom: 2px solid $color_white
+        &:hover
+            height: 40px
+            margin-bottom: 8px
+            border-bottom-color: $color_active
     &.black
         .primary_link
             border-color: $color_black
@@ -449,12 +461,10 @@ ul.list
                     border-color: $color_black
                     background-color: rgba(0,0,0,0)
                     box-shadow: none
-    .secondary_link
-        border-bottom: 2px solid $color_white
-        &:hover
-            height: 40px
-            margin-bottom: 8px
-            border-bottom-color: $color_active
+        .secondary_link
+            border-bottom: 2px solid $color_black
+            &:hover
+                border-bottom-color: $color_active
 .primary_btn
     @extend .pointer
     display: block
@@ -715,12 +725,13 @@ button
             margin-left: 16px
             &:hover
                 text-decoration: underline
-/* INTRO
+#intro,
+#contacts
+    .image
+        display: none
 #intro
     .content
         padding-top: 72px
-    .image
-        display: none
 @media screen and (min-width: 768px)
     header
         height: 72px
@@ -788,7 +799,8 @@ button
                 transform: translateY(-50%)
                 margin: 0
                 padding-top: 0
-    #intro
+    #intro,
+    #contacts
         .image
             display: block
     .timer

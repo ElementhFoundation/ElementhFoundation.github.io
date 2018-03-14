@@ -60,11 +60,11 @@ header ul li span, nav ul li, .link_block .primary_link,
   background-color: #212121; }
 
 /* IMAGE */
-.svg, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .winner, .finalist, header .logo {
+.svg, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .contacts, .winner, .finalist, header .logo {
   display: block;
   background: center center no-repeat; }
 
-.illustration, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .image {
+.illustration, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .contacts, .image {
   width: 288px;
   height: 288px;
   margin: 0 auto; }
@@ -104,6 +104,9 @@ header ul li span, nav ul li, .link_block .primary_link,
 
 .mission {
   background-image: url("/img/illustration/mission.svg"); }
+
+.contacts {
+  background-image: url("/img/illustration/contacts.svg"); }
 
 /* ICONS */
 .icon, nav .close {
@@ -468,6 +471,8 @@ ul.list {
   margin: 0; }
   .link_block p {
     display: inline; }
+  .link_block span {
+    line-height: 32px; }
   .link_block .link {
     text-decoration: underline;
     color: #00b0ff; }
@@ -496,6 +501,12 @@ ul.list {
         color: #fff;
         border-color: #fff;
         background-color: rgba(0, 0, 0, 0); }
+  .link_block .secondary_link {
+    border-bottom: 2px solid #fff; }
+    .link_block .secondary_link:hover {
+      height: 40px;
+      margin-bottom: 8px;
+      border-bottom-color: #00b0ff; }
   .link_block.black .primary_link {
     border-color: #212121; }
     .link_block.black .primary_link:hover {
@@ -511,11 +522,9 @@ ul.list {
         border-color: #212121;
         background-color: rgba(0, 0, 0, 0);
         box-shadow: none; }
-  .link_block .secondary_link {
-    border-bottom: 2px solid #fff; }
-    .link_block .secondary_link:hover {
-      height: 40px;
-      margin-bottom: 8px;
+  .link_block.black .secondary_link {
+    border-bottom: 2px solid #212121; }
+    .link_block.black .secondary_link:hover {
       border-bottom-color: #00b0ff; }
 
 .primary_btn {
@@ -583,7 +592,7 @@ ul.list {
 
 .rewards_block {
   margin: 16px 0; }
-  .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .winner, .rewards_block .finalist, .rewards_block header .logo, header .rewards_block .logo {
+  .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .winner, .rewards_block .finalist, .rewards_block header .logo, header .rewards_block .logo {
     width: 81px;
     height: 81px;
     margin-bottom: 8px;
@@ -796,11 +805,12 @@ button {
       .data .data_user .data_btn:hover {
         text-decoration: underline; }
 
-/* INTRO */
+#intro .image,
+#contacts .image {
+  display: none; }
+
 #intro .content {
   padding-top: 72px; }
-#intro .image {
-  display: none; }
 
 @media screen and (min-width: 768px) {
   header {
@@ -843,7 +853,7 @@ button {
     height: 100%;
     padding: 0;
     margin: 0 24px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .image {
       height: 100%;
       background-attachment: fixed;
       background-position-x: 24px; }
@@ -871,7 +881,8 @@ button {
         margin: 0;
         padding-top: 0; }
 
-  #intro .image {
+  #intro .image,
+  #contacts .image {
     display: block; }
 
   .timer {
@@ -936,7 +947,7 @@ button {
 
   .image {
     margin-left: 72px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .image {
       background-position-x: 72px; }
 
   h1 {
@@ -966,7 +977,7 @@ button {
     height: 100%;
     overflow: hidden;
     margin-bottom: 32px; }
-    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .winner, .rewards_block .finalist, .rewards_block header .logo, header .rewards_block .logo {
+    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .winner, .rewards_block .finalist, .rewards_block header .logo, header .rewards_block .logo {
       float: left; }
     .rewards_block p,
     .rewards_block .link_block {
@@ -994,7 +1005,7 @@ button {
 
   .image {
     margin-left: 24px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .image {
       background-position-x: 280px; }
 
   h1 {
@@ -1035,12 +1046,12 @@ button {
   section {
     margin-left: 288px; }
 
-  .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .image {
+  .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .image {
     background-position-x: 312px; }
 
   .rewards_block {
     margin-bottom: 48px; }
-    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .winner, .rewards_block .finalist, .rewards_block header .logo, header .rewards_block .logo {
+    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .winner, .rewards_block .finalist, .rewards_block header .logo, header .rewards_block .logo {
       float: left; }
     .rewards_block p,
     .rewards_block .link_block {
@@ -1070,7 +1081,7 @@ button {
 
   .image {
     margin: 0 40px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .image {
       background-position-x: 328px; }
 
   h1 {
@@ -1097,7 +1108,7 @@ button {
 @media screen and (min-width: 1600px) {
   .image {
     margin: 0 120px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .image {
       background-position-x: 408px; }
 
   h1 {
@@ -1108,7 +1119,7 @@ button {
 @media screen and (min-width: 1920px) {
   .image {
     margin: 0 200px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .image {
       background-position-x: 488px; }
 
   h1 {
@@ -1139,7 +1150,7 @@ button {
 @media screen and (min-width: 2560px) {
   .image {
     margin: 0 344px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .image {
       background-position-x: 632px; }
 
   h1 {

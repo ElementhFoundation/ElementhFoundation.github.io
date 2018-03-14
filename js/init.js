@@ -1,6 +1,6 @@
 $(function () {
   if ($(window).width() < 1280) {
-    $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
+    $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_contacts, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
       $('nav').removeClass('active');
     });
   }
@@ -68,9 +68,12 @@ $(function () {
   $('#to_dapps').on('click', function () {
     document.getElementById('dapps').scrollIntoView();
   });
-    $('#to_mission').on('click', function () {
-        document.getElementById('mission').scrollIntoView();
-    });
+  $('#to_mission').on('click', function () {
+      document.getElementById('mission').scrollIntoView();
+  });
+  $('#to_contacts').on('click', function () {
+      document.getElementById('contacts').scrollIntoView();
+  });
 
   $('#open_navigation').on('click', function () {
     $('nav').addClass('active');
