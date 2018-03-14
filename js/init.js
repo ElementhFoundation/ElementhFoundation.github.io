@@ -1,17 +1,15 @@
 $(function () {
-  if ($(window).width() < 768) {
-      $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_meetus, #to_faq, #to_contacts, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
-          $('header, section, footer').removeClass('disnone');
-      });
-      $('#open_navigation').on('click', function () {
-          $('header, section, footer').addClass('disnone');
-      });
-  }
-  if ($(window).width() < 1280) {
-    $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_meetus, #to_faq, #to_contacts, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
-      $('nav').removeClass('active');
-    });
-  }
+  $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_meetus, #to_faq, #to_contacts, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
+    if ($(window).width() < 768) {
+      $('header, section, footer').removeClass('disnone');
+    }
+    $('nav').removeClass('active');
+  });
+  $('#open_navigation').on('click', function () {
+    if ($(window).width() < 768) {
+      $('header, section, footer').addClass('disnone');
+    }
+  });
 
   for (var i = 1; i < 15; i++) {
     $('#team_text_open_' + i).on('click', function () {
@@ -77,16 +75,16 @@ $(function () {
     document.getElementById('dapps').scrollIntoView();
   });
   $('#to_mission').on('click', function () {
-      document.getElementById('mission').scrollIntoView();
+    document.getElementById('mission').scrollIntoView();
   });
   $('#to_contacts').on('click', function () {
-      document.getElementById('contacts').scrollIntoView();
+    document.getElementById('contacts').scrollIntoView();
   });
   $('#to_meetus').on('click', function () {
-      document.getElementById('meetus').scrollIntoView();
+    document.getElementById('meetus').scrollIntoView();
   });
   $('#to_faq').on('click', function () {
-      document.getElementById('faq').scrollIntoView();
+    document.getElementById('faq').scrollIntoView();
   });
 
   $('#open_navigation').on('click', function () {
@@ -135,21 +133,21 @@ $(function () {
 
   $(document).on("scroll", onScroll);
 
-  function onScroll(event){
-      var scrollPos = $(document).scrollTop() + document.documentElement.clientHeight / 4;
-      $('nav ul li').each(function () {
-          var currLink = $(this);
-          if (currLink.attr('id')) {
-            var refElement = $('#' + currLink.attr('id').replace('to_', ''));
-            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-                $('nav ul li').removeClass('active');
-                currLink.addClass("active");
-            }
-            else{
-                currLink.removeClass("active");
-            }
-          }
-      });
+  function onScroll (event) {
+    var scrollPos = $(document).scrollTop() + document.documentElement.clientHeight / 4;
+    $('nav ul li').each(function () {
+      var currLink = $(this);
+      if (currLink.attr('id')) {
+        var refElement = $('#' + currLink.attr('id').replace('to_', ''));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+          $('nav ul li').removeClass('active');
+          currLink.addClass("active");
+        }
+        else {
+          currLink.removeClass("active");
+        }
+      }
+    });
   }
 
 })

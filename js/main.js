@@ -179,11 +179,11 @@ function init () {
     }
   }
 
-  if ($('#userblock').length) {
+  if ($('.userblock').length) {
     if (user) {
-      $('#userblockR').removeClass('disnone')
+      $('.userblockR').removeClass('disnone')
     } else {
-      $('#userblockU').removeClass('disnone')
+      $('.userblockU').removeClass('disnone')
     }
   }
   var profile_tabs = $('#profile_tabs')
