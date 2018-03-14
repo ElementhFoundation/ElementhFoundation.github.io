@@ -60,11 +60,11 @@ header ul li span, nav ul li, .link_block .primary_link,
   background-color: #212121; }
 
 /* IMAGE */
-.svg, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .contacts, .meetus, .winner, .finalist, .bef, .cc, .d10e, header .logo {
+.svg, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .contacts, .meetus, .faq, .winner, .finalist, .bef, .cc, .d10e, header .logo {
   display: block;
   background: center center no-repeat; }
 
-.illustration, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .contacts, .meetus, .image {
+.illustration, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .contacts, .meetus, .faq, .image {
   width: 288px;
   height: 288px;
   margin: 0 auto; }
@@ -110,6 +110,9 @@ header ul li span, nav ul li, .link_block .primary_link,
 
 .meetus {
   background-image: url("/img/illustration/meetus.svg"); }
+
+.faq {
+  background-image: url("/img/illustration/faq.svg"); }
 
 /* ICONS */
 .icon, nav .close {
@@ -416,9 +419,8 @@ header {
           background-color: rgba(0, 0, 0, 0.1); }
 
 nav {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 100%;
   top: 0;
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
@@ -433,7 +435,7 @@ nav {
   nav .close {
     float: right; }
   nav ul {
-    margin-top: 8px; }
+    margin: 8px 0 32px; }
     nav ul .devider {
       margin: 8px 0;
       border-top: 1px solid #f0f0f0; }
@@ -605,7 +607,7 @@ ul.list {
 
 .rewards_block {
   margin: 16px 0; }
-  .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block header .logo, header .rewards_block .logo {
+  .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .faq, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block header .logo, header .rewards_block .logo {
     width: 81px;
     height: 81px;
     margin-bottom: 8px;
@@ -844,6 +846,7 @@ button {
       padding: 0 16px; }
 
   nav {
+    position: fixed;
     width: 256px;
     height: calc(100% - 72px);
     margin-top: 72px;
@@ -866,7 +869,7 @@ button {
     height: 100%;
     padding: 0;
     margin: 0 24px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
       height: 100%;
       background-attachment: fixed;
       background-position-x: 24px; }
@@ -960,7 +963,7 @@ button {
 
   .image {
     margin-left: 72px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
       background-position-x: 72px; }
 
   h1 {
@@ -990,7 +993,7 @@ button {
     height: 100%;
     overflow: hidden;
     margin-bottom: 32px; }
-    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block header .logo, header .rewards_block .logo {
+    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .faq, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block header .logo, header .rewards_block .logo {
       float: left; }
     .rewards_block p,
     .rewards_block .link_block {
@@ -1018,7 +1021,7 @@ button {
 
   .image {
     margin-left: 24px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
       background-position-x: 280px; }
 
   h1 {
@@ -1059,12 +1062,12 @@ button {
   section {
     margin-left: 288px; }
 
-  .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .image {
+  .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
     background-position-x: 312px; }
 
   .rewards_block {
     margin-bottom: 48px; }
-    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block header .logo, header .rewards_block .logo {
+    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .faq, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block header .logo, header .rewards_block .logo {
       float: left; }
     .rewards_block p,
     .rewards_block .link_block {
@@ -1094,7 +1097,7 @@ button {
 
   .image {
     margin: 0 40px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
       background-position-x: 328px; }
 
   h1 {
@@ -1121,7 +1124,7 @@ button {
 @media screen and (min-width: 1600px) {
   .image {
     margin: 0 120px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
       background-position-x: 408px; }
 
   h1 {
@@ -1132,7 +1135,7 @@ button {
 @media screen and (min-width: 1920px) {
   .image {
     margin: 0 200px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
       background-position-x: 488px; }
 
   h1 {
@@ -1163,7 +1166,7 @@ button {
 @media screen and (min-width: 2560px) {
   .image {
     margin: 0 344px; }
-    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .image {
+    .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
       background-position-x: 632px; }
 
   h1 {

@@ -1,6 +1,14 @@
 $(function () {
+  if ($(window).width() < 768) {
+      $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_meetus, #to_faq, #to_contacts, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
+          $('header, section, footer').removeClass('disnone');
+      });
+      $('#open_navigation').on('click', function () {
+          $('header, section, footer').addClass('disnone');
+      });
+  }
   if ($(window).width() < 1280) {
-    $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_meetus, #to_contacts, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
+    $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_meetus, #to_faq, #to_contacts, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
       $('nav').removeClass('active');
     });
   }
@@ -76,6 +84,9 @@ $(function () {
   });
   $('#to_meetus').on('click', function () {
       document.getElementById('meetus').scrollIntoView();
+  });
+  $('#to_faq').on('click', function () {
+      document.getElementById('faq').scrollIntoView();
   });
 
   $('#open_navigation').on('click', function () {
