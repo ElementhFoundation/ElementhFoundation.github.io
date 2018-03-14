@@ -1,4 +1,11 @@
 $(function () {
+  $('.lngSelect').on('change', function() {
+    if(this.value === 'en') {
+      window.location.href = '?lng=' + this.value
+    }else{
+      window.location.href = 'https://old.elementh.io?lng=' + this.value
+    }
+  })
   $('#close_navigation, #to_intro, #to_rating, #to_partners, #to_rewards, #to_mvp, #to_roadmap, #to_meetus, #to_faq, #to_contacts, #to_team, #to_advisors, #to_features, #to_cases, #to_dapps, #to_mission').on('click', function () {
     if ($(window).width() < 768) {
       $('header, section, footer').removeClass('disnone');
