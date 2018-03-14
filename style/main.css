@@ -52,7 +52,7 @@ header ul li span, nav ul li, .link_block .primary_link,
   color: #00b0ff !important; }
 
 /* IMAGE */
-.svg, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .contacts, .meetus, .faq, .winner, .finalist, .bef, .cc, .d10e, header .logo {
+.svg, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .contacts, .meetus, .faq, .winner, .finalist, .bef, .cc, .d10e, .token2049, header .logo {
   display: block;
   background: center center no-repeat; }
 
@@ -263,6 +263,9 @@ header ul li span, nav ul li, .link_block .primary_link,
 
 .d10e {
   background-image: url("/img/meetus/d10e.svg"); }
+
+.token2049 {
+  background-image: url("/img/meetus/token2049.png"); }
 
 /* TEAM */
 .photo, .ryabov, .bereznitskiy, .mengeshev, .vasilev, .morozov, .prigornitskiy, .miheev, .gashitsky, .kholodnykh, .kirillov, .yannam, .aurel, .averbach, .fradkov {
@@ -625,7 +628,7 @@ ul.list {
 
 .rewards_block {
   margin: 16px 0; }
-  .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .faq, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block header .logo, header .rewards_block .logo {
+  .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .faq, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block .token2049, .rewards_block header .logo, header .rewards_block .logo {
     width: 81px;
     height: 81px;
     margin-bottom: 8px;
@@ -1024,7 +1027,7 @@ button {
     height: 100%;
     overflow: hidden;
     margin-bottom: 32px; }
-    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .faq, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block header .logo, header .rewards_block .logo {
+    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .faq, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block .token2049, .rewards_block header .logo, header .rewards_block .logo {
       float: left; }
     .rewards_block p,
     .rewards_block .link_block {
@@ -1105,7 +1108,7 @@ button {
 
   .rewards_block {
     margin-bottom: 48px; }
-    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .faq, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block header .logo, header .rewards_block .logo {
+    .rewards_block .svg, .rewards_block .intro, .rewards_block .rating, .rewards_block .partners, .rewards_block .rewards, .rewards_block .features, .rewards_block .roadmap, .rewards_block .team, .rewards_block .advisors, .rewards_block .cases, .rewards_block .dapps, .rewards_block .mvp, .rewards_block .mission, .rewards_block .contacts, .rewards_block .meetus, .rewards_block .faq, .rewards_block .winner, .rewards_block .finalist, .rewards_block .bef, .rewards_block .cc, .rewards_block .d10e, .rewards_block .token2049, .rewards_block header .logo, header .rewards_block .logo {
       float: left; }
     .rewards_block p,
     .rewards_block .link_block {
