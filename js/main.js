@@ -40,7 +40,6 @@ if(lng) {
 }
 
 $(function () {
-  /*
   $('#lngSelect').on('change', function() {
     window.location.href = '?lng=' + this.value
   })
@@ -62,7 +61,6 @@ $(function () {
   i18next.on('languageChanged', function(lng) {
     $('#lngSelect').find('option[value="'+ lng +'"]').prop('selected', true)
   })
-  */
 
 
   var hash = window.location.hash.substr(1)
