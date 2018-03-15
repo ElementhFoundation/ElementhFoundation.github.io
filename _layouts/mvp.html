@@ -43,25 +43,78 @@
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="col-auto">
-                        <input type="text" class="form-control" placeholder="width" name="width">
+                <a class="btn btn-primary mb-2 btn-sm" data-toggle="collapse" href="#tab-additional-search" role="button" aria-expanded="false" aria-controls="tab-additional-search" onclick="$('#search-type').val('wheels')">
+                    Additional search parameters
+                </a>
+
+                <div id="tab-additional-search" class="collapse">
+                    <div class="card card-body">
+
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active show" data-toggle="tab" href="#wheels" onclick="$('#search-type').val('wheels')">Wheels</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tires" onclick="$('#search-type').val('tires')">Tires</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="wheels">
+                                <div class="form-row py-3">
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="brand" name="wheels-brand">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="model" name="wheels-model">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="width" name="wheels-width">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="radius" name="wheels-radius">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="dia" name="wheels-dia">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="tires">
+                                <div class="form-row py-3">
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="brand" name="tires-brand">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="model" name="tires-model">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="width" name="tires-width">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="height" name="tires-height">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="radius" name="tires-radius">
+                                    </div>
+                                    <div class="col-auto">
+                                        <select name="tires-season" class="form-control">
+                                            <option selected value="">Season</option>
+                                            <option value="summer">Summer</option>
+                                            <option value="winter">Winter</option>
+                                            <option value="all">All seasons</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="col-auto">
-                        <input type="text" class="form-control" placeholder="height" name="height">
-                    </div>
-                    <div class="col-auto">
-                        <input type="text" class="form-control" placeholder="radius" name="radius">
-                    </div>
-                    <div class="col-auto">
-                        <select name="season" class="form-control">
-                            <option selected value="">Season</option>
-                            <option value="summer">Summer</option>
-                            <option value="winter">Winter</option>
-                            <option value="all">All seasons</option>
-                        </select>
-                    </div>
+
                 </div>
+
+
+                <input type="hidden" name="search-type" value="" id="search-type"/>
+
             </form>
         </div>
 
@@ -226,6 +279,10 @@
     $('#search-button').click(function (e) {
       e.preventDefault();
       $('#product-list').html('');
+
+      if(!$('#tab-additional-search').is(':visible')) {
+        $('#search-type').val('none')
+      }
 
       $.get('https://apimvp.elementh.io/search?' + $('#form-search').serialize(), function (data) {
 
