@@ -393,6 +393,8 @@ header {
           float: left; }
     header ul li {
       float: right; }
+      header ul li .active {
+        background-color: rgba(0, 0, 0, 0.05); }
       header ul li .lngSelect {
         display: none; }
       header ul li i {
