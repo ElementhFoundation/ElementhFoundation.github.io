@@ -77,7 +77,7 @@
 
     <div class="row my-5">
         <div class="col-lg-12">
-            <p>Based on <a href="https://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fontawesome.io/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
+            <p>Based on <a href="https://getbootstrap.com" rel="nofollow">Bootstrap</a>. Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
         </div>
     </div>
 </div>
@@ -105,6 +105,12 @@
                             </div>
                             <div class="col-6">
                                 <table class="table">
+                                    <tr>
+                                        <th>Retailer</td>
+                                        <th>Amount</th>
+                                        <th>Price</th>
+                                        <th></th>
+                                    </tr>
                                     <tr>
                                         <td class="product-retailer-name"></td>
                                         <td class="product-amount"></td>
@@ -168,10 +174,9 @@
           var productHtml = $('#product-item-empty').clone();
           productHtml.attr('id', 'product-'+data._id);
           productHtml.removeClass('d-none');
-          productHtml.find('.product-name').html(data._source.model.title + ' :: ' + data._source.eepc);
-          productHtml.find('.product-brand').html('Brand:' + data._source.model.brand.title);
+          productHtml.find('.product-name').html(data._source.model.brand.title + ' ' + data._source.model.title + ' :: ' + data._source.eepc);
           productHtml.find('.product-image').attr('src', data._source.model.photos[0].path);
-          productHtml.find('.product-attributes').html('');
+          productHtml.find('.product-attributes').html('<tr><th>Attribute</th><th>Value</th></tr>');
           data._source.attributes.forEach(function (attribute, index) {
             productHtml.find('.product-attributes').append(`<tr><td>${attribute.alias}</td><td>${attribute.value}</td></tr>`)
           })
