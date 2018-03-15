@@ -339,9 +339,12 @@ h1 {
 .subhead {
   color: #757575; }
 
-.description {
+.description, .section_description {
   font-size: 16px;
   letter-spacing: 0.2px; }
+
+.section_description {
+  margin: 32px 0; }
 
 .title.active, .person_block .active.name {
   font-family: "Montserrat", sans-serif;
@@ -806,7 +809,7 @@ button {
     font-family: Montserrat, sans-serif;
     font-weight: 700;
     margin: 32px 0; }
-  .tabs_container .description {
+  .tabs_container .description, .tabs_container .section_description {
     margin: 16px 0; }
 
 .data_block {
