@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Elementh Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/simplex/bootstrap.min.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row my-5">
+        <div class="col-lg-12">
+            <form id="form-search">
+                <div class="form-row">
+                    <div class="form-group col-11">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                    <div class="form-group col-1">
+                        <button class="btn btn-secondary" id="search-button" type="submit">Search</button>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-auto">
+                        <input type="text" class="form-control" placeholder="width" name="width">
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" placeholder="height" name="height">
+                    </div>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" placeholder="radius" name="radius">
+                    </div>
+                    <div class="col-auto">
+                        <select name="season" class="form-control">
+                            <option selected value="">Season</option>
+                            <option value="summer">Summer</option>
+                            <option value="winter">Winter</option>
+                            <option value="all">All seasons</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div id="product-list">
+
+    </div>
+
+    <div class="row my-5">
+        <div class="col-lg-12">
+            <p>Based on <a href="https://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fontawesome.io/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row d-none" id="product-item-empty">
+    <div class="col-lg-12">
+        <div class="card mb-3">
+            <h3 class="card-header product-name"></h3>
+            <div class="card-body">
+                <h5 class="card-title product-brand"></h5>
+                <h6 class="card-subtitle text-muted"></h6>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img class="product-image" style="width: 100%; display: block;" src="" alt="Card image">
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-6">
+                                <table class="table product-attributes">
+
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <table class="table">
+                                    <tr>
+                                        <td class="product-retailer-name"></td>
+                                        <td class="product-amount"></td>
+                                        <td class="product-price"></td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-primary btn-sm product-show-eesn">show SN</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+</div>
+
+<div class="modal fade eesn-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="eesn-modal-label">EESN-M0AM5GKNS9K6 tranfers</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="accordion">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous"></script>
+
+<script>
+  var products = {}
+
+  $().ready(function () {
+    $('#search-button').click(function (e) {
+      e.preventDefault();
+      $('#product-list').html('');
+
+      $.get('http://apimvp.elementh.io/search?' + $('#form-search').serialize(), function (data) {
+
+        if(data.response.result.length === 0) $('#product-list').html('No results');
+        data.response.result.forEach(function (data) {
+          var productHtml = $('#product-item-empty').clone();
+          productHtml.attr('id', 'product-'+data._id);
+          productHtml.removeClass('d-none');
+          productHtml.find('.product-name').html(data._source.model.title + ' :: ' + data._source.eepc);
+          productHtml.find('.product-brand').html('Brand:' + data._source.model.brand.title);
+          productHtml.find('.product-image').attr('src', data._source.model.photos[0].path);
+          productHtml.find('.product-attributes').html('');
+          data._source.attributes.forEach(function (attribute, index) {
+            productHtml.find('.product-attributes').append(`<tr><td>${attribute.alias}</td><td>${attribute.value}</td></tr>`)
+          })
+
+          productHtml.find('.product-retailer-name').html(data._source.sku[0].stock.company.alias)
+          productHtml.find('.product-amount').html(data._source.eesn.length)
+          productHtml.find('.product-price').html('$' + (data._source.sku[0].retail_price / 57).toFixed(2))
+          productHtml.find('.product-show-eesn').attr('data-target', data._source.eepc)
+
+          products[data._source.eepc] = data._source;
+
+          productHtml.find('.product-eesn');
+          $('#product-list').append(productHtml);
+        })
+
+        $('.product-show-eesn').click(function () {
+          // modal modify
+          var eesnModalAccordion = $('.eesn-modal');
+          eesnModalAccordion.find('.accordion').html('')
+          products[$(this).attr('data-target')].eesn.forEach(function (eesn) {
+
+            var transfers = '';
+            eesn.transactions.forEach(function (transaction) {
+              transfers += `<tr>
+                    <td><span>${transaction.date}</span></td>
+                    <td>
+                        <p>
+                            <span class="text-muted">From:</span>
+                            <span class="badge badge-pill badge-success">${(transaction.from.name) ? transaction.from.name: ""}</span> ${transaction.from.address}
+                        </p>
+                        <p>
+                            <span class="text-muted">To:</span>
+                            <span class="badge badge-pill badge-success">${(transaction.to.name) ? transaction.to.name: ""}</span>${transaction.to.address}
+                        </p>
+                    </td>
+                </tr>`
+            })
+
+            eesnModalAccordion.find('.accordion').append(`<div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#${eesn.eesn}" aria-expanded="true" aria-controls="collapseOne">
+                            ${eesn.eesn}
+                        </button>
+                    </h4>
+                </div>
+
+                <div id="${eesn.eesn}" class="collapse hide" aria-labelledby="${eesn.eesn}" data-parent="#${eesn.eesn}">
+                    <div class="card-body">
+                        <table class="table">${transfers}</table>
+                    </div>
+                </div>
+            </div>`)
+          })
+
+          eesnModalAccordion.modal()
+        })
+
+      })
+    })
+
+
+  })
+
+</script>
+</body>
+</html>
