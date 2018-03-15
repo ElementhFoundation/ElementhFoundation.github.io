@@ -9,8 +9,9 @@
 </head>
 <body>
 
+<div id="authtrue" style="display: none">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Elementh Demo</a>
+    <a class="navbar-brand" href="/">Elementh Demo</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,23 +19,17 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a id="aSearch" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a id="aUploadPrice" class="nav-link" href="#">Upload price</a>
             </li>
         </ul>
 
     </div>
 </nav>
 
-<div class="container">
+<div class="container" id="searchContainer">
     <div class="row my-5">
         <div class="col-lg-12">
             <form id="form-search">
@@ -82,13 +77,22 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container" id="uploadFileContainer" style="display: none">
     <div class="row my-5">
         <div class="col-lg-12">
             <form id="form-upload" enctype="multipart/form-data">
                 <div class="form-row">
-                    <div class="form-group col-11">
-                        <input class="form-control" type="file" name="doc">
+                    <div class="form-group col-12">
+                        <label for="name">Your name</label>
+                        <input id="name" class="form-control" type="text" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="email">Your email</label>
+                        <input id="email" class="form-control" type="email" name="email" placeholder="johndoe@example.com" required>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="doc">Your price</label>
+                        <input id="doc" class="form-control" type="file" name="doc" required>
                     </div>
                     <div class="form-group col-1">
                         <button class="btn btn-secondary" id="upload-button" type="submit">Upload</button>
@@ -172,27 +176,51 @@
         </div>
     </div>
 </div>
-
+</div>
+<div id="authfalse" style="display: none">
+    Auth false
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous"></script>
+<script src="js/api.js?v=201" defer></script>
 
 <script>
   var products = {}
 
   $().ready(function () {
 
+    getInit(function (err, data) {
+      if (data && data.profile) {
+        $('#authtrue').show()
+      } else {
+        $('#authfalse').show()
+      }
+    })
+
+    $('#aSearch').click(function (e) {
+      e.preventDefault()
+      $('#searchContainer').show()
+      $('#uploadFileContainer').hide()
+    })
+
+    $('#aUploadPrice').click(function (e) {
+      e.preventDefault()
+      $('#searchContainer').hide()
+      $('#uploadFileContainer').show()
+    })
+
     $('#form-upload').submit(function (e) {
-      console.dir(this)
-      var formData = new FormData((this)[0])
-      console.dir(formData)
+      var formData = new FormData((this))
       e.preventDefault();
       $.ajax({
-        url: 'https://apimvp.elementh.io/upload',
+        //url: 'https://apimvp.elementh.io/upload',
+        url: 'http://localhost:9980/upload',
         type: 'POST',
         data: formData,
         contentType: false,
         processData: false
-      });
+      })
+      $('#uploadFileContainer').html('Your price was uploaded')
     })
     $('#search-button').click(function (e) {
       e.preventDefault();
