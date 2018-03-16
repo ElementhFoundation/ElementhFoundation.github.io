@@ -38,6 +38,70 @@ $shadow: 0 0 8px rgba(0,0,0,.25)
     color: $color_green !important
 .blue
     color: $color_active !important
+/* ANIMATION
+@keyframes bnr_m_1
+    from
+        opacity: 0
+    5%
+        opacity: 1
+    28%
+        opacity: 1
+    33%
+        opacity: 0
+    to
+        opacity: 0
+@keyframes bnr_m_2
+    from
+        opacity: 0
+    33%
+        opacity: 0
+    38%
+        opacity: 1
+    61%
+        opacity: 1
+    66%
+        opacity: 0
+    to
+        opacity: 0
+@keyframes bnr_m_3
+    from
+        opacity: 0
+    66%
+        opacity: 0
+    71%
+        opacity: 1
+    95%
+        opacity: 1
+    to
+        opacity: 0
+@keyframes bnr_t_2
+    from
+        opacity: 0
+    5%
+        opacity: 1
+    45%
+        opacity: 1
+    50%
+        opacity: 0
+    to
+        opacity: 0
+@keyframes bnr_t_3
+    from
+        opacity: 0
+    50%
+        opacity: 0
+    55%
+        opacity: 1
+    95%
+        opacity: 1
+    to
+        opacity: 0
+.bnr_1
+    animation: bnr_m_1 9s infinite linear
+.bnr_2
+    animation: bnr_m_2 9s infinite linear
+.bnr_3
+    animation: bnr_m_3 9s infinite linear
 /* IMAGE
 .svg
     display: block
@@ -315,7 +379,7 @@ header
     color: $color_white
     background-color: $color_active
     box-shadow: $shadow
-    z-index: 1
+    z-index: 2
     .logo
         @extend .svg
         position: absolute
@@ -370,7 +434,7 @@ nav
     box-shadow: $shadow
     margin-left: calc(-100% - 8px)
     transition: all .25s ease
-    z-index: 2
+    z-index: 3
     &.active
         -webkit-transform: translateX(calc(100% + 8px))
         -moz-transform: translateX(calc(100% + 8px))
@@ -405,6 +469,49 @@ nav
                 width: 100%
                 margin-top: 8px
                 border-radius: 0
+.bnr_top
+    @extend .pointer
+    position: absolute
+    width: 100%
+    height: 88px
+    overflow: hidden
+    top: 56px
+    color: $color_white
+    background-color: #0081cb
+    z-index: 1
+    .bnr_container
+        .bnr_slide
+            position: absolute
+            width: 100%
+            top: 50%
+            left: 50%
+            -webkit-transform: translate(-50%,-50%)
+            -moz-transform: translate(-50%,-50%)
+            -o-transform: translate(-50%,-50%)
+            transform: translate(-50%,-50%)
+            p
+                margin: 0 8px
+            .title
+                position: absolute
+                margin-left: 12px
+                top: 50%
+                -webkit-transform: translateY(-50%)
+                -moz-transform: translateY(-50%)
+                -o-transform: translateY(-50%)
+                transform: translateY(-50%)
+                &.center
+                    text-align: center
+                    margin: 0
+                    width: 100%
+                    left: 50%
+                    -webkit-transform: translate(-50%,-50%)
+                    -moz-transform: translate(-50%,-50%)
+                    -o-transform: translate(-50%,-50%)
+                    transform: translate(-50%,-50%)
+            .body
+                font-size: 12px
+                line-height: 20px
+                margin-left: 80px
 section
     position: relative
     min-height: 100%
@@ -778,14 +885,34 @@ button
     color: $color_black
     background-color: $color_white
     .content
-        padding-top: 72px
+        padding-top: 160px
 @media screen and (orientation: landscape) and (max-height: 670px)
     nav
         overflow: scroll
 @media screen and (min-width: 768px)
+    .bnr_top
+        .bnr_container
+            .bnr_slide
+                &.address
+                    margin-left: 336px
+                .title
+                    &.center
+                        margin-left: 24px
+                        text-align: left
+                        left: 0
+                        -webkit-transform: translateY(-50%)
+                        -moz-transform: translateY(-50%)
+                        -o-transform: translateY(-50%)
+                        transform: translateY(-50%)
+    .bnr_1
+        animation: none
+    .bnr_2
+        animation: bnr_t_2 10s infinite linear
+    .bnr_3
+        animation: bnr_t_3 10s infinite linear
     header
         height: 72px
-        z-index: 3
+        z-index: 4
         .logo
             top: 16px
             left: 16px
@@ -820,6 +947,10 @@ button
                 line-height: 56px
             .userblock
                 display: none
+    .bnr_top
+        top: 72px
+        .bnr_container
+
     footer
         position: absolute
         bottom: 0
@@ -907,6 +1038,18 @@ button
                 content: ""
                 margin: 0
 @media screen and (min-width: 1024px)
+    .bnr_top
+        .bnr_container
+            .bnr_slide
+                &.address
+                    margin-left: 400px
+                .title
+                    &.center
+                        margin-left: 72px
+                .body
+                    font-size: 14px
+                    line-height: 24px
+                    margin-left: 120px
     header
         .logo
             width: 144px
@@ -952,6 +1095,16 @@ button
     .profile_page
         width: 800px
 @media screen and (min-width: 1280px)
+    .bnr_top
+        width: calc(100% - 256px)
+        left: 256px
+        .bnr_container
+            .bnr_slide
+                &.address
+                    margin-left: 360px
+                .title
+                    &.center
+                        margin-left: 24px
     #open_navigation
         display: none
     header
@@ -991,6 +1144,9 @@ button
         .title
             margin-bottom: 16px
 @media screen and (min-width: 1360px)
+    .bnr_top
+        width: calc(100% - 288px)
+        left: 288px
     header
         width: calc(100% - 288px)
         padding-left: 288px
@@ -1028,6 +1184,60 @@ button
     .text_block
         padding-bottom: 56px
 @media screen and (min-width: 1440px)
+    .bnr_top
+        .bnr_container
+            .bnr_slide
+                .title
+                    &.center
+                        margin-left: 40px
+    .image
+        margin: 0 40px
+        .illustration
+            background-position-x: 328px
+    h1
+        left: 368px
+    .content
+        padding-left: 368px
+        .wrapper
+            padding-top: 320px
+    .title.active
+        font-size: 32px
+        line-height: 48px
+    .rewards_list,
+    .roadmap_list,
+    .person_list
+        margin-bottom: 96px
+    .roadmap_block
+        .roadmap_info
+            padding-bottom: 64px
+            margin-left: 96px
+@media screen and (min-width: 1600px)
+    .bnr_top
+        .bnr_container
+            .bnr_slide
+                &.address
+                    margin-left: 520px
+                .title
+                    &.center
+                        margin-left: 120px
+    .image
+        margin: 0 120px
+        .illustration
+            background-position-x: 408px
+    h1
+        left: 528px
+    .content
+        padding-left: 528px
+@media screen and (min-width: 1920px)
+    .bnr_top
+        top: 88px
+        .bnr_container
+            .bnr_slide
+                &.address
+                    margin-left: 696px
+                .title
+                    &.center
+                        margin-left: 200px
     header
         height: 88px
         .logo
@@ -1046,38 +1256,6 @@ button
     nav
         height: calc(100% - 88px)
         margin-top: 88px
-    .image
-        margin: 0 40px
-        .illustration
-            background-position-x: 328px
-    h1
-        top: 96px
-        left: 368px
-    .content
-        padding-left: 368px
-        .wrapper
-            padding-top: 320px
-    .title.active
-        font-size: 32px
-        line-height: 48px
-    .rewards_list,
-    .roadmap_list,
-    .person_list
-        margin-bottom: 96px
-    .roadmap_block
-        .roadmap_info
-            padding-bottom: 64px
-            margin-left: 96px
-@media screen and (min-width: 1600px)
-    .image
-        margin: 0 120px
-        .illustration
-            background-position-x: 408px
-    h1
-        left: 528px
-    .content
-        padding-left: 528px
-@media screen and (min-width: 1920px)
     .image
         margin: 0 200px
         .illustration
@@ -1106,6 +1284,14 @@ button
         .lines
             margin: 56px 0
 @media screen and (min-width: 2560px)
+    .bnr_top
+        .bnr_container
+            .bnr_slide
+                &.address
+                    margin-left: 968px
+                .title
+                    &.center
+                        margin-left: 320px
     .image
         margin: 0 344px
         .illustration
