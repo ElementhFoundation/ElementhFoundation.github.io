@@ -354,7 +354,13 @@ function init () {
           if (typeof yaCounter46855911 !== 'undefined') {
             yaCounter46855911.reachGoal('signup')
           }
-          window.location.href = "/profile"
+
+          var redirect = getParameterByName("redirect")
+          if(redirect) {
+            window.location.href = redirect
+          }else {
+            window.location.href = "/profile"
+          }
         }
       })
     })
@@ -374,7 +380,12 @@ function init () {
           signin_form.find(':input[type="submit"]').prop('disabled', false)
           signin_form.find('.error').html(err).removeClass('disnone')
         } else {
-          window.location.href = "/profile"
+          var redirect = getParameterByName("redirect")
+          if(redirect) {
+            window.location.href = redirect
+          }else {
+            window.location.href = "/profile"
+          }
         }
       })
     })
