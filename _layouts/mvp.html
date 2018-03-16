@@ -43,33 +43,14 @@
 
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active show" data-toggle="tab" href="#wheels" onclick="$('#search-type').val('wheels')">Wheels</a>
+                                <a class="nav-link active show" data-toggle="tab" href="#tires" onclick="$('#search-type').val('tires')">Tires</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tires" onclick="$('#search-type').val('tires')">Tires</a>
+                                <a class="nav-link" data-toggle="tab" href="#wheels" onclick="$('#search-type').val('wheels')">Wheels</a>
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane fade active show" id="wheels">
-                                <div class="form-row py-3">
-                                    <div class="col-auto">
-                                        <input type="text" class="form-control" placeholder="brand" name="wheels-brand">
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="text" class="form-control" placeholder="model" name="wheels-model">
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="text" class="form-control" placeholder="width" name="wheels-width">
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="text" class="form-control" placeholder="radius" name="wheels-radius">
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="text" class="form-control" placeholder="dia" name="wheels-dia">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="tires">
+                            <div class="tab-pane fade active show" id="tires">
                                 <div class="form-row py-3">
                                     <div class="col-2">
                                         <input type="text" class="form-control" placeholder="brand" name="tires-brand">
@@ -96,13 +77,33 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="tab-pane fade" id="wheels">
+                                <div class="form-row py-3">
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="brand" name="wheels-brand">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="model" name="wheels-model">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="width" name="wheels-width">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="radius" name="wheels-radius">
+                                    </div>
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control" placeholder="dia" name="wheels-dia">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-secondary float-right" id="search-button" type="submit">Search</button>
                         </div>
                     </div>
                 </div>
-                <input type="hidden" name="search-type" value="wheels" id="search-type"/>
+                <input type="hidden" name="search-type" value="tires" id="search-type"/>
             </form>
         </div>
 
