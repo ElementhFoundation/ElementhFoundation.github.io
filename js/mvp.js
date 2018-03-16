@@ -1031,13 +1031,17 @@ $().ready(function () {
                                         <th>Price</th>
                                         <th></th>
                                     </tr>`);
+
+                var stocks = [];
                 data._source.sku.forEach(function (sku, index) {
+                    if(stocks.indexOf(data._source.sku[index].stock.id) > -1) return
                     productHtml.find('.product-offers').append(`<tr><td>${data._source.sku[index].stock.company.alias} (${data._source.sku[index].stock.city.alias})</td>
                                         <td>${data._source.sku[index].qty}</td>
                                         <td>${'$' + (data._source.sku[index].retail_price / 57).toFixed(2)}</td>
                                         <td>
                                             <button type="button" class="btn btn-outline-primary btn-sm product-show-eesn" data-target="${data._source.eepc}">show serial number and history</button>
                                         </td></tr>`);
+                    stocks.push(data._source.sku[index].stock.id)
                 });
 
                 products[data._source.eepc] = data._source;
