@@ -5,6 +5,7 @@
     <title>Elementh MVP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/cosmo/bootstrap.min.css" />
 </head>
 <body>
@@ -223,10 +224,11 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="js/mvp.js?v=201" defer></script>
 <script src="js/api.js?v=201" defer></script>
 
 <script>
-  var products = {}
 
   $().ready(function () {
 
@@ -262,96 +264,8 @@
       })
       $('#uploadFileContainer').html('Your price was uploaded')
     })
-    $('#search-button').click(function (e) {
-      e.preventDefault();
-      $('#product-list').html('');
 
-      if(!$('#tab-additional-search').is(':visible')) {
-        $('#search-type').val('none')
-      }
 
-      $.get('https://apimvp.elementh.io/search?' + $('#form-search').serialize(), function (data) {
-
-        if(data.response.result.length === 0) $('#product-list').html('No results');
-        data.response.result.forEach(function (data) {
-          var productHtml = $('#product-item-empty').clone();
-          productHtml.attr('id', 'product-'+data._id);
-          productHtml.removeClass('d-none');
-          productHtml.find('.product-name').html(data._source.model.brand.title + ' ' + data._source.model.title + ' :: ' + data._source.eepc);
-          productHtml.find('.product-image').attr('src', data._source.model.photos[0].path);
-          productHtml.find('.product-attributes').html('<tr><th>Attribute</th><th>Value</th></tr>');
-          data._source.attributes.forEach(function (attribute, index) {
-            productHtml.find('.product-attributes').append(`<tr><td>${attribute.alias}</td><td>${attribute.value}</td></tr>`);
-          });
-
-          productHtml.find('.product-offers').html(`<tr>
-                                        <th>Retailer</td>
-                                        <th>Amount</th>
-                                        <th>Price</th>
-                                        <th></th>
-                                    </tr>`);
-          data._source.sku.forEach(function (sku, index) {
-              productHtml.find('.product-offers').append(`<tr><td>${data._source.sku[index].stock.company.alias}</td>
-                                        <td>${data._source.sku[index].qty}</td>
-                                        <td>${'$' + (data._source.sku[index].retail_price / 57).toFixed(2)}</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-primary btn-sm product-show-eesn" data-target="${data._source.eepc}">show serial number and history</button>
-                                        </td></tr>`);
-          });
-
-          products[data._source.eepc] = data._source;
-
-          productHtml.find('.product-eesn');
-          $('#product-list').append(productHtml);
-        })
-
-        $('.product-show-eesn').click(function () {
-          // modal modify
-          var eesnModal = $('.eesn-modal');
-          eesnModal.find('.accordion').html('');
-          eesnModal.find('.modal-title').html($(this).attr('data-target'));
-          products[$(this).attr('data-target')].eesn.forEach(function (eesn) {
-
-            var transfers = '';
-            eesn.transactions.forEach(function (transaction) {
-              transfers += `<tr>
-                    <td><span>${transaction.date}</span></td>
-                    <td>
-                        <p>
-                            <span class="text-muted">From:</span>
-                            <span class="badge badge-pill badge-success">${(transaction.from.name) ? transaction.from.name: ""}</span> ${transaction.from.address}
-                        </p>
-                        <p>
-                            <span class="text-muted">To:</span>
-                            <span class="badge badge-pill badge-success">${(transaction.to.name) ? transaction.to.name: ""}</span>${transaction.to.address}
-                        </p>
-                    </td>
-                </tr>`
-            })
-
-            eesnModal.find('.accordion').append(`<div class="card">
-                <div class="card-header">
-                    <h5 class="mb-0">
-                        ${eesn.eesn}
-                        <button class="btn btn-info btn-sm" data-toggle="collapse" data-target="#${eesn.eesn}" aria-expanded="true" aria-controls="collapseOne">
-                            show history of ownership
-                        </button>
-                    </h5>
-                </div>
-
-                <div id="${eesn.eesn}" class="collapse hide" aria-labelledby="${eesn.eesn}" data-parent="#${eesn.eesn}">
-                    <div class="card-body">
-                        <table class="table">${transfers}</table>
-                    </div>
-                </div>
-            </div>`)
-          })
-
-          eesnModal.modal()
-        })
-
-      })
-    })
 
 
   })
