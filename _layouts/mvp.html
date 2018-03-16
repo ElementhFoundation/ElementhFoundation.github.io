@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Elementh Demo</title>
+    <title>Elementh MVP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/simplex/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/cosmo/bootstrap.min.css" />
 </head>
 <body>
 
 <div id="authtrue" style="display: none">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Elementh Demo</a>
+    <a class="navbar-brand" href="/">Elementh MVP</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,24 +30,11 @@
 </nav>
 
 <div class="container" id="searchContainer">
-    <h1>Search</h1>
+    <h1 class="mt-5">Search</h1>
     <div class="row my-5">
         <div class="col-lg-12">
             <form id="form-search">
-                <div class="form-row">
-                    <div class="form-group col-11">
-                        <input class="form-control" type="text" name="q" placeholder="Search (example: Nokian)">
-                    </div>
-                    <div class="form-group col-1">
-                        <button class="btn btn-secondary" id="search-button" type="submit">Search</button>
-                    </div>
-                </div>
-
-                <a class="btn btn-primary mb-2 btn-sm" data-toggle="collapse" href="#tab-additional-search" role="button" aria-expanded="false" aria-controls="tab-additional-search" onclick="$('#search-type').val('wheels')">
-                    Additional search parameters
-                </a>
-
-                <div id="tab-additional-search" class="collapse">
+                <div id="tab-additional-search">
                     <div class="card card-body">
 
                         <ul class="nav nav-tabs">
@@ -78,25 +65,24 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="tab-pane fade" id="tires">
                                 <div class="form-row py-3">
-                                    <div class="col-auto">
+                                    <div class="col-2">
                                         <input type="text" class="form-control" placeholder="brand" name="tires-brand">
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-2">
                                         <input type="text" class="form-control" placeholder="model" name="tires-model">
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-2">
                                         <input type="text" class="form-control" placeholder="width" name="tires-width">
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-2">
                                         <input type="text" class="form-control" placeholder="height" name="tires-height">
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-2">
                                         <input type="text" class="form-control" placeholder="radius" name="tires-radius">
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col-2">
                                         <select name="tires-season" class="form-control">
                                             <option selected value="">Season</option>
                                             <option value="summer">Summer</option>
@@ -106,15 +92,13 @@
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-secondary float-right" id="search-button" type="submit">Search</button>
                         </div>
                     </div>
-
                 </div>
-
-
-                <input type="hidden" name="search-type" value="" id="search-type"/>
-
+                <input type="hidden" name="search-type" value="wheels" id="search-type"/>
             </form>
         </div>
 
@@ -126,7 +110,7 @@
 
     <div class="row my-5">
         <div class="col-lg-12">
-            <p>Based on <a href="https://getbootstrap.com" rel="nofollow">Bootstrap</a>. Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
+            <p><a href="https://elementh.io">Elementh 2018</a></p>
         </div>
     </div>
 </div>
@@ -174,13 +158,13 @@
                     </div>
                     <div class="col-sm-10">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-4">
                                 <table class="table product-attributes">
 
                                 </table>
                             </div>
-                            <div class="col-6">
-                                <table class="table">
+                            <div class="col-8">
+                                <table class="table product-offers">
                                     <tr>
                                         <th>Retailer</td>
                                         <th>Amount</th>
@@ -192,7 +176,7 @@
                                         <td class="product-amount"></td>
                                         <td class="product-price"></td>
                                         <td>
-                                            <button type="button" class="btn btn-outline-primary btn-sm product-show-eesn">show SN</button>
+                                            <button type="button" class="btn btn-outline-primary btn-sm product-show-eesn">show serial number and history</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -223,8 +207,6 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="accordion">
-
-
                     </div>
                 </div>
             </div>
@@ -299,13 +281,23 @@
           productHtml.find('.product-image').attr('src', data._source.model.photos[0].path);
           productHtml.find('.product-attributes').html('<tr><th>Attribute</th><th>Value</th></tr>');
           data._source.attributes.forEach(function (attribute, index) {
-            productHtml.find('.product-attributes').append(`<tr><td>${attribute.alias}</td><td>${attribute.value}</td></tr>`)
-          })
+            productHtml.find('.product-attributes').append(`<tr><td>${attribute.alias}</td><td>${attribute.value}</td></tr>`);
+          });
 
-          productHtml.find('.product-retailer-name').html(data._source.sku[0].stock.company.alias)
-          productHtml.find('.product-amount').html(data._source.eesn.length)
-          productHtml.find('.product-price').html('$' + (data._source.sku[0].retail_price / 57).toFixed(2))
-          productHtml.find('.product-show-eesn').attr('data-target', data._source.eepc)
+          productHtml.find('.product-offers').html(`<tr>
+                                        <th>Retailer</td>
+                                        <th>Amount</th>
+                                        <th>Price</th>
+                                        <th></th>
+                                    </tr>`);
+          data._source.sku.forEach(function (sku, index) {
+              productHtml.find('.product-offers').append(`<tr><td>${data._source.sku[index].stock.company.alias}</td>
+                                        <td>${data._source.sku[index].qty}</td>
+                                        <td>${'$' + (data._source.sku[0].retail_price / 57).toFixed(2)}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-primary btn-sm product-show-eesn" data-target="${data._source.eepc}">show serial number and history</button>
+                                        </td></tr>`);
+          });
 
           products[data._source.eepc] = data._source;
 
@@ -339,11 +331,12 @@
 
             eesnModal.find('.accordion').append(`<div class="card">
                 <div class="card-header">
-                    <h4 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#${eesn.eesn}" aria-expanded="true" aria-controls="collapseOne">
-                            ${eesn.eesn}
+                    <h5 class="mb-0">
+                        ${eesn.eesn}
+                        <button class="btn btn-info btn-sm" data-toggle="collapse" data-target="#${eesn.eesn}" aria-expanded="true" aria-controls="collapseOne">
+                            show history of ownership
                         </button>
-                    </h4>
+                    </h5>
                 </div>
 
                 <div id="${eesn.eesn}" class="collapse hide" aria-labelledby="${eesn.eesn}" data-parent="#${eesn.eesn}">
