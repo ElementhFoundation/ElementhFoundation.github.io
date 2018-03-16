@@ -1032,7 +1032,7 @@ $().ready(function () {
                                         <th></th>
                                     </tr>`);
                 data._source.sku.forEach(function (sku, index) {
-                    productHtml.find('.product-offers').append(`<tr><td>${data._source.sku[index].stock.company.alias}</td>
+                    productHtml.find('.product-offers').append(`<tr><td>${data._source.sku[index].stock.company.alias} (${data._source.sku[index].stock.city.alias})</td>
                                         <td>${data._source.sku[index].qty}</td>
                                         <td>${'$' + (data._source.sku[index].retail_price / 57).toFixed(2)}</td>
                                         <td>
