@@ -71,7 +71,12 @@ function checkLoginState () {
         if (err) {
           $('.error').html(err).removeClass('disnone')
         } else {
-          window.location.href = "/profile"
+          var redirect = getParameterByName("redirect")
+          if(redirect) {
+            window.location.href = redirect
+          }else {
+            window.location.href = "/profile"
+          }
         }
       })
     }
