@@ -1,7 +1,7 @@
 var products = {};
 
 
-var tiresWidth = [
+var tyresWidth = [
     "10",
     "10.5",
     "100",
@@ -242,7 +242,7 @@ var tiresWidth = [
     "950",
     "<>"
 ];
-var tiresHeight = [
+var tyresHeight = [
     "10",
     "10.2",
     "10.5",
@@ -330,7 +330,7 @@ var tiresHeight = [
     "99",
     "<>"
 ];
-var tiresRadius = [
+var tyresRadius = [
     "10",
     "10.50",
     "11",
@@ -990,16 +990,16 @@ $().ready(function () {
         source: wheelsDia
     });
 
-    $( "#form-search" ).find('input[name="tires-width"]').autocomplete({
-        source: tiresWidth
+    $( "#form-search" ).find('input[name="tyres-width"]').autocomplete({
+        source: tyresWidth
     })
 
-    $( "#form-search" ).find('input[name="tires-height"]').autocomplete({
-        source: tiresHeight
+    $( "#form-search" ).find('input[name="tyres-height"]').autocomplete({
+        source: tyresHeight
     });
 
-    $( "#form-search" ).find('input[name="tires-radius"]').autocomplete({
-        source: tiresRadius
+    $( "#form-search" ).find('input[name="tyres-radius"]').autocomplete({
+        source: tyresRadius
     });
 
 
