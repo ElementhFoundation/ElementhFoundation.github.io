@@ -1007,10 +1007,6 @@ $().ready(function () {
         e.preventDefault();
         $('#product-list').html('');
 
-        if(!$('#tab-additional-search').is(':visible')) {
-            $('#search-type').val('none')
-        }
-
         $.get('https://apimvp.elementh.io/search?' + $('#form-search').serialize(), function (data) {
 
             if(data.response.result.length === 0) $('#product-list').html('No results');
