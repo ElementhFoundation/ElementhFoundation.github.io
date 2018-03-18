@@ -1,7 +1,7 @@
 var products = {};
 
 
-var tiresWidth = [
+var tyresWidth = [
     "10",
     "10.5",
     "100",
@@ -242,7 +242,7 @@ var tiresWidth = [
     "950",
     "<>"
 ];
-var tiresHeight = [
+var tyresHeight = [
     "10",
     "10.2",
     "10.5",
@@ -330,7 +330,7 @@ var tiresHeight = [
     "99",
     "<>"
 ];
-var tiresRadius = [
+var tyresRadius = [
     "10",
     "10.50",
     "11",
@@ -990,26 +990,22 @@ $().ready(function () {
         source: wheelsDia
     });
 
-    $( "#form-search" ).find('input[name="tires-width"]').autocomplete({
-        source: tiresWidth
+    $( "#form-search" ).find('input[name="tyres-width"]').autocomplete({
+        source: tyresWidth
     })
 
-    $( "#form-search" ).find('input[name="tires-height"]').autocomplete({
-        source: tiresHeight
+    $( "#form-search" ).find('input[name="tyres-height"]').autocomplete({
+        source: tyresHeight
     });
 
-    $( "#form-search" ).find('input[name="tires-radius"]').autocomplete({
-        source: tiresRadius
+    $( "#form-search" ).find('input[name="tyres-radius"]').autocomplete({
+        source: tyresRadius
     });
 
 
     $('#search-button').click(function (e) {
         e.preventDefault();
         $('#product-list').html('');
-
-        if(!$('#tab-additional-search').is(':visible')) {
-            $('#search-type').val('none')
-        }
 
         $.get('https://apimvp.elementh.io/search?' + $('#form-search').serialize(), function (data) {
 
@@ -1031,13 +1027,17 @@ $().ready(function () {
                                         <th>Price</th>
                                         <th></th>
                                     </tr>`);
+
+                var stocks = [];
                 data._source.sku.forEach(function (sku, index) {
-                    productHtml.find('.product-offers').append(`<tr><td>${data._source.sku[index].stock.company.alias}</td>
+                    if(stocks.indexOf(data._source.sku[index].stock.id) > -1) return
+                    productHtml.find('.product-offers').append(`<tr><td>${data._source.sku[index].stock.company.alias} (${data._source.sku[index].stock.city.alias})</td>
                                         <td>${data._source.sku[index].qty}</td>
                                         <td>${'$' + (data._source.sku[index].retail_price / 57).toFixed(2)}</td>
                                         <td>
                                             <button type="button" class="btn btn-outline-primary btn-sm product-show-eesn" data-target="${data._source.eepc}">show serial number and history</button>
                                         </td></tr>`);
+                    stocks.push(data._source.sku[index].stock.id)
                 });
 
                 products[data._source.eepc] = data._source;
@@ -1093,4 +1093,6 @@ $().ready(function () {
 
         })
     })
+
+    $('#search-button').click()
 });
