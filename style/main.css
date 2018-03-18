@@ -35,7 +35,7 @@ a:visited {
 .twitter,
 .youtube, header ul li i,
 header ul li a,
-header ul li span, nav ul li, .link_block .primary_link,
+header ul li span, nav ul li, .bnr_top, .link_block .primary_link,
 .link_block .secondary_link, .primary_btn, .tabs li, .data .data_user .data_btn {
   cursor: pointer; }
 
@@ -50,6 +50,73 @@ header ul li span, nav ul li, .link_block .primary_link,
 
 .blue {
   color: #00b0ff !important; }
+
+/* ANIMATION */
+@keyframes bnr_m_1 {
+  from {
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  28% {
+    opacity: 1; }
+  33% {
+    opacity: 0; }
+  to {
+    opacity: 0; } }
+@keyframes bnr_m_2 {
+  from {
+    opacity: 0; }
+  33% {
+    opacity: 0; }
+  38% {
+    opacity: 1; }
+  61% {
+    opacity: 1; }
+  66% {
+    opacity: 0; }
+  to {
+    opacity: 0; } }
+@keyframes bnr_m_3 {
+  from {
+    opacity: 0; }
+  66% {
+    opacity: 0; }
+  71% {
+    opacity: 1; }
+  95% {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+@keyframes bnr_t_2 {
+  from {
+    opacity: 0; }
+  5% {
+    opacity: 1; }
+  45% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  to {
+    opacity: 0; } }
+@keyframes bnr_t_3 {
+  from {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  55% {
+    opacity: 1; }
+  95% {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+.bnr_1 {
+  animation: bnr_m_1 9s infinite linear; }
+
+.bnr_2 {
+  animation: bnr_m_2 9s infinite linear; }
+
+.bnr_3 {
+  animation: bnr_m_3 9s infinite linear; }
 
 /* IMAGE */
 .svg, .intro, .rating, .partners, .rewards, .features, .roadmap, .team, .advisors, .cases, .dapps, .mvp, .mission, .contacts, .meetus, .faq, .winner, .finalist, .bef, .cc, .d10e, .token2049, header .logo {
@@ -370,7 +437,7 @@ header {
   color: #fff;
   background-color: #00b0ff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-  z-index: 1; }
+  z-index: 2; }
   header .logo {
     position: absolute;
     width: 40px;
@@ -428,7 +495,7 @@ nav {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   margin-left: calc(-100% - 8px);
   transition: all 0.25s ease;
-  z-index: 2; }
+  z-index: 3; }
   nav.active {
     -webkit-transform: translateX(calc(100% + 8px));
     -moz-transform: translateX(calc(100% + 8px));
@@ -459,6 +526,48 @@ nav {
         width: 100%;
         margin-top: 8px;
         border-radius: 0; }
+
+.bnr_top {
+  position: absolute;
+  width: 100%;
+  height: 88px;
+  overflow: hidden;
+  top: 56px;
+  color: #fff;
+  background-color: #0081cb;
+  z-index: 1; }
+  .bnr_top .bnr_container .bnr_slide {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    .bnr_top .bnr_container .bnr_slide p {
+      margin: 0 8px; }
+    .bnr_top .bnr_container .bnr_slide .title, .bnr_top .bnr_container .bnr_slide .person_block .name, .person_block .bnr_top .bnr_container .bnr_slide .name {
+      position: absolute;
+      margin-left: 12px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%); }
+      .bnr_top .bnr_container .bnr_slide .title.center, .bnr_top .bnr_container .bnr_slide .person_block .center.name, .person_block .bnr_top .bnr_container .bnr_slide .center.name {
+        text-align: center;
+        margin: 0;
+        width: 100%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+    .bnr_top .bnr_container .bnr_slide .body {
+      font-size: 12px;
+      line-height: 20px;
+      margin-left: 80px; }
 
 section {
   position: relative;
@@ -858,15 +967,35 @@ button {
   color: #212121;
   background-color: #fff; }
   #intro .content {
-    padding-top: 72px; }
+    padding-top: 160px; }
 
 @media screen and (orientation: landscape) and (max-height: 670px) {
   nav {
     overflow: scroll; } }
 @media screen and (min-width: 768px) {
+  .bnr_top .bnr_container .bnr_slide.address {
+    margin-left: 336px; }
+  .bnr_top .bnr_container .bnr_slide .title.center, .bnr_top .bnr_container .bnr_slide .person_block .center.name, .person_block .bnr_top .bnr_container .bnr_slide .center.name {
+    margin-left: 24px;
+    text-align: left;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+
+  .bnr_1 {
+    animation: none; }
+
+  .bnr_2 {
+    animation: bnr_t_2 10s infinite linear; }
+
+  .bnr_3 {
+    animation: bnr_t_3 10s infinite linear; }
+
   header {
     height: 72px;
-    z-index: 3; }
+    z-index: 4; }
     header .logo {
       top: 16px;
       left: 16px; }
@@ -899,6 +1028,9 @@ button {
       line-height: 56px; }
     nav ul .userblock {
       display: none; }
+
+  .bnr_top {
+    top: 72px; }
 
   footer {
     position: absolute;
@@ -997,6 +1129,15 @@ button {
         content: "";
         margin: 0; } }
 @media screen and (min-width: 1024px) {
+  .bnr_top .bnr_container .bnr_slide.address {
+    margin-left: 400px; }
+  .bnr_top .bnr_container .bnr_slide .title.center, .bnr_top .bnr_container .bnr_slide .person_block .center.name, .person_block .bnr_top .bnr_container .bnr_slide .center.name {
+    margin-left: 72px; }
+  .bnr_top .bnr_container .bnr_slide .body {
+    font-size: 14px;
+    line-height: 24px;
+    margin-left: 120px; }
+
   header .logo {
     width: 144px;
     top: 14px;
@@ -1048,6 +1189,14 @@ button {
   .profile_page {
     width: 800px; } }
 @media screen and (min-width: 1280px) {
+  .bnr_top {
+    width: calc(100% - 256px);
+    left: 256px; }
+    .bnr_top .bnr_container .bnr_slide.address {
+      margin-left: 360px; }
+    .bnr_top .bnr_container .bnr_slide .title.center, .bnr_top .bnr_container .bnr_slide .person_block .center.name, .person_block .bnr_top .bnr_container .bnr_slide .center.name {
+      margin-left: 24px; }
+
   #open_navigation {
     display: none; }
 
@@ -1088,6 +1237,10 @@ button {
   .rewards_block .title, .rewards_block .person_block .name, .person_block .rewards_block .name {
     margin-bottom: 16px; } }
 @media screen and (min-width: 1360px) {
+  .bnr_top {
+    width: calc(100% - 288px);
+    left: 288px; }
+
   header {
     width: calc(100% - 288px);
     padding-left: 288px; }
@@ -1128,23 +1281,8 @@ button {
   .text_block {
     padding-bottom: 56px; } }
 @media screen and (min-width: 1440px) {
-  header {
-    height: 88px; }
-    header .logo {
-      top: 22px; }
-    header ul li .lngSelect {
-      margin: 24px 8px; }
-    header ul li a,
-    header ul li span {
-      height: 88px; }
-    header ul li i,
-    header ul li a,
-    header ul li span {
-      line-height: 88px !important; }
-
-  nav {
-    height: calc(100% - 88px);
-    margin-top: 88px; }
+  .bnr_top .bnr_container .bnr_slide .title.center, .bnr_top .bnr_container .bnr_slide .person_block .center.name, .person_block .bnr_top .bnr_container .bnr_slide .center.name {
+    margin-left: 40px; }
 
   .image {
     margin: 0 40px; }
@@ -1152,7 +1290,6 @@ button {
       background-position-x: 328px; }
 
   h1 {
-    top: 96px;
     left: 368px; }
 
   .content {
@@ -1173,6 +1310,11 @@ button {
     padding-bottom: 64px;
     margin-left: 96px; } }
 @media screen and (min-width: 1600px) {
+  .bnr_top .bnr_container .bnr_slide.address {
+    margin-left: 520px; }
+  .bnr_top .bnr_container .bnr_slide .title.center, .bnr_top .bnr_container .bnr_slide .person_block .center.name, .person_block .bnr_top .bnr_container .bnr_slide .center.name {
+    margin-left: 120px; }
+
   .image {
     margin: 0 120px; }
     .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
@@ -1184,6 +1326,31 @@ button {
   .content {
     padding-left: 528px; } }
 @media screen and (min-width: 1920px) {
+  .bnr_top {
+    top: 88px; }
+    .bnr_top .bnr_container .bnr_slide.address {
+      margin-left: 696px; }
+    .bnr_top .bnr_container .bnr_slide .title.center, .bnr_top .bnr_container .bnr_slide .person_block .center.name, .person_block .bnr_top .bnr_container .bnr_slide .center.name {
+      margin-left: 200px; }
+
+  header {
+    height: 88px; }
+    header .logo {
+      top: 22px; }
+    header ul li .lngSelect {
+      margin: 24px 8px; }
+    header ul li a,
+    header ul li span {
+      height: 88px; }
+    header ul li i,
+    header ul li a,
+    header ul li span {
+      line-height: 88px !important; }
+
+  nav {
+    height: calc(100% - 88px);
+    margin-top: 88px; }
+
   .image {
     margin: 0 200px; }
     .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
@@ -1215,6 +1382,11 @@ button {
     .text_block .lines {
       margin: 56px 0; } }
 @media screen and (min-width: 2560px) {
+  .bnr_top .bnr_container .bnr_slide.address {
+    margin-left: 968px; }
+  .bnr_top .bnr_container .bnr_slide .title.center, .bnr_top .bnr_container .bnr_slide .person_block .center.name, .person_block .bnr_top .bnr_container .bnr_slide .center.name {
+    margin-left: 320px; }
+
   .image {
     margin: 0 344px; }
     .image .illustration, .image .intro, .image .rating, .image .partners, .image .rewards, .image .features, .image .roadmap, .image .team, .image .advisors, .image .cases, .image .dapps, .image .mvp, .image .mission, .image .contacts, .image .meetus, .image .faq, .image .image {
