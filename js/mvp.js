@@ -1097,4 +1097,6 @@ $().ready(function () {
 
         })
     })
+
+    $('#search-button').click()
 });
