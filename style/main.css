@@ -276,7 +276,7 @@ header ul li span, nav ul li, .bnr_top, .link_block .primary_link,
   background-image: url("../img/icon/ic_youtube.svg"); }
 
 /* RATING */
-.rating_logo, .foxico, .trackico, .icomarks, .foundico, .wiserico {
+.rating_logo, .foxico, .trackico, .icomarks, .zaz, .foundico, .wiserico {
   background: center center no-repeat; }
 
 .foxico {
@@ -287,6 +287,9 @@ header ul li span, nav ul li, .bnr_top, .link_block .primary_link,
 
 .icomarks {
   background-image: url("../img/rating/icomarks.svg"); }
+
+.zaz {
+  background-image: url("../img/rating/zaz.svg"); }
 
 .foundico {
   background-size: 104px, auto;
@@ -718,9 +721,9 @@ ul.list {
     .rating_block a:hover {
       border-color: #00b0ff;
       background-color: #00b0ff; }
-      .rating_block a:hover .rating_logo, .rating_block a:hover .foxico, .rating_block a:hover .trackico, .rating_block a:hover .icomarks, .rating_block a:hover .foundico, .rating_block a:hover .wiserico {
+      .rating_block a:hover .rating_logo, .rating_block a:hover .foxico, .rating_block a:hover .trackico, .rating_block a:hover .icomarks, .rating_block a:hover .zaz, .rating_block a:hover .foundico, .rating_block a:hover .wiserico {
         border-color: #00b0ff; }
-    .rating_block a .rating_logo, .rating_block a .foxico, .rating_block a .trackico, .rating_block a .icomarks, .rating_block a .foundico, .rating_block a .wiserico {
+    .rating_block a .rating_logo, .rating_block a .foxico, .rating_block a .trackico, .rating_block a .icomarks, .rating_block a .zaz, .rating_block a .foundico, .rating_block a .wiserico {
       width: 132px;
       height: 84px;
       float: left;
