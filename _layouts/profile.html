@@ -6,11 +6,11 @@ layout: default
 
 <div class="profile_page">
     <div id="verification" class="block disnone">
-        <p class="title">We've sent you a verification email, please, check your email address.</p>
+        <p class="title" data-i18n="verificationSent">We've sent you a verification email, please, check your email address.</p>
         <form id="resend_form">
             <div class="error disnone"></div>
-            <div class="allok disnone">Check your email and follow the instructions!</div>
-            <button class="primary_btn" type="submit" form="resend_form">
+            <div class="allok disnone" data-i18n="verificationCheck">Check your email and follow the instructions!</div>
+            <button class="primary_btn" type="submit" form="resend_form" data-i18n="sendAgain">
                 Send email again
             </button>
         </form>
@@ -19,19 +19,19 @@ layout: default
         <form id="user_email_edit_form">
             <input id="email_input" form="user_email_edit_form" name="email" type="text" value="" placeholder="johndoe@site.com">
             <div class="error disnone"></div>
-            <div class="allok disnone">Check your email and follow the instructions</div>
-            <button class="primary_btn" type="submit" form="resend_form">
+            <div class="allok disnone" data-i18n="verificationCheck">Check your email and follow the instructions!</div>
+            <button class="primary_btn" type="submit" form="resend_form" data-i18n="saveEmail">
                 Save email
             </button>
         </form>
     </div>
     <div id="profile_tabs" class="disnone">
         <ul class="tabs">
-            <li id="tabs_list_profile" class="active">PROFILE</li>
-            <li id="tabs_list_contribute">ICO</li>
-            <li id="tabs_list_bounty">BOUNTY</li>
-            <li id="tabs_list_airdrop">AIRDROP</li>
-            <li id="tabs_list_referral">REFERRAL</li>
+            <li id="tabs_list_profile" class="active" data-i18n="PROFILE">PROFILE</li>
+            <li id="tabs_list_contribute" data-i18n="ICO">ICO</li>
+            <li id="tabs_list_bounty" data-i18n="bounty">BOUNTY</li>
+            <li id="tabs_list_airdrop" data-i18n="airdrop">AIRDROP</li>
+            <li id="tabs_list_referral" data-i18n="referral">REFERRAL</li>
         </ul>
         {% include tabs_container_profile.html %}
         {% include tabs_container_contribute.html %}
@@ -42,8 +42,8 @@ layout: default
     </div>
     <div id="emailVerified" class="modal disnone">
         <div class="message">
-            <div class="title">Your email is verified!</div>
-            <a class="primary_btn" href="profile">OK</a>
+            <div class="title" data-i18n="emailVerified">Your email is verified!</div>
+            <a class="primary_btn" href="profile" data-i18n="OK">OK</a>
         </div>
     </div>
 </div>
