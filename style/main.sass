@@ -548,6 +548,13 @@ h1
 .image
     @extend .illustration
     padding: 64px 0 0 0
+.video
+    width: 100%
+    margin-top: calc(56px + 88px)
+    z-index: 10
+    iframe
+        width: 100%
+        max-width: 480px
 .content
     height: 100%
     padding: 0 16px 16px
@@ -643,9 +650,59 @@ ul.list
     background-color: $color_active
     &:hover
         box-shadow: 0 5px 8px rgba(0,0,0,.2)
+.progressbar
+    max-width: 512px
+    margin: 32px 0 0
+    .progress_line
+        position: relative
+        width: 100%
+        height: 16px
+        margin-bottom: 8px
+        background-color: #e1f5fe
+        &_softcap,
+        &_hardcap
+            position: absolute
+            height: 32px
+            top: -16px
+            font-size: 12px
+            line-height: 16px
+            color: $color_gray
+            text-align: right
+            padding-right: 4px
+            border-right: 1px solid $color_gray
+            &.check
+                color: $color_active
+                border-right-color: $color_active
+                &::before
+                    content: "✓"
+        &_softcap
+            width: calc(33% - 4px)
+        &_hardcap
+            width: calc(100% - 4px)
+        &_current
+            position: absolute
+            height: 16px
+            top: 0
+            background-color: $color_active
+    .progress_row
+        width: 100%
+        height: 24px
+        &_name
+            float: left
+            color: $color_gray
+            text-transform: uppercase
+            &::after
+                content: ":"
+        &_info,
+        &_plus
+            float: right
+        &_plus
+            position: relative
+            top: 12px
+
 .timer
     max-width: 480px
-    margin: 24px 0 8px
+    margin: 8px 0
     padding: 16px
     background: repeat url(../img/details/line.svg)
     .time
@@ -895,10 +952,8 @@ button
     .image
         display: none
 #intro
-    color: $color_black
-    background-color: $color_white
     .content
-        padding-top: 160px
+        padding-top: 16px
 @media screen and (orientation: landscape) and (max-height: 670px)
     nav
         overflow: scroll
@@ -976,6 +1031,23 @@ button
             height: 100%
             background-attachment: fixed
             background-position-x: 24px
+    #intro
+        .content
+            padding-top: 88px
+    .video
+        position: absolute
+        width: 336px
+        height: 100%
+        margin: 0
+        iframe
+            position: absolute
+            width: calc(100% - 48px)
+            top: 50%
+            -webkit-transform: translateY(-50%)
+            -moz-transform: translateY(-50%)
+            -o-transform: translateY(-50%)
+            transform: translateY(-50%)
+            margin: 0 24px
     h1
         position: absolute
         top: 80px
@@ -1071,6 +1143,8 @@ button
         margin-left: 72px
         .illustration
             background-position-x: 72px
+    .video
+        width: 384px
     h1
         left: 384px
     .content
@@ -1141,6 +1215,8 @@ button
         margin-left: 24px
         .illustration
             background-position-x: 280px
+    .video
+        width: 336px
     h1
         left: 336px
     .content
@@ -1205,6 +1281,8 @@ button
         margin: 0 40px
         .illustration
             background-position-x: 328px
+    .video
+        width: 368px
     h1
         left: 368px
     .content
@@ -1235,6 +1313,8 @@ button
         margin: 0 120px
         .illustration
             background-position-x: 408px
+    .video
+        width: 528px
     h1
         left: 528px
     .content
@@ -1271,6 +1351,15 @@ button
         margin: 0 200px
         .illustration
             background-position-x: 488px
+    .video
+        width: 704px
+        iframe
+            left: 50%
+            -webkit-transform: translate(-50%,-50%)
+            -moz-transform: translate(-50%,-50%)
+            -o-transform: translate(-50%,-50%)
+            transform: translate(-50%,-50%)
+            margin: 0
     h1
         position: relative
         max-width: 780px
@@ -1307,6 +1396,8 @@ button
         margin: 0 344px
         .illustration
             background-position-x: 632px
+    .video
+        width: 984px
     h1
         top: 144px
     .content
