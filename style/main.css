@@ -35,7 +35,7 @@ a:visited {
 .twitter,
 .youtube, header ul li i,
 header ul li a,
-header ul li span, nav ul li, .bnr_top, .link_block .primary_link,
+header ul li span, nav ul li, .link_block .primary_link,
 .link_block .secondary_link, .primary_btn, .tabs li, .data .data_user .data_btn {
   cursor: pointer; }
 
@@ -276,7 +276,7 @@ header ul li span, nav ul li, .bnr_top, .link_block .primary_link,
   background-image: url("../img/icon/ic_youtube.svg"); }
 
 /* RATING */
-.rating_logo, .foxico, .trackico, .icomarks, .zaz, .foundico, .wiserico, .hacked, .bazaar {
+.rating_logo, .foxico, .trackico, .icomarks, .zaz, .foundico, .wiserico, .hacked, .bazaar, .icobench {
   background: center center no-repeat; }
 
 .foxico {
@@ -305,6 +305,9 @@ header ul li span, nav ul li, .bnr_top, .link_block .primary_link,
 
 .bazaar {
   background-image: url("../img/rating/bazaar.svg"); }
+
+.icobench {
+  background-image: url("../img/rating/icobench.svg"); }
 
 /* PARTNERS */
 .partners_logo, .sap, .bitrewards, .sberbank, .gmtlegal {
@@ -533,7 +536,7 @@ nav {
       nav ul li.subhead, nav ul li.devider {
         cursor: auto; }
         nav ul li.subhead:hover, nav ul li.devider:hover {
-          background-color: rgba(0, 0, 0, 0); }
+          background-color: transparent; }
       nav ul li.active {
         color: #00b0ff; }
       nav ul li .lngSelect {
@@ -664,7 +667,7 @@ ul.list {
       .link_block .primary_link.disabled:hover, .link_block .primary_link.disabled:active {
         color: #fff;
         border-color: #fff;
-        background-color: rgba(0, 0, 0, 0); }
+        background-color: transparent; }
   .link_block .secondary_link {
     border-bottom: 2px solid #fff; }
     .link_block .secondary_link:hover {
@@ -684,7 +687,7 @@ ul.list {
       .link_block.black .primary_link.disabled:hover, .link_block.black .primary_link.disabled:active {
         color: #212121;
         border-color: #212121;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: transparent;
         box-shadow: none; }
   .link_block.black .secondary_link {
     border-bottom: 2px solid #212121; }
@@ -728,9 +731,9 @@ ul.list {
     .rating_block a:hover {
       border-color: #00b0ff;
       background-color: #00b0ff; }
-      .rating_block a:hover .rating_logo, .rating_block a:hover .foxico, .rating_block a:hover .trackico, .rating_block a:hover .icomarks, .rating_block a:hover .zaz, .rating_block a:hover .foundico, .rating_block a:hover .wiserico, .rating_block a:hover .hacked, .rating_block a:hover .bazaar {
+      .rating_block a:hover .rating_logo, .rating_block a:hover .foxico, .rating_block a:hover .trackico, .rating_block a:hover .icomarks, .rating_block a:hover .zaz, .rating_block a:hover .foundico, .rating_block a:hover .wiserico, .rating_block a:hover .hacked, .rating_block a:hover .bazaar, .rating_block a:hover .icobench {
         border-color: #00b0ff; }
-    .rating_block a .rating_logo, .rating_block a .foxico, .rating_block a .trackico, .rating_block a .icomarks, .rating_block a .zaz, .rating_block a .foundico, .rating_block a .wiserico, .rating_block a .hacked, .rating_block a .bazaar {
+    .rating_block a .rating_logo, .rating_block a .foxico, .rating_block a .trackico, .rating_block a .icomarks, .rating_block a .zaz, .rating_block a .foundico, .rating_block a .wiserico, .rating_block a .hacked, .rating_block a .bazaar, .rating_block a .icobench {
       width: 132px;
       height: 84px;
       float: left;
