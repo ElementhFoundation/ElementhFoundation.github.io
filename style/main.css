@@ -631,7 +631,7 @@ h1 {
 
 .video {
   width: 100%;
-  margin-top: calc(56px + 88px);
+  margin-top: calc(56px);
   z-index: 10; }
   .video iframe {
     width: 100%;
@@ -990,7 +990,7 @@ button {
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
     .modal .message .close {
-      margin-right: -8p; }
+      margin-right: -8px; }
     .modal .message .title, .modal .message .person_block .name, .person_block .modal .message .name {
       margin-bottom: 16px; }
 
