@@ -19,7 +19,7 @@ a:visited {
   text-decoration: none; }
 
 /* DECORATION */
-.pointer, .icon, nav .close,
+.pointer, .icon, .close,
 .icons,
 .behance,
 .bitcointalk,
@@ -176,7 +176,7 @@ header ul li span, nav ul li, .link_block .primary_link,
   background-image: url("/img/illustration/faq.svg"); }
 
 /* ICONS */
-.icon, nav .close {
+.icon, .close {
   width: 24px;
   height: 24px;
   padding: 8px;
@@ -189,7 +189,7 @@ header ul li span, nav ul li, .link_block .primary_link,
   float: left;
   background: center center no-repeat; }
 
-.icon, nav .close,
+.icon, .close,
 .icons,
 .behance,
 .bitcointalk,
@@ -207,7 +207,7 @@ header ul li span, nav ul li, .link_block .primary_link,
 .kakaotalk,
 .wechat {
   border-radius: 50%; }
-  .icon:hover, nav .close:hover,
+  .icon:hover, .close:hover,
   .icons:hover,
   .behance:hover,
   .bitcointalk:hover,
@@ -225,7 +225,7 @@ header ul li span, nav ul li, .link_block .primary_link,
   .kakaotalk:hover,
   .wechat:hover {
     background-color: rgba(0, 0, 0, 0.05); }
-  .icon:active, nav .close:active,
+  .icon:active, .close:active,
   .icons:active,
   .behance:active,
   .bitcointalk:active,
@@ -243,6 +243,9 @@ header ul li span, nav ul li, .link_block .primary_link,
   .kakaotalk:active,
   .wechat:active {
     background-color: rgba(0, 0, 0, 0.1); }
+
+.close {
+  float: right; }
 
 .behance {
   background-image: url("../img/icon/ic_behance.svg"); }
@@ -532,8 +535,6 @@ nav {
     -moz-transform: translateX(calc(100% + 8px));
     -o-transform: translateX(calc(100% + 8px));
     transform: translateX(calc(100% + 8px)); }
-  nav .close {
-    float: right; }
   nav ul {
     margin: 8px 0 32px; }
     nav ul .devider {
@@ -976,7 +977,7 @@ button {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 200;
   background-color: rgba(255, 255, 255, 0.9); }
   .modal .message {
     position: absolute;
@@ -988,6 +989,8 @@ button {
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+    .modal .message .close {
+      margin-right: -8p; }
     .modal .message .title, .modal .message .person_block .name, .person_block .modal .message .name {
       margin-bottom: 16px; }
 
