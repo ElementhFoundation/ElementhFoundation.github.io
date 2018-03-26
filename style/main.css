@@ -19,7 +19,7 @@ a:visited {
   text-decoration: none; }
 
 /* DECORATION */
-.pointer, .icon, nav .close,
+.pointer, .icon, .close,
 .icons,
 .behance,
 .bitcointalk,
@@ -33,7 +33,9 @@ a:visited {
 .steemit,
 .telegram,
 .twitter,
-.youtube, header ul li i,
+.youtube,
+.kakaotalk,
+.wechat, header ul li i,
 header ul li a,
 header ul li span, nav ul li, .link_block .primary_link,
 .link_block .secondary_link, .primary_btn, .tabs li, .data .data_user .data_btn {
@@ -174,20 +176,20 @@ header ul li span, nav ul li, .link_block .primary_link,
   background-image: url("/img/illustration/faq.svg"); }
 
 /* ICONS */
-.icon, nav .close {
+.icon, .close {
   width: 24px;
   height: 24px;
   padding: 8px;
   margin: 8px; }
 
-.icons, .behance, .bitcointalk, .bounty, .facebook, .github, .instagram, .linkedin, .medium, .reddit, .steemit, .telegram, .twitter, .youtube {
+.icons, .behance, .bitcointalk, .bounty, .facebook, .github, .instagram, .linkedin, .medium, .reddit, .steemit, .telegram, .twitter, .youtube, .kakaotalk, .wechat {
   display: block;
   width: 40px;
   height: 40px;
   float: left;
   background: center center no-repeat; }
 
-.icon, nav .close,
+.icon, .close,
 .icons,
 .behance,
 .bitcointalk,
@@ -201,9 +203,11 @@ header ul li span, nav ul li, .link_block .primary_link,
 .steemit,
 .telegram,
 .twitter,
-.youtube {
+.youtube,
+.kakaotalk,
+.wechat {
   border-radius: 50%; }
-  .icon:hover, nav .close:hover,
+  .icon:hover, .close:hover,
   .icons:hover,
   .behance:hover,
   .bitcointalk:hover,
@@ -217,9 +221,11 @@ header ul li span, nav ul li, .link_block .primary_link,
   .steemit:hover,
   .telegram:hover,
   .twitter:hover,
-  .youtube:hover {
+  .youtube:hover,
+  .kakaotalk:hover,
+  .wechat:hover {
     background-color: rgba(0, 0, 0, 0.05); }
-  .icon:active, nav .close:active,
+  .icon:active, .close:active,
   .icons:active,
   .behance:active,
   .bitcointalk:active,
@@ -233,8 +239,13 @@ header ul li span, nav ul li, .link_block .primary_link,
   .steemit:active,
   .telegram:active,
   .twitter:active,
-  .youtube:active {
+  .youtube:active,
+  .kakaotalk:active,
+  .wechat:active {
     background-color: rgba(0, 0, 0, 0.1); }
+
+.close {
+  float: right; }
 
 .behance {
   background-image: url("../img/icon/ic_behance.svg"); }
@@ -274,6 +285,12 @@ header ul li span, nav ul li, .link_block .primary_link,
 
 .youtube {
   background-image: url("../img/icon/ic_youtube.svg"); }
+
+.kakaotalk {
+  background-image: url("../img/icon/ic_kakaotalk.svg"); }
+
+.wechat {
+  background-image: url("../img/icon/ic_wechat.svg"); }
 
 /* RATING */
 .rating_logo, .foxico, .trackico, .icomarks, .zaz, .foundico, .wiserico, .hacked, .bazaar, .icobench {
@@ -518,8 +535,6 @@ nav {
     -moz-transform: translateX(calc(100% + 8px));
     -o-transform: translateX(calc(100% + 8px));
     transform: translateX(calc(100% + 8px)); }
-  nav .close {
-    float: right; }
   nav ul {
     margin: 8px 0 32px; }
     nav ul .devider {
@@ -536,7 +551,7 @@ nav {
       nav ul li.subhead, nav ul li.devider {
         cursor: auto; }
         nav ul li.subhead:hover, nav ul li.devider:hover {
-          background-color: transparent; }
+          background-color: rgba(0, 0, 0, 0); }
       nav ul li.active {
         color: #00b0ff; }
       nav ul li .lngSelect {
@@ -616,7 +631,7 @@ h1 {
 
 .video {
   width: 100%;
-  margin-top: calc(56px + 88px);
+  margin-top: calc(56px);
   z-index: 10; }
   .video iframe {
     width: 100%;
@@ -675,7 +690,7 @@ ul.list {
       .link_block .primary_link.disabled:hover, .link_block .primary_link.disabled:active {
         color: #fff;
         border-color: #fff;
-        background-color: transparent; }
+        background-color: rgba(0, 0, 0, 0); }
   .link_block .secondary_link {
     border-bottom: 2px solid #fff; }
     .link_block .secondary_link:hover {
@@ -695,7 +710,7 @@ ul.list {
       .link_block.black .primary_link.disabled:hover, .link_block.black .primary_link.disabled:active {
         color: #212121;
         border-color: #212121;
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0);
         box-shadow: none; }
   .link_block.black .secondary_link {
     border-bottom: 2px solid #212121; }
@@ -962,7 +977,7 @@ button {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 200;
   background-color: rgba(255, 255, 255, 0.9); }
   .modal .message {
     position: absolute;
@@ -974,6 +989,8 @@ button {
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+    .modal .message .close {
+      margin-right: -8px; }
     .modal .message .title, .modal .message .person_block .name, .person_block .modal .message .name {
       margin-bottom: 16px; }
 

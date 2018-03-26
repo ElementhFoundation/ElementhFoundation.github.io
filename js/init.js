@@ -136,6 +136,13 @@ $(function () {
     $('#tabs_container_profile').addClass('disblock')
   })
 
+  $('.wechat').on('click', function () {
+      $('#wechat_qrcode').removeClass('disnone');
+  });
+  $('#close_wechat_qrcode').on('click', function () {
+      $('#wechat_qrcode').addClass('disnone');
+  });
+
   $(document).on("scroll", onScroll);
 
   function onScroll (event) {

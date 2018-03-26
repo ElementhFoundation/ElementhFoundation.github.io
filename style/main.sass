@@ -190,6 +190,9 @@ $shadow: 0 0 8px rgba(0,0,0,.25)
         background-color: rgba(0,0,0,.05)
     &:active
         background-color: rgba(0,0,0,.1)
+.close
+    @extend .icon
+    float: right
 .behance
     @extend .icons
     background-image: url("../img/icon/ic_behance.svg")
@@ -229,6 +232,12 @@ $shadow: 0 0 8px rgba(0,0,0,.25)
 .youtube
     @extend .icons
     background-image: url("../img/icon/ic_youtube.svg")
+.kakaotalk
+    @extend .icons
+    background-image: url("../img/icon/ic_kakaotalk.svg")
+.wechat
+    @extend .icons
+    background-image: url("../img/icon/ic_wechat.svg")
 /* RATING
 .rating_logo
     background: center center no-repeat
@@ -457,9 +466,6 @@ nav
         -moz-transform: translateX(calc(100% + 8px))
         -o-transform: translateX(calc(100% + 8px))
         transform: translateX(calc(100% + 8px))
-    .close
-        @extend .icon
-        float: right
     ul
         margin: 8px 0 32px
         .devider
@@ -553,7 +559,7 @@ h1
     padding: 64px 0 0 0
 .video
     width: 100%
-    margin-top: calc(56px + 88px)
+    margin-top: calc(56px)
     z-index: 10
     iframe
         width: 100%
@@ -883,7 +889,7 @@ button
     height: 100%
     top: 0
     left: 0
-    z-index: 10
+    z-index: 200
     background-color: rgba(255,255,255,.9)
     .message
         position: absolute
@@ -895,6 +901,8 @@ button
         -ms-transform: translate(-50%,-50%)
         -o-transform: translate(-50%,-50%)
         transform: translate(-50%,-50%)
+        .close
+            margin-right: -8px
         .title
             margin-bottom: 16px
 .tabs
