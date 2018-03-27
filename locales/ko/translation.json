@@ -298,7 +298,9 @@
   "MinimumGas": "최소gas량:",
   "GAS PRICE": "GAS 가격:",
   "YouWillReceiveEEE": "비트코인 블록체인 상에서 6개의 거래가 승인된 후 EEE 토큰을 받게 될 것입니다.",
-  "ISENTBTC": "BTC를 보냈습니다"
+  "ISENTBTC": "BTC를 보냈습니다",
+  "ratings": "평점",
+  "intro": "소개 평점"
 }
 
 
