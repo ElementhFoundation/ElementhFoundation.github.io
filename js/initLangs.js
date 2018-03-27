@@ -43,5 +43,5 @@ i18next.use(i18nextXHRBackend).use(i18nextBrowserLanguageDetector).init({
 });
 
 i18next.on('languageChanged', function(lng) {
-  $('#lngSelect').find('option[value="'+ lng +'"]').prop('selected', true)
+  $('.lngSelect').find('option[value="'+ lng +'"]').prop('selected', true)
 })
