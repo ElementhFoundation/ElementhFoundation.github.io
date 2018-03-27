@@ -349,6 +349,9 @@ $shadow: 0 0 8px rgba(0,0,0,.25)
 .kirillov
     @extend .photo
     background-image: url("../img/team/kirillov.jpg")
+.bruk
+    @extend .photo
+    background-image: url("../img/team/bruk.jpg")
 
 /* ADVISORS
 .yannam
@@ -933,6 +936,7 @@ button
 .data_block
     margin: 32px 0
 .data
+    position: relative
     height: 100%
     overflow: hidden
     padding-bottom: 16px
@@ -963,6 +967,39 @@ button
             margin-left: 16px
             &:hover
                 text-decoration: underline
+    .transaction_date,
+    .transaction_description,
+    .transaction_status,
+    .transaction_amount
+        font-size: 12px
+        line-height: 16px
+    .transaction_date
+        color: $color_gray
+    .transaction_description
+        display: flex
+        width: calc(100% - 76px)
+        span
+            display: inline-block
+            word-wrap: break-word
+            white-space: nowrap
+            margin-right: 8px
+            &.transaction_description_address
+                text-overflow: ellipsis
+                overflow: hidden
+                margin-right: 0
+    .transaction_status
+        position: absolute
+        width: 72px
+        top: 12px
+        right: 0
+        border-radius: 2px
+        text-align: center
+        line-height: 24px
+        color: $color_white
+        background-color: $color_active
+#history
+    .data
+
 #intro,
 #contacts
     color: $color_black
