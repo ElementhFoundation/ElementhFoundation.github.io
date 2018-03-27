@@ -22,6 +22,14 @@ function getParameterByName(name, url) {
 }
 var lng = getParameterByName("lng")
 
+var cpa = getParameterByName("utm")
+var click = getParameterByName("click")
+
+if(cpa && click){
+  setCookie("cpa", cpa)
+  setCookie("click", cpa)
+}
+
 if(lng) {
   setCookie("i18next", lng)
   var newUrl = window.location.href.replace('?lng=' + lng , '')
