@@ -1,5 +1,5 @@
 $('.lngSelect').on('change', function() {
-  if(this.value === 'en') {
+  if(this.value === 'en' || this.value === 'ko') {
     window.location.href = '?lng=' + this.value
   }else{
     window.location.href = 'https://old.elementh.io?lng=' + this.value
