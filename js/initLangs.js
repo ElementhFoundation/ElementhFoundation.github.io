@@ -8,7 +8,7 @@ $('.lngSelect').on('change', function() {
 function setCookie(key, value) {
   var expires = new Date();
   expires.setTime(expires.getTime() + (24 * 60 * 60 * 1000));
-  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString()+';domain=.elementh.io';
 }
 
 function getParameterByName(name, url) {
@@ -27,7 +27,7 @@ var click = getParameterByName("click")
 
 if(cpa && click){
   setCookie("cpa", cpa)
-  setCookie("click", cpa)
+  setCookie("click", click)
 }
 
 if(lng) {
