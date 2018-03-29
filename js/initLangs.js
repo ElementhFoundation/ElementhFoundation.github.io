@@ -1,8 +1,6 @@
 $('.lngSelect').on('change', function() {
-  if(this.value === 'en' || this.value === 'ko' || this.value === 'zh') {
+  if(this.value) {
     window.location.href = '?lng=' + this.value
-  }else{
-    window.location.href = 'https://old.elementh.io?lng=' + this.value
   }
 })
 function setCookie(key, value) {
