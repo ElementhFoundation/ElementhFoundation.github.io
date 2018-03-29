@@ -304,5 +304,6 @@
   "MinimumGas": "Minimum amount of gas:",
   "GAS PRICE": "GAS PRICE:",
   "YouWillReceiveEEE": "You will receive EEE tokens after 6 confirmations of your transaction in bitcoin blockchain.",
-  "ISENTBTC": "I SENT BTC"
+  "ISENTBTC": "I SENT BTC",
+  "I AGREE": "I AGREEE"
 }
