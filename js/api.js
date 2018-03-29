@@ -159,6 +159,10 @@ function getProfile (callback) {
   makeApiRequest('getProfile', 'GET', null, callback)
 }
 
+function cancelKYC (callback) {
+  makeApiRequest('cancelKYC', 'GET', null, callback)
+}
+
 function makeApiRequest (url, method, data, callback) {
   var request = $.ajax({
     url: apiUrl + url,

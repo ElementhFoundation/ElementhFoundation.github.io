@@ -27,6 +27,12 @@ $(function () {
         yaCounter46855911.reachGoal('verifyEmail')
       }
     }
+    if(hash.toLowerCase() === 'ico'){
+      $('#tabs_container_profile').removeClass('disblock')
+      $('#tabs_list_profile').removeClass('active')
+      $('#tabs_list_contribute').addClass('active')
+      $('#tabs_container_contribute').addClass('disblock')
+    }
   }
 
   getInit(function (err, data) {
@@ -491,10 +497,20 @@ function init () {
     })
   })
 
+  $('#ignore_kyc_btn').on('click', function () {
+    $('#ignore_kyc_div').removeClass('disnone')
+  })
+
+  $('#ignore_kyc_ok').on('click', function () {
+    cancelKYC(function (err, data) {
+      window.location.href = '/profile#ico'
+      location.reload()
+    })
+  })
   var kyc_form = $('#kyc_form')
   if (kyc_form.length) {
 
-    if (user && user.kyc == false && balance == 0) {
+    if (user && user.kyc == 0 && balance == 0) {
       getToken(function (err, token) {
         if (err) {
           //alert(err)
