@@ -372,7 +372,7 @@ header ul li span, nav ul li, .link_block .primary_link,
   background-size: 56px 56px !important; }
 
 /* TEAM */
-.photo, .ryabov, .bereznitskiy, .mengeshev, .vasilev, .morozov, .prigornitskiy, .miheev, .gashitsky, .kholodnykh, .kirillov, .bruk, .yannam, .aurel, .averbach, .fradkov {
+.photo, .ryabov, .bereznitskiy, .mengeshev, .vasilev, .morozov, .prigornitskiy, .miheev, .gashitsky, .kholodnykh, .kirillov, .bruk, .yannam, .aurel, .anikin, .averbach, .fradkov {
   background: center center no-repeat;
   background-size: cover; }
 
@@ -415,6 +415,9 @@ header ul li span, nav ul li, .link_block .primary_link,
 
 .aurel {
   background-image: url("../img/advisors/aurel.png"); }
+
+.anikin {
+  background-image: url("../img/advisors/anikin.jpg"); }
 
 .averbach {
   background-image: url("../img/advisors/averbach.png"); }
@@ -557,7 +560,7 @@ nav {
       nav ul li.subhead, nav ul li.devider {
         cursor: auto; }
         nav ul li.subhead:hover, nav ul li.devider:hover {
-          background-color: transparent; }
+          background-color: rgba(0, 0, 0, 0); }
       nav ul li.active {
         color: #00b0ff; }
       nav ul li .lngSelect {
@@ -696,7 +699,7 @@ ul.list {
       .link_block .primary_link.disabled:hover, .link_block .primary_link.disabled:active {
         color: #fff;
         border-color: #fff;
-        background-color: transparent; }
+        background-color: rgba(0, 0, 0, 0); }
   .link_block .secondary_link {
     border-bottom: 2px solid #fff; }
     .link_block .secondary_link:hover {
@@ -716,7 +719,7 @@ ul.list {
       .link_block.black .primary_link.disabled:hover, .link_block.black .primary_link.disabled:active {
         color: #212121;
         border-color: #212121;
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0);
         box-shadow: none; }
   .link_block.black .secondary_link {
     border-bottom: 2px solid #212121; }
@@ -889,7 +892,7 @@ ul.list {
   width: 100%;
   border-bottom: 2px dotted #fff;
   margin: 32px 0; }
-.person_block .photo, .person_block .ryabov, .person_block .bereznitskiy, .person_block .mengeshev, .person_block .vasilev, .person_block .morozov, .person_block .prigornitskiy, .person_block .miheev, .person_block .gashitsky, .person_block .kholodnykh, .person_block .kirillov, .person_block .bruk, .person_block .yannam, .person_block .aurel, .person_block .averbach, .person_block .fradkov {
+.person_block .photo, .person_block .ryabov, .person_block .bereznitskiy, .person_block .mengeshev, .person_block .vasilev, .person_block .morozov, .person_block .prigornitskiy, .person_block .miheev, .person_block .gashitsky, .person_block .kholodnykh, .person_block .kirillov, .person_block .bruk, .person_block .yannam, .person_block .aurel, .person_block .anikin, .person_block .averbach, .person_block .fradkov {
   width: 288px;
   height: 288px; }
 .person_block .name {
