@@ -412,6 +412,7 @@ function init () {
 
   if(user && user.tfa){
     $('#ga2fa_div').removeClass('disnone')
+    $('#twofa_enabled').removeClass('disnone')
   }else{
     $('#twofa_enable_form').removeClass('disnone')
   }
@@ -532,7 +533,7 @@ function init () {
       createWithdraw({
         address: $('#withdraw_send_address').val(),
         amount: $('#withdraw_send_amount').val(),
-        ga: $('#ga2fa_input').val()
+        code: $('#ga2fa_input').val()
       }, function (err, data) {
         transaction_withdraw_confirm.find(':input[type="submit"]').prop('disabled', false)
         if (err) {

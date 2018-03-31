@@ -1236,7 +1236,13 @@ button {
 #transaction_withdraw form .data .link_block {
   top: 200px; }
   #transaction_withdraw form .data .link_block.top {
-    top: 120px; }
+    position: relative;
+    top: 0;
+    margin-top: 16px; }
+    #transaction_withdraw form .data .link_block.top #withdraw_confirm_success,
+    #transaction_withdraw form .data .link_block.top #withdraw_confirm_back {
+      width: 96px;
+      height: 36px; }
 
 #transaction_history {
   margin-bottom: 24px; }
