@@ -436,6 +436,10 @@ function init () {
             } else if(data[i].status === 3){
               newClass = 'expired'
             }
+
+            if(data[i].status !== 0){
+              obj.find('.transaction_data').addClass('disnone')
+            }
             obj.find('.transaction_row_status').addClass(newClass)
             obj.find('.transaction_row_description_address').html(data[i].wallet)
           } else {
@@ -444,6 +448,11 @@ function init () {
             obj.find('.transaction_row_description_address.from').html(data[i].from)
             obj.find('.transaction_row_description_address.to').html(data[i].to)
             obj.find('.transaction_row_number').html(data[i].type).addClass(data[i].type)
+
+            if(data[i].type === 'exchange'){
+              obj.find('.transaction_row_description').html('Sent ' + data[i].amount + ' ' + data[i].currency)
+            }
+
             newClass = 'pending'
             if(data[i].status === 1){
               newClass = 'confirmed'

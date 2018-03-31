@@ -1,4 +1,4 @@
-var apiUrl = 'http://testapi.elementh.io/'
+var apiUrl = 'https://api.elementh.io/'
 
 var isCrowdAddressesLoaded = null
 if (typeof Web3 !== 'undefined') {
