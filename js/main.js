@@ -489,6 +489,9 @@ function init () {
       $('#withdraw_confirm_amount').html($('#withdraw_send_amount').val() + ' EEE')
       transaction_withdraw_send.addClass('disnone')
       transaction_withdraw_confirm.removeClass('disnone')
+      if(user.googlePassed){
+        $('#ga2fa_div').removeClass('disnone')
+      }
       $('#transaction_withdraw_confirm_title').addClass('active')
     })
 
@@ -525,7 +528,8 @@ function init () {
       transaction_withdraw_confirm.find(':input[type="submit"]').prop('disabled', true)
       createWithdraw({
         address: $('#withdraw_send_address').val(),
-        amount: $('#withdraw_send_amount').val()
+        amount: $('#withdraw_send_amount').val(),
+        ga: $('#ga2fa_input').val()
       }, function (err, data) {
         transaction_withdraw_confirm.find(':input[type="submit"]').prop('disabled', false)
         if (err) {

@@ -189,6 +189,19 @@ function getICOStat (callback) {
 
 
 function makeApiRequest (url, method, data, callback) {
+
+  console.dir(data)
+    if (data) {
+    if(typeof data === 'string'){
+      data+= '&_token=' + getCookie('X-CSRF-TOKEN')
+    }else{
+        data._token = getCookie('X-CSRF-TOKEN')
+      }
+    } else {
+      data = {}
+      data._token = getCookie('X-CSRF-TOKEN')
+    }
+  console.dir(data)
   var request = $.ajax({
     url: apiUrl + url,
     method: method,
