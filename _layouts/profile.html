@@ -27,17 +27,18 @@ layout: default
     </div>
     <div id="profile_tabs" class="">
         <ul class="tabs">
-            <li id="tabs_list_profile" class="active" data-i18n="PROFILE">PROFILE</li>
-            <li id="tabs_list_contribute" data-i18n="ICO">ICO</li>
+            <li id="tabs_list_contribute" class="active" data-i18n="ICO">ICO</li>
             <li id="tabs_list_bounty" data-i18n="bounty">BOUNTY</li>
             <li id="tabs_list_airdrop" data-i18n="airdrop">AIRDROP</li>
             <li id="tabs_list_referral" data-i18n="referral">REFERRAL</li>
+            <li id="tabs_list_profile" data-i18n="PROFILE">PROFILE</li>
         </ul>
         {% include tabs_container_profile.html %}
         {% include tabs_container_contribute.html %}
         {% include tabs_container_bounty.html %}
         {% include tabs_container_airdrop.html %}
         {% include tabs_container_referral.html %}
+        {% include tabs_container_profile.html %}
         {% include social_link.html %}
     </div>
     <div id="emailVerified" class="modal disnone">

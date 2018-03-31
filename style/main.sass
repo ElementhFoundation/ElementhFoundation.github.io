@@ -665,6 +665,14 @@ ul.list
             border-bottom: 2px solid $color_black
             &:hover
                 border-bottom-color: $color_active
+    &.blue
+        .primary_link
+            border-color: $color_active
+            background-color: $color_active
+            color: $color_white
+            &:active
+                background-color: #0081cb
+                border-color: #0081cb
 .primary_btn
     @extend .pointer
     display: block
@@ -1452,11 +1460,10 @@ button
             margin: 0
             &.active
                 width: calc(20% - 2px)
-                height: 55px
+                height: 54px
                 color: $color-black
                 line-height: 54px
                 border: 1px solid $color-black
-                border-bottom: none
                 background-color: $color-white
                 &:hover
                     background-color: $color-white

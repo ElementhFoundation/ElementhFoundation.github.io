@@ -739,6 +739,13 @@ ul.list {
     border-bottom: 2px solid #212121; }
     .link_block.black .secondary_link:hover {
       border-bottom-color: #00b0ff; }
+  .link_block.blue .primary_link {
+    border-color: #00b0ff;
+    background-color: #00b0ff;
+    color: #fff; }
+    .link_block.blue .primary_link:active {
+      background-color: #0081cb;
+      border-color: #0081cb; }
 
 .primary_btn {
   display: block;
@@ -1563,11 +1570,10 @@ button {
       margin: 0; }
       .tabs li.active {
         width: calc(20% - 2px);
-        height: 55px;
+        height: 54px;
         color: #212121;
         line-height: 54px;
         border: 1px solid #212121;
-        border-bottom: none;
         background-color: #fff; }
         .tabs li.active:hover {
           background-color: #fff; }

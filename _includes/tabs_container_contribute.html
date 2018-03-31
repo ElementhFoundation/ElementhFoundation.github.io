@@ -1,4 +1,4 @@
-<div id="tabs_container_contribute" class="tabs_container">
+<div id="tabs_container_contribute" class="tabs_container disblock">
     <p class="title" data-i18n="ICO">ICO</p>
     {% include transaction.html %}
     <div id="kyc" class="disnone"></div>
@@ -18,7 +18,7 @@
         <button class="primary_btn" type="submit" form="kyc_form" data-i18n="START KYC">START KYC</button>
         <button id="ignore_kyc_btn" class="primary_btn" style="background-color: #757575" type="button" form="kyc_form" data-i18n="IGNORE_KYC">Don't want to process KYC</button>
         <div id="ignore_kyc_div" class="disnone">
-            <p class="description red">If you don't want to pass KYC, you can invest directly, but you should agree with this disclaimer.
+            <p class="description red" data-i18n="disclaimer_kyc">If you don't want to pass KYC, you can invest directly, but you should agree with this disclaimer.
             In case of a demand by a regulatory authority or bank, we can find ourselves in a situation when we should refund all investments made without KYC. So if you didn't pass KYC, probably, you will get a refund and your tokens will be burned, or you shall pass KYC later if you want to avoid such situation.
             </p>
             <div class="link_block black">
