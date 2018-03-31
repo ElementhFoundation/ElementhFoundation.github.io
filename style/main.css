@@ -1080,6 +1080,23 @@ button {
       .data .data_user .data_btn:hover {
         text-decoration: underline; }
 
+#twofa_qrcode .data {
+  border: none; }
+  #twofa_qrcode .data .data_user {
+    height: 100%; }
+    #twofa_qrcode .data .data_user form {
+      position: relative; }
+      #twofa_qrcode .data .data_user form .link_block {
+        position: absolute;
+        overflow: initial;
+        top: 0;
+        right: 0; }
+        #twofa_qrcode .data .data_user form .link_block button {
+          width: 80px;
+          height: 40px;
+          font-family: "Roboto Mono", monospace;
+          font-size: 14px; }
+
 #transaction_balance .data {
   height: 96px;
   overflow: initial;
@@ -1348,13 +1365,22 @@ button {
     height: 100%;
     padding: 16px 16px 8px; }
 
-.qrcode_transaction .qrcode_transaction_container {
+.qrcode_transaction .qrcode_transaction_container,
+.qrcode_transaction .qrcode_twofa_container,
+.qrcode_twofa .qrcode_transaction_container,
+.qrcode_twofa .qrcode_twofa_container {
   width: 220px;
   height: 220px;
   margin: 0 auto; }
-  .qrcode_transaction .qrcode_transaction_container svg {
+  .qrcode_transaction .qrcode_transaction_container svg,
+  .qrcode_transaction .qrcode_twofa_container svg,
+  .qrcode_twofa .qrcode_transaction_container svg,
+  .qrcode_twofa .qrcode_twofa_container svg {
     width: 220px;
     height: 220px; }
+.qrcode_transaction .qrcode_twofa_container,
+.qrcode_twofa .qrcode_twofa_container {
+  margin: 0; }
 
 #intro,
 #contacts {

@@ -985,6 +985,24 @@ button
             margin-left: 16px
             &:hover
                 text-decoration: underline
+#twofa_qrcode
+    .data
+        border: none
+        .data_user
+            height: 100%
+            form
+                position: relative
+                .link_block
+                    position: absolute
+                    overflow: initial
+                    top: 0
+                    right: 0
+                    button
+                        width: 80px
+                        height: 40px
+                        font-family: "Roboto Mono", monospace
+                        font-size: 14px
+
 #transaction_balance
     .data
         height: 96px
@@ -1254,14 +1272,18 @@ button
     &.active
         height: 100%
         padding: 16px 16px 8px
-.qrcode_transaction
-    .qrcode_transaction_container
+.qrcode_transaction,
+.qrcode_twofa
+    .qrcode_transaction_container,
+    .qrcode_twofa_container
         width: 220px
         height: 220px
         margin: 0 auto
         svg
             width: 220px
             height: 220px
+    .qrcode_twofa_container
+        margin: 0
 #intro,
 #contacts
     color: $color_black
