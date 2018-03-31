@@ -573,7 +573,7 @@ nav {
       nav ul li.subhead, nav ul li.devider {
         cursor: auto; }
         nav ul li.subhead:hover, nav ul li.devider:hover {
-          background-color: transparent; }
+          background-color: rgba(0, 0, 0, 0); }
       nav ul li.active {
         color: #00b0ff; }
       nav ul li .lngSelect {
@@ -712,7 +712,7 @@ ul.list {
       .link_block .primary_link.disabled:hover, .link_block .primary_link.disabled:active {
         color: #fff;
         border-color: #fff;
-        background-color: transparent; }
+        background-color: rgba(0, 0, 0, 0); }
   .link_block .secondary_link {
     border-bottom: 2px solid #fff; }
     .link_block .secondary_link:hover {
@@ -733,7 +733,7 @@ ul.list {
       .link_block.black .primary_link.disabled:hover, .link_block.black .primary_link.disabled:active {
         color: #212121;
         border-color: #212121;
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0);
         box-shadow: none; }
   .link_block.black .secondary_link {
     border-bottom: 2px solid #212121; }
@@ -1230,8 +1230,8 @@ button {
   position: relative;
   height: 100%;
   overflow: hidden;
-  width: 100%;
-  padding: 16px;
+  width: calc(100% - 16px);
+  padding: 16px 16px 16px 32px;
   border-bottom: 1px solid #f0f0f0;
   margin: 0 -16px; }
   .transaction_row:hover {
@@ -1242,7 +1242,7 @@ button {
     background-color: rgba(0, 0, 0, 0.025); }
   .transaction_row.devider {
     height: 0;
-    padding: 0 16px; }
+    padding: 0 16px 0 32px; }
     .transaction_row.devider:hover {
       box-shadow: none;
       border-bottom: 1px solid #f0f0f0; }
@@ -1255,9 +1255,20 @@ button {
     font-size: 12px;
     line-height: 16px;
     float: left; }
-  .transaction_row_number::before {
-    content: "#";
-    margin-right: 4px; }
+  .transaction_row_number {
+    position: absolute;
+    width: 80px;
+    height: 16px;
+    top: 32px;
+    left: -32px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff; }
+    .transaction_row_number.invoice {
+      background-color: #00b0ff; }
+    .transaction_row_number.in, .transaction_row_number.out, .transaction_row_number.exchange {
+      background-color: #00c853; }
   .transaction_row_date {
     color: #757575; }
   .transaction_row_description {
@@ -1576,9 +1587,19 @@ button {
     float: none;
     margin-left: 8px; }
 
-  .transaction_row_number, .transaction_row_date, .transaction_row_description, .transaction_row_amount {
-    font-size: 14px;
-    line-height: 24px; } }
+  .transaction_row {
+    width: calc(100% - 24px);
+    padding-left: 40px; }
+    .transaction_row.devider {
+      padding-left: 40px; }
+    .transaction_row_number, .transaction_row_date, .transaction_row_description, .transaction_row_amount {
+      font-size: 14px;
+      line-height: 24px; }
+    .transaction_row_number {
+      width: 104px;
+      height: 24px;
+      top: 40px;
+      left: -40px; } }
 @media screen and (min-width: 1024px) {
   .bnr_top .bnr_container .bnr_slide.address {
     margin-left: 400px; }
