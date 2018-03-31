@@ -279,7 +279,6 @@ function init () {
             user_email_edit_form.find(':input[type="submit"]').prop('disabled', true)
             e.preventDefault();
             user_email_edit_form.find('.error').addClass('disnone')
-            console.log(user_email_edit_form.serialize())
             setEmail(user_email_edit_form.serialize(), function (err, data) {
               if (err) {
                 user_email_edit_form.find('.error').html(err).removeClass('disnone')
@@ -411,6 +410,12 @@ function init () {
     $('#transaction_invoice_confirm_title').removeClass('active')
   })
 
+  if(user && user.tfa){
+    $('#ga2fa_div').removeClass('disnone')
+  }else{
+    $('#twofa_enable_form').removeClass('disnone')
+  }
+
   if (transaction_invoice_send.length) {
     getEventsList(function (err, data) {
       if (Array.isArray(data)) {
@@ -489,9 +494,7 @@ function init () {
       $('#withdraw_confirm_amount').html($('#withdraw_send_amount').val() + ' EEE')
       transaction_withdraw_send.addClass('disnone')
       transaction_withdraw_confirm.removeClass('disnone')
-      if(user.googlePassed){
-        $('#ga2fa_div').removeClass('disnone')
-      }
+
       $('#transaction_withdraw_confirm_title').addClass('active')
     })
 
@@ -642,6 +645,27 @@ function init () {
     parent.parent().find('.verify').addClass('disnone')
   })
 
+  $('#twofa_enable_button').on('click', function () {
+    initTFA(function (err, data) {
+      $('#twofa_enable_button').parent().addClass('disnone')
+      $('#twofa_qrcode').removeClass('disnone')
+      $('#secret_2fa').html(data.secret)
+      $('#qrcode_twofa_container').append("<img src='"+ data.url +"'/>")
+    })
+  })
+  $('#user_twofa_form').submit(function (e) {
+    e.preventDefault()
+    enableTFA({
+      code: $('#user_twofa_input').val()
+    }, function (err, data) {
+      if(err) {
+        $('#user_twofa_form').find('.error').html(err).removeClass('disnone')
+      }else{
+        window.location.href = '/profile'
+        location.reload()
+      }
+    })
+  })
   $('.ajaxForm').submit(function (e) {
     e.preventDefault()
     var action = $(this).attr('action')
