@@ -1,16 +1,20 @@
-<div class="progressbar">
+<div id="progressbar_div" class="progressbar disnone">
     <div class="progress_line">
-        <div class="progress_line_softcap" data-i18n="Softcap">SoftCap</div>
+        <div id="progress_line_softcap" class="progress_line_softcap" data-i18n="Softcap">SoftCap</div>
         <div class="progress_line_hardcap" data-i18n="Hardcap">HardCap</div>
-        <div class="progress_line_current" style="width: 3%"></div>
+        <div id="progress_line_current" class="progress_line_current" style="width: 0%"></div>
     </div>
     <div class="progress_row">
         <p class="progress_row_name" data-i18n="Current">Current</p>
-        <p class="progress_row_info">900 ETH</p>
+        <p id="nowETH" class="progress_row_info"></p>
         <p class="progress_row_plus">+</p>
     </div>
     <div class="progress_row">
-        <p class="progress_row_info">13 BTC</p>
+        <p id="nowBTC" class="progress_row_info"></p>
+    </div>
+    <div class="progress_row">
+        <p class="progress_row_name" data-i18n="Total">Total</p>
+        <p id="total" class="progress_row_info"></p>
     </div>
     <div class="progress_row">
         <p class="progress_row_name" data-i18n="softcap">SoftCap</p>

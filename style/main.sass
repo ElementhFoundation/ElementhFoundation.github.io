@@ -398,6 +398,20 @@ h1
     font-family: 'Montserrat', sans-serif
     font-weight: 700
     color: $color_active
+.title.chevron
+    height: 32px
+    font-size: 18px
+    margin-bottom: 16px !important
+    span,
+    i
+        height: 32px
+        line-height: 32px
+        color: $color_gray
+    span
+        position: relative
+        top: -6px
+        &.active
+            color: $color_black
 /* LAYOUT
 .disnone
     display: none !important
@@ -635,6 +649,7 @@ ul.list
     &.black
         .primary_link
             border-color: $color_black
+            background-color: $color_white
             &:hover
                 color: $color_black
                 box-shadow: 0 5px 8px rgba(0,0,0,.25)
@@ -653,6 +668,14 @@ ul.list
             border-bottom: 2px solid $color_black
             &:hover
                 border-bottom-color: $color_active
+    &.blue
+        .primary_link
+            border-color: $color_active
+            background-color: $color_active
+            color: $color_white
+            &:active
+                background-color: #0081cb
+                border-color: #0081cb
 .primary_btn
     @extend .pointer
     display: block
@@ -688,6 +711,7 @@ ul.list
             text-align: right
             padding-right: 4px
             border-right: 1px solid $color_gray
+            z-index: 5
             &.check
                 color: $color_active
                 border-right-color: $color_active
@@ -717,7 +741,6 @@ ul.list
         &_plus
             position: relative
             top: 12px
-
 .timer
     max-width: 480px
     margin: 8px 0
@@ -856,11 +879,14 @@ select
     &:hover,
     &:focus
         box-shadow: 0 5px 10px rgba(0,0,0,.2)
+input.amount_shot
+    width: 98px
 input.amount
-    width: 84px
-input.amount50
-    width: 144px
-input.margin_bottom
+    width: calc(100% - 84px)
+input.withselect
+    width: calc(100% - 97px)
+    max-width: 392px
+.margin_bottom
     margin-bottom: 16px
 textarea
     height: 92px
@@ -970,39 +996,311 @@ button
             margin-left: 16px
             &:hover
                 text-decoration: underline
-    .transaction_date,
-    .transaction_description,
-    .transaction_status,
-    .transaction_amount
+#twofa_qrcode
+    .data
+        border: none
+        .data_user
+            height: 100%
+            form
+                position: relative
+                .link_block
+                    position: absolute
+                    overflow: initial
+                    top: 0
+                    right: 0
+                    button
+                        width: 80px
+                        height: 40px
+                        font-family: "Roboto Mono", monospace
+                        font-size: 14px
+
+#transaction_balance
+    .data
+        height: 96px
+        overflow: initial
+        padding: 0
+        border: none
+        .data_name
+            height: 32px
+            font-size: 12px
+            line-height: 16px
+        .data_user
+            display: flex
+            width: calc(100% - 96px)
+            height: 36px
+            margin: 0
+            font-size: 20px
+            line-height: 36px
+            span
+                display: inline-block
+                word-wrap: break-word
+                white-space: nowrap
+                text-overflow: ellipsis
+                overflow: hidden
+                &::after
+                    content: " EEE"
+        .link_block
+            overflow: initial
+            .primary_link
+                margin: 0 0 0 8px
+                float: right
+#transaction_invoice,
+#transaction_withdraw
+    form
+        max-width: 488px
+        min-height: 276px
+        margin: 0 auto
+        .data
+            border: none
+        .primary_btn
+            margin-top: 16px
+#transaction_invoice_confirm,
+#transaction_withdraw_confirm
+    .data
+        overflow: initial
+        padding: 0
+        .data_name
+            height: 24px
+            font-size: 12px
+            line-height: 24px
+        .data_user
+            display: flex
+            width: calc(100% - 168px)
+            height: 36px
+            margin: 0
+            font-size: 20px
+            line-height: 36px
+            span
+                display: inline-block
+                word-wrap: break-word
+                white-space: nowrap
+                text-overflow: ellipsis
+                overflow: hidden
+        .link_block
+            position: absolute
+            top: 24px
+            right: 0
+            #invoice_confirm_back,
+            #invoice_confirm_success,
+            #withdraw_confirm_back,
+            #withdraw_confirm_success
+                width: 80px
+                height: 36px
+                font-family: 'Roboto Mono', monospace
+                font-size: 14px
+            button#withdraw_confirm_success
+                width: 94px
+            .primary_link
+                float: right
+                margin: 0 0 0 8px
+#transaction_invoice_invoice
+    .data
+        overflow: initial
+        padding: 0
+        border: none
+        .data_name
+            height: 24px
+            font-size: 12px
+            line-height: 24px
+        .data_user
+            display: flex
+            width: calc(100% - 168px)
+            height: 36px
+            margin: 0
+            font-size: 20px
+            line-height: 36px
+            span
+                display: inline-block
+                word-wrap: break-word
+                white-space: nowrap
+                text-overflow: ellipsis
+                overflow: hidden
+        input
+            width: calc(100% - 84px)
+            max-width: 472px
+            margin-top: 8px
+        .qrcode_transaction
+            margin-top: 16px
+        button
+            margin-bottom: 0
+    .data_btn
+        float: right
+        color: $color-active
+        margin: 16px 0 8px 16px
+        &.copy
+            @extend .pointer
+            &:hover
+                text-decoration: underline
+#transaction_withdraw
+    form
+        span.amount
+            margin: 8px 16px
+            font-size: 16px
+            float: right
+        .data
+            .data_user
+                width: 100%
+                font-size: 20px
+                &.address
+                    font-size: 16px
+            .link_block
+                top: 200px
+                &.top
+                    position: relative
+                    top: 0
+                    margin-top: 16px
+                    #withdraw_confirm_success,
+                    #withdraw_confirm_back
+                        width: 96px
+                        height: 36px
+#transaction_history
+    margin-bottom: 24px
+.transaction_block
+    padding: 0 16px
+    margin: 0 -16px
+.transaction_row
+    @extend .pointer
+    position: relative
+    height: 100%
+    overflow: hidden
+    width: calc(100% - 16px)
+    padding: 16px 16px 16px 32px
+    border-bottom: 1px solid #f0f0f0
+    margin: 0 -16px
+    &:hover
+        box-shadow: 0 2px 8px rgba(0,0,0,.2)
+        border-bottom: 1px solid $color_white
+    &:active
+        border-bottom: 1px solid rgba(0,0,0,.025)
+        background-color: rgba(0,0,0,.025)
+    &.devider
+        height: 0
+        padding: 0 16px 0 32px
+        &:hover
+            box-shadow: none
+            border-bottom: 1px solid #f0f0f0
+    &_description,
+    &_status,
+    &_amount
+        width: calc(100% - 72px)
         font-size: 12px
         line-height: 16px
-    .transaction_date
+    &_number,
+    &_date
+        margin-right: 8px
+        font-size: 12px
+        line-height: 16px
+        float: left
+    &_number
+        position: absolute
+        width: 80px
+        height: 16px
+        top: 32px
+        left: -32px
+        transform: rotate(-90deg)
+        text-transform: uppercase
+        text-align: center
+        color: $color_white
+        &.invoice
+            background-color: $color_active
+        &.in,
+        &.out,
+        &.exchange
+            background-color: $color_green
+    &_date
         color: $color_gray
-    .transaction_description
+    &_description
         display: flex
-        width: calc(100% - 76px)
         span
             display: inline-block
             word-wrap: break-word
             white-space: nowrap
             margin-right: 8px
-            &.transaction_description_address
+            &.transaction_row_description_address
                 text-overflow: ellipsis
                 overflow: hidden
                 margin-right: 0
-    .transaction_status
+    &_status
         position: absolute
         width: 72px
-        top: 12px
-        right: 0
-        border-radius: 2px
+        top: 50%
+        right: 16px
         text-align: center
-        line-height: 24px
-        color: $color_white
-        background-color: $color_active
-#history
-    .data
-
+        line-height: 16px
+        text-transform: uppercase
+        -webkit-transform: translateY(-50%)
+        -moz-transform: translateY(-50%)
+        -o-transform: translateY(-50%)
+        transform: translateY(-50%)
+        &.pending,
+        &.new
+            color: $color_gray
+        &.confirmed,
+        &.payed,
+        &.partially_payed
+            color: $color_green
+        &.cancelled,
+        &.declined,
+        &.expired
+            color: $color_red
+        &.pending::before
+            content: "pending"
+        &.confirmed::before
+            content: "confirmed"
+        &.cancelled::before
+            content: "cancelled"
+        &.declined::before
+            content: "declined"
+        &.new::before
+            content: "new"
+        &.payed::before
+            content: "payed"
+        &.partially_payed::before
+            content: "partially payed"
+        &.expired::before
+            content: "expired"
+.transaction_data
+    height: 0
+    overflow: hidden
+    margin: 0 -16px
+    background-color: #f0f0f0
+    .transaction_info
+        position: relative
+        margin-bottom: 8px
+        .transaction_info_name
+            font-size: 12px
+            color: $color_gray
+        .transaction_info_body
+            word-wrap: break-word
+        input
+            width: calc(100% - 84px)
+            margin: 8px 0
+        .data_btn
+            position: absolute
+            top: 40px
+            right: 0
+            color: $color-active
+            &.copy
+                @extend .pointer
+                &:hover
+                    text-decoration: underline
+    .qrcode_transaction
+        margin: 0 0 8px 0
+    &.active
+        height: 100%
+        padding: 16px 16px 8px
+.qrcode_transaction,
+.qrcode_twofa
+    .qrcode_transaction_container,
+    .qrcode_twofa_container
+        width: 220px
+        height: 220px
+        margin: 0 auto
+        svg
+            width: 220px
+            height: 220px
+    .qrcode_twofa_container
+        margin: 0
 #intro,
 #contacts
     color: $color_black
@@ -1165,11 +1463,10 @@ button
             margin: 0
             &.active
                 width: calc(20% - 2px)
-                height: 55px
+                height: 54px
                 color: $color-black
                 line-height: 54px
                 border: 1px solid $color-black
-                border-bottom: none
                 background-color: $color-white
                 &:hover
                     background-color: $color-white
@@ -1178,6 +1475,68 @@ button
             &::before
                 content: ""
                 margin: 0
+    #transaction_balance
+        .data
+            height: 100%
+            .data_name
+                height: 36px
+                line-height: 36px
+            .data_user
+                position: absolute
+                top: 0
+                width: calc(100% - 416px)
+                margin-left: 304px
+            .link_block
+                position: absolute
+                top: 0
+                right: 0
+                margin: 0
+    #transaction_invoice_confirm
+        .data
+            .data_name
+                height: 36px
+                line-height: 36px
+            .data_user
+                position: absolute
+                top: 0
+                width: calc(100% - 280px)
+                margin-left: 112px
+            .link_block
+                position: absolute
+                top: 0
+                right: 0
+                margin-top: 0
+                .primary_link
+                    margin: 0 0 0 8px
+    #transaction_invoice_invoice
+        .data
+            .data_name
+                height: 36px
+                line-height: 36px
+            .data_user
+                position: absolute
+                top: 0
+                width: calc(100% - 280px)
+                margin-left: 112px
+            .data_btn
+                float: none
+                margin-left: 8px
+    .transaction_row
+        width: calc(100% - 24px)
+        padding-left: 40px
+        &.devider
+            padding-left: 40px
+        &_number,
+        &_date,
+        &_description,
+        &_amount
+            font-size: 14px
+            line-height: 24px
+        &_number
+            width: 104px
+            height: 24px
+            top: 40px
+            left: -40px
 @media screen and (min-width: 1024px)
     .bnr_top
         .bnr_container

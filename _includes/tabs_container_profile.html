@@ -1,4 +1,30 @@
-<div id="tabs_container_profile" class="tabs_container disblock">
+<div id="tabs_container_profile" class="tabs_container">
+    <form id="twofa_enable_form" class="disnone">
+        <button id="twofa_enable_button" class="primary_btn" type="button" form="twofa_enable_form" data-i18n="enable">
+            Enable 2FA
+        </button>
+    </form>
+    <div id="twofa_enabled" class="green disnone">
+        2FA Enabled
+    </div>
+    <div id="twofa_qrcode" class="disnone data_block">
+        <div class="data">
+            <div class="qrcode_twofa margin_bottom">
+                <div id="qrcode_twofa_container" class="qrcode_twofa_container"></div>
+            </div>
+            <p id="secret_2fa" class="description"></p>
+            <div class="data_name">Input your authentication code:</div>
+            <div class="data_user">
+                <form id="user_twofa_form" class="">
+                    <div class="error disnone"></div>
+                    <input id="user_twofa_input" name="username" type="text" value="" placeholder="Authentication code">
+                    <div class="link_block black">
+                        <input id="user_twofa_ok" class="primary_link" type="submit" value="OK">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <p class="title" data-i18n="profile">Profile</p>
     <div id="profile">
     <div class="data_block">
@@ -63,7 +89,7 @@
         <form id="questionnaire_form">
             <div class="inline_form">
                 <span>I would like to purchase tokens equal to</span>
-                <span><input class="amount" form="questionnaire_form" name="info8" maxlength="1000" placeholder="amount" required></span>
+                <span><input class="amount_shot" form="questionnaire_form" name="info8" maxlength="1000" placeholder="amount" required></span>
                 <span>
                     <select form="questionnaire_form" name="info9" required>
                         <option value="ETH">ETH</option>

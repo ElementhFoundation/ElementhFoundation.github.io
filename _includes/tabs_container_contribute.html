@@ -1,5 +1,6 @@
-<div id="tabs_container_contribute" class="tabs_container">
+<div id="tabs_container_contribute" class="tabs_container disblock">
     <p class="title" data-i18n="ICO">ICO</p>
+    {% include transaction.html %}
     <div id="kyc" class="disnone"></div>
     <form id="kyc_form" class="disnone">
         <p class="description" data-i18n="contribute1T">Verify your identity to participate in the Elementh token sale. Please, prepare the following documents for KYC, you have only 30 mins to end your KYC after you click the button:</p>
@@ -17,7 +18,7 @@
         <button class="primary_btn" type="submit" form="kyc_form" data-i18n="START KYC">START KYC</button>
         <button id="ignore_kyc_btn" class="primary_btn" style="background-color: #757575" type="button" form="kyc_form" data-i18n="IGNORE_KYC">Don't want to process KYC</button>
         <div id="ignore_kyc_div" class="disnone">
-            <p class="description red">If you don't want to pass KYC, you can invest directly, but you should agree with this disclaimer.
+            <p class="description red" data-i18n="disclaimer_kyc">If you don't want to pass KYC, you can invest directly, but you should agree with this disclaimer.
             In case of a demand by a regulatory authority or bank, we can find ourselves in a situation when we should refund all investments made without KYC. So if you didn't pass KYC, probably, you will get a refund and your tokens will be burned, or you shall pass KYC later if you want to avoid such situation.
             </p>
             <div class="link_block black">
@@ -26,12 +27,6 @@
         </div>
     </form>
     <div id="forAdopters" class="data_block disnone">
-        <div class="data">
-            <div class="data_name" data-i18n="contribute11T">Token balance:</div>
-            <div class="data_user">
-                <span id="user_token" data-i18n="loading">loading...</span>
-            </div>
-        </div>
         <div class="data">
             <div class="data_name" data-i18n="contribute12T">At ICO stage you will receive:</div>
             <div class="data_user">
@@ -43,40 +38,8 @@
             <div class="data_user">
                 <span class="link_block">
                     <a id="howToWatchEEE" class="link disnone" target="_blank" href="https://drive.google.com/file/d/1bBSg8Id0cQesx1LuaAKiq7Usnzh4KQK7/view" data-i18n="howToWatchEEE">How to watch EEE in your wallet</a>
-                    <a id="investors_chat" class="link disnone" target="_blank" href="https://t.me/joinchat/Ct0cV1DIq-cCBwsspTIyPQ" data-i18n="investors_chat">Join Elementh Early Adopters Secret Chat</a>
                 </span>
             </div>
         </div>
-        <div id="contribute_prefund" class="primary_btn" data-i18n="JoinWhalesPool">Join whales pool!</div>
-        <div id="prefund_block" class="block disnone">
-            <p class="description" data-i18n="contribute13T">Elementh ICO starts at April 01, however you can already join the pool. All amount collected in the pool will be transferred to Elementh ICO as soon as it starts.</p>
-            <p class="title" data-i18n="contribute14T">There are 3 reasons to join the pool:</p>
-            <ul>
-                <li data-i18n="contribute15T">You will not be late for Elementh ICO because all funds from the pool will be automatically transferred at 00:00 UTC as soon as ICO has been started;</li>
-                <li data-i18n="contribute16T">You will not miss getting 30% early bird bonus, because the pool is suppose to be the first participant in Elementh ICO;</li>
-                <li data-i18n="contribute17T">Pool's smart contract is 100% refundable, thus you do not risk at all. You can send your ETH to the pool's smart contract and get them refunded upon request at any time before Elementh ICO start on April 1st 00:00 UTC.</li>
-            </ul>
-            <p class="title blue" data-i18n="contribute18T">So be sure you are not going to be late to Elementh ICO and do not hesitate to join the pool!</p>
-            <p class="description">GAS LIMIT: 50000</p>
-            <div class="data">
-                <div class="data_name" data-i18n="smartContractAddress">Smart contract address:</div>
-                <div class="data_user">
-                    <form id="prefund_link_copy_form">
-                        <input id="prefund_link_input" name="prefund_link" type="text" value="" readonly>
-                        <span id="prefund_link_copy" class="copy data_btn" data-clipboard-target="#prefund_link_input">Copy</span>
-                        <span id="prefund_link_copied" class="copied green data_btn disnone">Copied</span>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <p class="title" data-i18n="infoAboutICO">Information about Elementh ICO</p>
-        <p class="body" data-i18n="ICODate">Dates: 01.04-30.04</p>
-        <p class="body" data-i18n="ICOSupply">ICO Supply: 195M EEE</p>
-        <p class="body" data-i18n="SoftCap">SoftCap: 10,000 ETH</p>
-        <p class="body" data-i18n="HardCap">HardCap: 30,000 ETH</p>
-    </div>
-    <div class="link_block black">
-        <div id="contribute_get_eth" class="primary_link disabled" data-i18n="SendETH">Send ETH</div>
-        <div id="contribute_get_btc" class="primary_link disabled" data-i18n="SendBTC">Send BTC</div>
     </div>
 </div>

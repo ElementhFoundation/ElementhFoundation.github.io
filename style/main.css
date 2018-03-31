@@ -38,7 +38,7 @@ a:visited {
 .wechat, header ul li i,
 header ul li a,
 header ul li span, nav ul li, .link_block .primary_link,
-.link_block .secondary_link, .primary_btn, .tabs li, .data .data_user .data_btn {
+.link_block .secondary_link, .primary_btn, .tabs li, .data .data_user .data_btn, #transaction_invoice_invoice .data_btn.copy, .transaction_row, .transaction_data .transaction_info .data_btn.copy {
   cursor: pointer; }
 
 /* COLOR */
@@ -461,6 +461,22 @@ h1 {
   font-weight: 700;
   color: #00b0ff; }
 
+.title.chevron, .person_block .chevron.name {
+  height: 32px;
+  font-size: 18px;
+  margin-bottom: 16px !important; }
+  .title.chevron span, .person_block .chevron.name span,
+  .title.chevron i,
+  .person_block .chevron.name i {
+    height: 32px;
+    line-height: 32px;
+    color: #757575; }
+  .title.chevron span, .person_block .chevron.name span {
+    position: relative;
+    top: -6px; }
+    .title.chevron span.active, .person_block .chevron.name span.active {
+      color: #212121; }
+
 /* LAYOUT */
 .disnone {
   display: none !important; }
@@ -707,7 +723,8 @@ ul.list {
       margin-bottom: 8px;
       border-bottom-color: #00b0ff; }
   .link_block.black .primary_link {
-    border-color: #212121; }
+    border-color: #212121;
+    background-color: #fff; }
     .link_block.black .primary_link:hover {
       color: #212121;
       box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25); }
@@ -725,6 +742,13 @@ ul.list {
     border-bottom: 2px solid #212121; }
     .link_block.black .secondary_link:hover {
       border-bottom-color: #00b0ff; }
+  .link_block.blue .primary_link {
+    border-color: #00b0ff;
+    background-color: #00b0ff;
+    color: #fff; }
+    .link_block.blue .primary_link:active {
+      background-color: #0081cb;
+      border-color: #0081cb; }
 
 .primary_btn {
   display: block;
@@ -759,7 +783,8 @@ ul.list {
       color: #757575;
       text-align: right;
       padding-right: 4px;
-      border-right: 1px solid #757575; }
+      border-right: 1px solid #757575;
+      z-index: 5; }
       .progressbar .progress_line_softcap.check, .progressbar .progress_line_hardcap.check {
         color: #00b0ff;
         border-right-color: #00b0ff; }
@@ -940,13 +965,17 @@ select {
   select:focus {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
 
+input.amount_shot {
+  width: 98px; }
+
 input.amount {
-  width: 84px; }
+  width: calc(100% - 84px); }
 
-input.amount50 {
-  width: 144px; }
+input.withselect {
+  width: calc(100% - 97px);
+  max-width: 392px; }
 
-input.margin_bottom {
+.margin_bottom {
   margin-bottom: 16px; }
 
 textarea {
@@ -1060,36 +1089,314 @@ button {
       margin-left: 16px; }
       .data .data_user .data_btn:hover {
         text-decoration: underline; }
-  .data .transaction_date,
-  .data .transaction_description,
-  .data .transaction_status,
-  .data .transaction_amount {
+
+#twofa_qrcode .data {
+  border: none; }
+  #twofa_qrcode .data .data_user {
+    height: 100%; }
+    #twofa_qrcode .data .data_user form {
+      position: relative; }
+      #twofa_qrcode .data .data_user form .link_block {
+        position: absolute;
+        overflow: initial;
+        top: 0;
+        right: 0; }
+        #twofa_qrcode .data .data_user form .link_block button {
+          width: 80px;
+          height: 40px;
+          font-family: "Roboto Mono", monospace;
+          font-size: 14px; }
+
+#transaction_balance .data {
+  height: 96px;
+  overflow: initial;
+  padding: 0;
+  border: none; }
+  #transaction_balance .data .data_name {
+    height: 32px;
     font-size: 12px;
     line-height: 16px; }
-  .data .transaction_date {
-    color: #757575; }
-  .data .transaction_description {
+  #transaction_balance .data .data_user {
     display: flex;
-    width: calc(100% - 76px); }
-    .data .transaction_description span {
+    width: calc(100% - 96px);
+    height: 36px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 36px; }
+    #transaction_balance .data .data_user span {
+      display: inline-block;
+      word-wrap: break-word;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+      #transaction_balance .data .data_user span::after {
+        content: " EEE"; }
+  #transaction_balance .data .link_block {
+    overflow: initial; }
+    #transaction_balance .data .link_block .primary_link {
+      margin: 0 0 0 8px;
+      float: right; }
+
+#transaction_invoice form,
+#transaction_withdraw form {
+  max-width: 488px;
+  min-height: 276px;
+  margin: 0 auto; }
+  #transaction_invoice form .data,
+  #transaction_withdraw form .data {
+    border: none; }
+  #transaction_invoice form .primary_btn,
+  #transaction_withdraw form .primary_btn {
+    margin-top: 16px; }
+
+#transaction_invoice_confirm .data,
+#transaction_withdraw_confirm .data {
+  overflow: initial;
+  padding: 0; }
+  #transaction_invoice_confirm .data .data_name,
+  #transaction_withdraw_confirm .data .data_name {
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px; }
+  #transaction_invoice_confirm .data .data_user,
+  #transaction_withdraw_confirm .data .data_user {
+    display: flex;
+    width: calc(100% - 168px);
+    height: 36px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 36px; }
+    #transaction_invoice_confirm .data .data_user span,
+    #transaction_withdraw_confirm .data .data_user span {
+      display: inline-block;
+      word-wrap: break-word;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+  #transaction_invoice_confirm .data .link_block,
+  #transaction_withdraw_confirm .data .link_block {
+    position: absolute;
+    top: 24px;
+    right: 0; }
+    #transaction_invoice_confirm .data .link_block #invoice_confirm_back,
+    #transaction_invoice_confirm .data .link_block #invoice_confirm_success,
+    #transaction_invoice_confirm .data .link_block #withdraw_confirm_back,
+    #transaction_invoice_confirm .data .link_block #withdraw_confirm_success,
+    #transaction_withdraw_confirm .data .link_block #invoice_confirm_back,
+    #transaction_withdraw_confirm .data .link_block #invoice_confirm_success,
+    #transaction_withdraw_confirm .data .link_block #withdraw_confirm_back,
+    #transaction_withdraw_confirm .data .link_block #withdraw_confirm_success {
+      width: 80px;
+      height: 36px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 14px; }
+    #transaction_invoice_confirm .data .link_block button#withdraw_confirm_success,
+    #transaction_withdraw_confirm .data .link_block button#withdraw_confirm_success {
+      width: 94px; }
+    #transaction_invoice_confirm .data .link_block .primary_link,
+    #transaction_withdraw_confirm .data .link_block .primary_link {
+      float: right;
+      margin: 0 0 0 8px; }
+
+#transaction_invoice_invoice .data {
+  overflow: initial;
+  padding: 0;
+  border: none; }
+  #transaction_invoice_invoice .data .data_name {
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px; }
+  #transaction_invoice_invoice .data .data_user {
+    display: flex;
+    width: calc(100% - 168px);
+    height: 36px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 36px; }
+    #transaction_invoice_invoice .data .data_user span {
+      display: inline-block;
+      word-wrap: break-word;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+  #transaction_invoice_invoice .data input {
+    width: calc(100% - 84px);
+    max-width: 472px;
+    margin-top: 8px; }
+  #transaction_invoice_invoice .data .qrcode_transaction {
+    margin-top: 16px; }
+  #transaction_invoice_invoice .data button {
+    margin-bottom: 0; }
+#transaction_invoice_invoice .data_btn {
+  float: right;
+  color: #00b0ff;
+  margin: 16px 0 8px 16px; }
+  #transaction_invoice_invoice .data_btn.copy:hover {
+    text-decoration: underline; }
+
+#transaction_withdraw form span.amount {
+  margin: 8px 16px;
+  font-size: 16px;
+  float: right; }
+#transaction_withdraw form .data .data_user {
+  width: 100%;
+  font-size: 20px; }
+  #transaction_withdraw form .data .data_user.address {
+    font-size: 16px; }
+#transaction_withdraw form .data .link_block {
+  top: 200px; }
+  #transaction_withdraw form .data .link_block.top {
+    position: relative;
+    top: 0;
+    margin-top: 16px; }
+    #transaction_withdraw form .data .link_block.top #withdraw_confirm_success,
+    #transaction_withdraw form .data .link_block.top #withdraw_confirm_back {
+      width: 96px;
+      height: 36px; }
+
+#transaction_history {
+  margin-bottom: 24px; }
+
+.transaction_block {
+  padding: 0 16px;
+  margin: 0 -16px; }
+
+.transaction_row {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  width: calc(100% - 16px);
+  padding: 16px 16px 16px 32px;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0 -16px; }
+  .transaction_row:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #fff; }
+  .transaction_row:active {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.025);
+    background-color: rgba(0, 0, 0, 0.025); }
+  .transaction_row.devider {
+    height: 0;
+    padding: 0 16px 0 32px; }
+    .transaction_row.devider:hover {
+      box-shadow: none;
+      border-bottom: 1px solid #f0f0f0; }
+  .transaction_row_description, .transaction_row_status, .transaction_row_amount {
+    width: calc(100% - 72px);
+    font-size: 12px;
+    line-height: 16px; }
+  .transaction_row_number, .transaction_row_date {
+    margin-right: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    float: left; }
+  .transaction_row_number {
+    position: absolute;
+    width: 80px;
+    height: 16px;
+    top: 32px;
+    left: -32px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff; }
+    .transaction_row_number.invoice {
+      background-color: #00b0ff; }
+    .transaction_row_number.in, .transaction_row_number.out, .transaction_row_number.exchange {
+      background-color: #00c853; }
+  .transaction_row_date {
+    color: #757575; }
+  .transaction_row_description {
+    display: flex; }
+    .transaction_row_description span {
       display: inline-block;
       word-wrap: break-word;
       white-space: nowrap;
       margin-right: 8px; }
-      .data .transaction_description span.transaction_description_address {
+      .transaction_row_description span.transaction_row_description_address {
         text-overflow: ellipsis;
         overflow: hidden;
         margin-right: 0; }
-  .data .transaction_status {
+  .transaction_row_status {
     position: absolute;
     width: 72px;
-    top: 12px;
-    right: 0;
-    border-radius: 2px;
+    top: 50%;
+    right: 16px;
     text-align: center;
-    line-height: 24px;
-    color: #fff;
-    background-color: #00b0ff; }
+    line-height: 16px;
+    text-transform: uppercase;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    .transaction_row_status.pending, .transaction_row_status.new {
+      color: #757575; }
+    .transaction_row_status.confirmed, .transaction_row_status.payed, .transaction_row_status.partially_payed {
+      color: #00c853; }
+    .transaction_row_status.cancelled, .transaction_row_status.declined, .transaction_row_status.expired {
+      color: #f44336; }
+    .transaction_row_status.pending::before {
+      content: "pending"; }
+    .transaction_row_status.confirmed::before {
+      content: "confirmed"; }
+    .transaction_row_status.cancelled::before {
+      content: "cancelled"; }
+    .transaction_row_status.declined::before {
+      content: "declined"; }
+    .transaction_row_status.new::before {
+      content: "new"; }
+    .transaction_row_status.payed::before {
+      content: "payed"; }
+    .transaction_row_status.partially_payed::before {
+      content: "partially payed"; }
+    .transaction_row_status.expired::before {
+      content: "expired"; }
+
+.transaction_data {
+  height: 0;
+  overflow: hidden;
+  margin: 0 -16px;
+  background-color: #f0f0f0; }
+  .transaction_data .transaction_info {
+    position: relative;
+    margin-bottom: 8px; }
+    .transaction_data .transaction_info .transaction_info_name {
+      font-size: 12px;
+      color: #757575; }
+    .transaction_data .transaction_info .transaction_info_body {
+      word-wrap: break-word; }
+    .transaction_data .transaction_info input {
+      width: calc(100% - 84px);
+      margin: 8px 0; }
+    .transaction_data .transaction_info .data_btn {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      color: #00b0ff; }
+      .transaction_data .transaction_info .data_btn.copy:hover {
+        text-decoration: underline; }
+  .transaction_data .qrcode_transaction {
+    margin: 0 0 8px 0; }
+  .transaction_data.active {
+    height: 100%;
+    padding: 16px 16px 8px; }
+
+.qrcode_transaction .qrcode_transaction_container,
+.qrcode_transaction .qrcode_twofa_container,
+.qrcode_twofa .qrcode_transaction_container,
+.qrcode_twofa .qrcode_twofa_container {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto; }
+  .qrcode_transaction .qrcode_transaction_container svg,
+  .qrcode_transaction .qrcode_twofa_container svg,
+  .qrcode_twofa .qrcode_transaction_container svg,
+  .qrcode_twofa .qrcode_twofa_container svg {
+    width: 220px;
+    height: 220px; }
+.qrcode_transaction .qrcode_twofa_container,
+.qrcode_twofa .qrcode_twofa_container {
+  margin: 0; }
 
 #intro,
 #contacts {
@@ -1266,11 +1573,10 @@ button {
       margin: 0; }
       .tabs li.active {
         width: calc(20% - 2px);
-        height: 55px;
+        height: 54px;
         color: #212121;
         line-height: 54px;
         border: 1px solid #212121;
-        border-bottom: none;
         background-color: #fff; }
         .tabs li.active:hover {
           background-color: #fff; }
@@ -1278,7 +1584,65 @@ button {
         background-color: rgba(33, 33, 33, 0.9); }
       .tabs li::before {
         content: "";
-        margin: 0; } }
+        margin: 0; }
+
+  #transaction_balance .data {
+    height: 100%; }
+    #transaction_balance .data .data_name {
+      height: 36px;
+      line-height: 36px; }
+    #transaction_balance .data .data_user {
+      position: absolute;
+      top: 0;
+      width: calc(100% - 416px);
+      margin-left: 304px; }
+    #transaction_balance .data .link_block {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0; }
+
+  #transaction_invoice_confirm .data .data_name {
+    height: 36px;
+    line-height: 36px; }
+  #transaction_invoice_confirm .data .data_user {
+    position: absolute;
+    top: 0;
+    width: calc(100% - 280px);
+    margin-left: 112px; }
+  #transaction_invoice_confirm .data .link_block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0; }
+    #transaction_invoice_confirm .data .link_block .primary_link {
+      margin: 0 0 0 8px; }
+
+  #transaction_invoice_invoice .data .data_name {
+    height: 36px;
+    line-height: 36px; }
+  #transaction_invoice_invoice .data .data_user {
+    position: absolute;
+    top: 0;
+    width: calc(100% - 280px);
+    margin-left: 112px; }
+  #transaction_invoice_invoice .data .data_btn {
+    float: none;
+    margin-left: 8px; }
+
+  .transaction_row {
+    width: calc(100% - 24px);
+    padding-left: 40px; }
+    .transaction_row.devider {
+      padding-left: 40px; }
+    .transaction_row_number, .transaction_row_date, .transaction_row_description, .transaction_row_amount {
+      font-size: 14px;
+      line-height: 24px; }
+    .transaction_row_number {
+      width: 104px;
+      height: 24px;
+      top: 40px;
+      left: -40px; } }
 @media screen and (min-width: 1024px) {
   .bnr_top .bnr_container .bnr_slide.address {
     margin-left: 400px; }

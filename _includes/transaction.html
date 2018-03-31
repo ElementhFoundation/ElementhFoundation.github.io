@@ -1,0 +1,186 @@
+<div id="transaction" class="disnone">
+
+    <div id="transaction_balance">
+        <div class="data">
+            <div class="data_name" data-i18n="Balance">Available balance of tokens to withdraw:</div>
+            <div class="data_user">
+                <span id="user_transaction_balance">0</span>
+            </div>
+            <div class="link_block blue">
+                <div id="transaction_balance_withdraw" class="primary_link disnone" data-i18n="Withdraw">Withdraw</div>
+                <div id="transaction_balance_gettoken" class="primary_link" data-i18n="gettoken">Get token</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="transaction_invoice" class="disnone">
+        <p class="title chevron">
+            <span id="transaction_invoice_send_title" class="active" data-i18n="Send">Send</span>
+            <i class="material-icons">chevron_right</i>
+            <span id="transaction_invoice_confirm_title" data-i18n="Confirm">Confirm</span>
+            <i class="material-icons">chevron_right</i>
+            <span id="transaction_invoice_invoice_title" data-i18n="Invoice">Invoice</span>
+        </p>
+        <form id="transaction_invoice_send">
+            <p class="body margin_bottom" data-i18n="invoice1">Please specify the amount and currency which you want to
+                use for purchasing EEE tokens.</p>
+            <span><input id="invoice_send_amount" name="invoice_send_amount" type="text" placeholder="Amount" required
+                         class="withselect"></span>
+            <span><select id="invoice_send_currency" name="invoice_send_currency" required><option
+                    value="ETH">ETH</option><option value="BTC">BTC</option></select></span>
+            <input type="submit" class="primary_btn" value="Send" style="height: 72px"/>
+        </form>
+        <form id="transaction_invoice_confirm" class="disnone">
+            <p class="body margin_bottom" data-i18n="invoice2">Please check and confirm the amount and currency which
+                you want to use for purchasing EEE tokens.</p>
+            <div class="data">
+                <div class="data_name" data-i18n="Amount">Amount:</div>
+                <div class="data_user">
+                    <span id="invoice_confirm_amount">1000 ETH</span>
+                </div>
+                <div class="error disnone"></div>
+                <div class="link_block black">
+                    <input type="submit" id="invoice_confirm_success" class="primary_link" data-i18n="next"
+                           value="Next"/>
+                    <button id="invoice_confirm_back" class="primary_link" data-i18n="back">back</button>
+                </div>
+            </div>
+        </form>
+        <form id="transaction_invoice_invoice" class="disnone">
+            <p class="body margin_bottom" data-i18n="invoice3">Here is your invoice. To purchase EEE tokens, you need to
+                send the amount you choosed to the following address or scan QR-code.</p>
+            <div class="data">
+                <div class="data_name" data-i18n="Amount">Amount:</div>
+                <div class="data_user">
+                    <span id="invoice_invoice_amount">1000 ETH</span>
+                </div>
+                <input id="ico_link_input" class="ico_link_input" name="ico_link" type="text" value="" readonly>
+                <span id="ico_link_input_copy" class="copy data_btn" data-clipboard-target="#ico_link_input"
+                      data-i18n="Copy">Copy</span>
+                <span id="ico_link_input_copied" class="copied green data_btn disnone" data-i18n="Copied">Copied</span>
+                <div class="qrcode_transaction">
+                    <div id="qrcode_transaction_container" class="qrcode_transaction_container">
+                    </div>
+                </div>
+                <input type="button" id="invoice_invoice_success" class="primary_btn" style="width: 100%; height: 72px" data-i18n="OK" value="OK"/>
+            </div>
+        </form>
+    </div>
+
+    <div id="transaction_withdraw" class="disnone">
+        <p class="title chevron">
+            <span id="transaction_withdraw_send_title" class="active" data-i18n="Send">Send</span>
+            <i class="material-icons">chevron_right</i>
+            <span id="transaction_withdraw_confirm_title" data-i18n="Confirm">Confirm</span>
+            <i class="material-icons">chevron_right</i>
+            <span id="transaction_withdraw_invoice_title" data-i18n="Withdraw">Withdraw</span>
+        </p>
+        <form id="transaction_withdraw_send">
+            <p class="body margin_bottom" data-i18n="withdraw1">Please provide your Ethereum wallet address and the
+                amount in order to withdraw your EEE tokens.</p>
+            <input id="withdraw_send_address" name="withdraw_send_address" type="text" placeholder="Address" required
+                   class="margin_bottom">
+            <input id="withdraw_send_amount" name="withdraw_send_amount" type="text" placeholder="Amount" required
+                   class="amount">
+            <span class="amount">EEE</span>
+            <button class="primary_btn" data-i18n="Send">Send</button>
+        </form>
+        <form id="transaction_withdraw_confirm" class="disnone">
+            <p class="body margin_bottom" data-i18n="withdraw2">Please check and confirm your Ethereum wallet address
+                and the amount to withdraw your EEE tokens. We cannot refund an incorrect withdrawal. In the withdrawal
+                address field, we support hex addresses only. A proper hex address starts with '0x' Please enter a small
+                amount for your first withdrawal to check that everything is working as expected, before sending larger
+                amounts. We cannot recover your funds if the address is incorrect.</p>
+            <div class="data">
+                <div class="data_name" data-i18n="Address">Address:</div>
+                <div class="data_user address">
+                    <span id="withdraw_confirm_address"></span>
+                </div>
+                <div class="data_name" data-i18n="Amount">Amount:</div>
+                <div class="data_user">
+                    <span id="withdraw_confirm_amount"></span>
+                </div>
+                <div id="ga2fa_div" class="disnone">
+                    <div class="data_name" data-i18n="aCode">Input your authentication code:</div>
+                    <input id="ga2fa_input" class="authentication_code" name="authentication_code" type="text"
+                           placeholder="Authentication code" style="margin-top: 8px">
+                </div>
+                <div class="error disnone"></div>
+                <div class="link_block black top">
+                    <button id="withdraw_confirm_success" class="primary_link" data-i18n="Withdraw">Withdraw</button>
+                    <button id="withdraw_confirm_back" class="primary_link" data-i18n="back">back</button>
+                </div>
+            </div>
+        </form>
+        <form id="transaction_withdraw_withdraw" class="disnone">
+            <p class="body margin_bottom" data-i18n="withdraw3">In the near future, you will receive your EEE tokens to
+                the following Ethereum wallet address.</p>
+            <div class="data">
+                <div class="data_name" data-i18n="Address">Address:</div>
+                <div class="data_user address margin_bottom">
+                    <span id="withdraw_withdraw_address"></span>
+                </div>
+                <div class="data_name" data-i18n="Amount">Amount:</div>
+                <div class="data_user">
+                    <span id="withdraw_withdraw_amount"></span>
+                </div>
+                <button id="withdraw_withdraw_success" class="primary_btn" style="width: 100%; height: 72px" data-i18n="OK">OK</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="transaction_history">
+        <p class="title" data-i18n="History">Transaction history</p>
+        <div class="transaction_row devider"></div>
+        <div id="invoice_tmpl" class="transaction_block disnone">
+            <div class="transaction_row">
+                <p class="transaction_row_number invoice">invoice</p>
+                <p class="transaction_row_date"></p>
+                <p class="transaction_row_description"><span data-i18n="Sent">Sent</span><span
+                        class="transaction_row_description_amount"></span><span>to</span><span
+                        class="transaction_row_description_address"></span>
+                </p>
+                <p class="transaction_row_amount red"></p>
+                <p class="transaction_row_amount green"></p>
+                <div class="transaction_row_status"></div>
+            </div>
+            <div class="transaction_data">
+                <div class="transaction_info">
+                    <div class="transaction_info_name">Number:</div>
+                    <div class="transaction_info_body"></div>
+                </div>
+                <div class="transaction_info">
+                    <div class="transaction_info_name">Wallet:</div>
+                    <input class="ico_link_input" name="ico_link" type="text"
+                           value="0x46r775839h73829274y483930284y47239497284736" readonly>
+                    <span class="copy data_btn" data-clipboard-target="" data-i18n="Copy">Copy</span>
+                    <span class="copied green data_btn disnone" data-i18n="Copied">Copied</span>
+                </div>
+                <div class="qrcode_transaction">
+                    <div class="qrcode_transaction_container">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="transaction_tmpl" class="transaction_block disnone">
+            <div class="transaction_row">
+                <p class="transaction_row_number"></p>
+                <p class="transaction_row_date">0</p>
+                <p class="transaction_row_description"><span data-i18n="Sent">Sent</span><span
+                        class="transaction_row_description_amount"></span> <span>from</span><span
+                        class="transaction_row_description_address from"></span> <span>to</span><span
+                        class="transaction_row_description_address to"></span></p>
+                <p class="transaction_row_amount red"></p>
+                <p class="transaction_row_amount green"></p>
+                <div class="transaction_row_status"></div>
+            </div>
+            <div class="transaction_data">
+                <div class="transaction_info">
+                    <div class="transaction_info_name">Number:</div>
+                    <div class="transaction_info_body"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

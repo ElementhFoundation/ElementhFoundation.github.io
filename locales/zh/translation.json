@@ -298,5 +298,7 @@
   "MinimumGas": "最小气体量：",
   "GAS PRICE": "气体价格：",
   "YouWillReceiveEEE": "经过对您在比特币区块链中的交易的 6 次确认，您将收到 EEE 代币。",
-  "ISENTBTC": "我发送了 BTC"
+  "ISENTBTC": "我发送了 BTC",
+  "IGNORE_KYC": "不想处理KYC",
+  "disclaimer_kyc": "如果你不想通过KYC，你可以直接投资，但你应该同意这个免责声明。 如果监管机构或银行有要求，我们可能会发现我们应该退还所有未经KYC进行的投资。 所以如果你没有通过KYC，可能会得到退款，你的代币将被烧毁，或者如果你想避免这种情况，你将通过KYC。"
 }

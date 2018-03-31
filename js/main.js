@@ -27,7 +27,7 @@ $(function () {
         yaCounter46855911.reachGoal('verifyEmail')
       }
     }
-    if(hash.toLowerCase() === 'ico'){
+    if (hash.toLowerCase() === 'ico') {
       $('#tabs_container_profile').removeClass('disblock')
       $('#tabs_list_profile').removeClass('active')
       $('#tabs_list_contribute').addClass('active')
@@ -78,9 +78,9 @@ function checkLoginState () {
           $('.error').html(err).removeClass('disnone')
         } else {
           var redirect = getParameterByName("redirect")
-          if(redirect) {
+          if (redirect) {
             window.location.href = redirect
-          }else {
+          } else {
             window.location.href = "/profile"
           }
         }
@@ -89,11 +89,27 @@ function checkLoginState () {
   })
 }
 
+function updateProgressBar () {
+  getICOStat(function (err, data) {
+    if (data.totalRaised >= 10000) {
+      if (!$('#progress_line_softcap').hasClass('check')) {
+        $('#progress_line_softcap').addClass('check')
+      }
+    }
+    $('#progress_line_current').animate({
+      width: (Number(data.totalRaised) / 30000 * 100) + "%"
+    }, 300)
+    $('#nowETH').html(data.totalRaisedETH + ' ETH')
+    $('#nowBTC').html(data.totalRaisedBTC + ' BTC')
+    $('#total').html(data.totalRaised + ' ETH')
+  })
+}
+
 function init () {
 
   if ($('#timer').length) {
     var curDate = new Date().getTime();
-
+    updateProgressBar()
     if (curDate < countDownDate) {
       $('#timerTitle').html('ICO starts in:')
       //$('#preico').removeClass('disnone')
@@ -130,14 +146,18 @@ function init () {
 
         $('#timer').html(days + "d " + hours + ":" + minutes + ":" + seconds)
         // If the count down is finished, write some text
-        if (distance <= 0) {
+        if (distance <= 1) {
 
-          //$('#timerTitle').html('ICO coming soon')
-          countDownDate = null;
-          clearInterval(x)
-          //$('#preico').removeClass('disnone')
+          $('#timerTitle').html('ICO ends in:')
+          countDownDate = 1525132800000;
+          //clearInterval(x)
+          $('#progressbar_div').removeClass('disnone')
         }
       }, 1000);
+
+      setInterval(function () {
+        updateProgressBar()
+      }, 10000)
     }
   }
 
@@ -152,7 +172,7 @@ function init () {
   if (profile_tabs.length) {
     if (user) {
       getReferralsInfo(function (err, data) {
-        if(data && data.total && data.total.bonus){
+        if (data && data.total && data.total.bonus) {
           $('#user_referral_balance').html(data.total.bonus + ' ETH')
         }
       })
@@ -166,6 +186,12 @@ function init () {
             referral: user.referral
           })
         }
+        $('#user_transaction_balance').html(user.eee_balance)
+
+        if(parseFloat(user.eee_balance)){
+          $('#transaction_balance_withdraw').removeClass('disnone')
+        }
+
         var questionnaire_form = $('#questionnaire_form')
         if (questionnaire_form.length) {
           questionnaire_form.submit(function (e) {
@@ -253,7 +279,6 @@ function init () {
             user_email_edit_form.find(':input[type="submit"]').prop('disabled', true)
             e.preventDefault();
             user_email_edit_form.find('.error').addClass('disnone')
-            console.log(user_email_edit_form.serialize())
             setEmail(user_email_edit_form.serialize(), function (err, data) {
               if (err) {
                 user_email_edit_form.find('.error').html(err).removeClass('disnone')
@@ -348,6 +373,190 @@ function init () {
     $('#wallet_eth_ok').addClass('disnone')
   })
 
+  $('#transaction_balance_gettoken').on('click', function () {
+    $('#transaction_invoice').removeClass('disnone')
+  })
+
+
+  var transaction_invoice_send = $('#transaction_invoice_send')
+  var transaction_invoice_confirm = $('#transaction_invoice_confirm')
+
+  $('#invoice_confirm_back').on('click', function (e) {
+    e.preventDefault()
+    transaction_invoice_send.find(':input[type="submit"]').prop('disabled', false)
+    transaction_invoice_send.removeClass('disnone')
+    transaction_invoice_confirm.addClass('disnone')
+    $('#transaction_invoice_confirm_title').removeClass('active')
+  })
+
+  new Clipboard('#ico_link_input_copy').on('success', function (e) {
+    $('#ico_link_input_copy').addClass('disnone')
+    $('#ico_link_input_copied').addClass('disblock')
+  });
+
+
+  $('#transaction_balance_withdraw').on('click', function () {
+    $('#transaction_withdraw').removeClass('disnone')
+  })
+
+  var transaction_withdraw_send = $('#transaction_withdraw_send')
+  var transaction_withdraw_confirm = $('#transaction_withdraw_confirm')
+
+  $('#withdraw_confirm_back').on('click', function (e) {
+    e.preventDefault()
+    transaction_withdraw_send.find(':input[type="submit"]').prop('disabled', false)
+    transaction_withdraw_send.removeClass('disnone')
+    transaction_withdraw_confirm.addClass('disnone')
+    $('#transaction_invoice_confirm_title').removeClass('active')
+  })
+
+  if(user && user.tfa){
+    $('#ga2fa_div').removeClass('disnone')
+    $('#twofa_enabled').removeClass('disnone')
+  }else{
+    $('#twofa_enable_form').removeClass('disnone')
+  }
+
+  if (transaction_invoice_send.length) {
+    getEventsList(function (err, data) {
+      if (Array.isArray(data)) {
+        for (var i = 0; i < data.length; i++) {
+          var obj = null
+          var newClass = null
+          if (data[i].event_type === 'invoice') {
+            obj = $("#invoice_tmpl").clone()
+            obj.attr("id", 'i' + data[i].id)
+            obj.find('.ico_link_input').val(data[i].wallet).attr("id", 'ili' + data[i].id)
+            obj.find('.copy').data('clipboard-target', '#ili' + data[i].id).attr("data-clipboard-target", '#ili' + data[i].id).attr("id", 'copy_' + data[i].id)
+            newClass = 'new'
+            if(data[i].status === 1){
+              newClass = 'payed'
+            } else if(data[i].status === 2){
+              newClass = 'partially_payed'
+            } else if(data[i].status === 3){
+              newClass = 'expired'
+            }
+
+            if(data[i].status !== 0){
+              obj.find('.transaction_data').addClass('disnone')
+            }
+            obj.find('.transaction_row_status').addClass(newClass)
+            obj.find('.transaction_row_description_address').html(data[i].wallet)
+          } else {
+            obj = $("#transaction_tmpl").clone()
+            obj.attr("id", 't' + data[i].id)
+            obj.find('.transaction_row_description_address.from').html(data[i].from)
+            obj.find('.transaction_row_description_address.to').html(data[i].to)
+            obj.find('.transaction_row_number').html(data[i].type).addClass(data[i].type)
+
+            if(data[i].type === 'exchange'){
+              obj.find('.transaction_row_description').html('Sent ' + data[i].amount + ' ' + data[i].currency)
+            }
+
+            newClass = 'pending'
+            if(data[i].status === 1){
+              newClass = 'confirmed'
+            } else if(data[i].status === 2){
+              newClass = 'cancelled'
+            } else if(data[i].status === 3){
+              newClass = 'declined'
+            }
+            obj.find('.transaction_row_status').addClass(newClass)
+          }
+
+          if (parseFloat(data[i].amount) >= 0) {
+            obj.find('.transaction_row_amount.green').html(data[i].amount + ' ' + data[i].currency)
+          } else {
+            obj.find('.transaction_row_amount.red').html(data[i].amount + ' ' + data[i].currency)
+          }
+          obj.find('.transaction_row_description_amount').html(data[i].amount + ' ' + data[i].currency)
+          obj.find('.transaction_row_date').html(data[i].created_at.date)
+          obj.find('.transaction_info_body').html(data[i].id)
+          obj.appendTo("#transaction_history").removeClass('disnone')
+          if (data[i].event_type === 'invoice') {
+            obj.find('.qrcode_transaction_container').attr("id", 'qr' + data[i].id)
+            new QRCode(document.getElementById('qr' + data[i].id), {
+              text: data[i].link,
+              width: 220,
+              height: 220,
+              correctLevel: QRCode.CorrectLevel.H
+            })
+            new Clipboard('#copy_' + data[i].id).on('success', function (e) {
+              $('#' + e.trigger.id).addClass('disnone').parent().children('.copied').addClass('disblock')
+            })
+          }
+        }
+      }
+    })
+    transaction_invoice_send.submit(function (e) {
+      transaction_invoice_send.find(':input[type="submit"]').prop('disabled', true)
+      e.preventDefault();
+      $('#invoice_confirm_amount').html($('#invoice_send_amount').val() + $('#invoice_send_currency').val())
+      transaction_invoice_send.addClass('disnone')
+      transaction_invoice_confirm.removeClass('disnone')
+      $('#transaction_invoice_confirm_title').addClass('active')
+    })
+
+    transaction_withdraw_send.submit(function (e) {
+      transaction_withdraw_send.find(':input[type="submit"]').prop('disabled', true)
+      e.preventDefault();
+      $('#withdraw_confirm_address').html($('#withdraw_send_address').val())
+      $('#withdraw_confirm_amount').html($('#withdraw_send_amount').val() + ' EEE')
+      transaction_withdraw_send.addClass('disnone')
+      transaction_withdraw_confirm.removeClass('disnone')
+
+      $('#transaction_withdraw_confirm_title').addClass('active')
+    })
+
+    transaction_invoice_confirm.submit(function (e) {
+      e.preventDefault()
+      transaction_invoice_confirm.find(':input[type="submit"]').prop('disabled', true)
+      createInvoice({
+        currency: $('#invoice_send_currency').val(),
+        amount: $('#invoice_send_amount').val()
+      }, function (err, data) {
+        transaction_invoice_confirm.find(':input[type="submit"]').prop('disabled', false)
+        if (err) {
+          transaction_invoice_confirm.find('.error').html(err).removeClass('disnone')
+        } else {
+          $('#transaction_invoice_invoice').removeClass('disnone')
+          transaction_invoice_confirm.addClass('disnone')
+          new QRCode(document.getElementById("qrcode_transaction_container"),
+            {
+              text: data.link,
+              width: 220,
+              height: 220,
+              correctLevel: QRCode.CorrectLevel.H
+            })
+
+          $('#ico_link_input').val(data.wallet.address)
+
+          $('#invoice_invoice_amount').html($('#invoice_send_amount').val() + $('#invoice_send_currency').val())
+        }
+      })
+    })
+
+    transaction_withdraw_confirm.submit(function (e) {
+      e.preventDefault()
+      transaction_withdraw_confirm.find(':input[type="submit"]').prop('disabled', true)
+      createWithdraw({
+        address: $('#withdraw_send_address').val(),
+        amount: $('#withdraw_send_amount').val(),
+        code: $('#ga2fa_input').val()
+      }, function (err, data) {
+        transaction_withdraw_confirm.find(':input[type="submit"]').prop('disabled', false)
+        if (err) {
+          transaction_withdraw_confirm.find('.error').html(err).removeClass('disnone')
+        } else {
+          transaction_withdraw_confirm.addClass('disnone')
+          $('#transaction_withdraw_withdraw').removeClass('disnone')
+          $('#withdraw_withdraw_address').html(data.to)
+          $('#withdraw_withdraw_amount').html(data.amount + ' ' + data.currency)
+        }
+      })
+    })
+  }
+
   var signup_form = $('#signup_form')
   if (signup_form.length) {
     if (user) {
@@ -367,9 +576,9 @@ function init () {
           }
 
           var redirect = getParameterByName("redirect")
-          if(redirect) {
+          if (redirect) {
             window.location.href = redirect
-          }else {
+          } else {
             window.location.href = "/profile"
           }
         }
@@ -392,9 +601,9 @@ function init () {
           signin_form.find('.error').html(err).removeClass('disnone')
         } else {
           var redirect = getParameterByName("redirect")
-          if(redirect) {
+          if (redirect) {
             window.location.href = redirect
-          }else {
+          } else {
             window.location.href = "/profile"
           }
         }
@@ -446,6 +655,27 @@ function init () {
     parent.parent().find('.verify').addClass('disnone')
   })
 
+  $('#twofa_enable_button').on('click', function () {
+    initTFA(function (err, data) {
+      $('#twofa_enable_button').parent().addClass('disnone')
+      $('#twofa_qrcode').removeClass('disnone')
+      $('#secret_2fa').html(data.secret)
+      $('#qrcode_twofa_container').append("<img src='"+ data.url +"'/>")
+    })
+  })
+  $('#user_twofa_form').submit(function (e) {
+    e.preventDefault()
+    enableTFA({
+      code: $('#user_twofa_input').val()
+    }, function (err, data) {
+      if(err) {
+        $('#user_twofa_form').find('.error').html(err).removeClass('disnone')
+      }else{
+        window.location.href = '/profile'
+        location.reload()
+      }
+    })
+  })
   $('.ajaxForm').submit(function (e) {
     e.preventDefault()
     var action = $(this).attr('action')
@@ -507,6 +737,18 @@ function init () {
       location.reload()
     })
   })
+
+  $('#invoice_invoice_success').on('click', function () {
+    window.location.href = '/profile#ico'
+    location.reload()
+  })
+
+  $('#withdraw_withdraw_success').on('click', function () {
+    window.location.href = '/profile#ico'
+    location.reload()
+  })
+
+
   var kyc_form = $('#kyc_form')
   if (kyc_form.length) {
 
@@ -557,15 +799,15 @@ function init () {
         }
       })
     } else {
+
+      $('#transaction').removeClass('disnone')
       $('#forAdopters').removeClass('disnone')
-      $('#user_token').html(balance + ' EEE')
       if (balance > 0) {
         $('#howToWatchEEE').removeClass('disnone')
-        $('#investors_chat').removeClass('disnone')
       }
 
       getPrefundTokens(function (err, data) {
-        if(data){
+        if (data) {
           $('#user_token_ico').html(data.total + ' EEE')
         }
       })
