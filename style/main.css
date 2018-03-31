@@ -573,7 +573,7 @@ nav {
       nav ul li.subhead, nav ul li.devider {
         cursor: auto; }
         nav ul li.subhead:hover, nav ul li.devider:hover {
-          background-color: rgba(0, 0, 0, 0); }
+          background-color: transparent; }
       nav ul li.active {
         color: #00b0ff; }
       nav ul li .lngSelect {
@@ -712,7 +712,7 @@ ul.list {
       .link_block .primary_link.disabled:hover, .link_block .primary_link.disabled:active {
         color: #fff;
         border-color: #fff;
-        background-color: rgba(0, 0, 0, 0); }
+        background-color: transparent; }
   .link_block .secondary_link {
     border-bottom: 2px solid #fff; }
     .link_block .secondary_link:hover {
@@ -733,7 +733,7 @@ ul.list {
       .link_block.black .primary_link.disabled:hover, .link_block.black .primary_link.disabled:active {
         color: #212121;
         border-color: #212121;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: transparent;
         box-shadow: none; }
   .link_block.black .secondary_link {
     border-bottom: 2px solid #212121; }
@@ -773,7 +773,8 @@ ul.list {
       color: #757575;
       text-align: right;
       padding-right: 4px;
-      border-right: 1px solid #757575; }
+      border-right: 1px solid #757575;
+      z-index: 5; }
       .progressbar .progress_line_softcap.check, .progressbar .progress_line_hardcap.check {
         color: #00b0ff;
         border-right-color: #00b0ff; }
@@ -1117,6 +1118,9 @@ button {
   #transaction_invoice form .data,
   #transaction_withdraw form .data {
     border: none; }
+  #transaction_invoice form .primary_btn,
+  #transaction_withdraw form .primary_btn {
+    margin-top: 16px; }
 
 #transaction_invoice_confirm .data,
 #transaction_withdraw_confirm .data {
@@ -1147,10 +1151,14 @@ button {
     position: absolute;
     top: 24px;
     right: 0; }
-    #transaction_invoice_confirm .data .link_block button#invoice_confirm_success,
-    #transaction_invoice_confirm .data .link_block button#withdraw_confirm_success,
-    #transaction_withdraw_confirm .data .link_block button#invoice_confirm_success,
-    #transaction_withdraw_confirm .data .link_block button#withdraw_confirm_success {
+    #transaction_invoice_confirm .data .link_block #invoice_confirm_back,
+    #transaction_invoice_confirm .data .link_block #invoice_confirm_success,
+    #transaction_invoice_confirm .data .link_block #withdraw_confirm_back,
+    #transaction_invoice_confirm .data .link_block #withdraw_confirm_success,
+    #transaction_withdraw_confirm .data .link_block #invoice_confirm_back,
+    #transaction_withdraw_confirm .data .link_block #invoice_confirm_success,
+    #transaction_withdraw_confirm .data .link_block #withdraw_confirm_back,
+    #transaction_withdraw_confirm .data .link_block #withdraw_confirm_success {
       width: 80px;
       height: 36px;
       font-family: "Roboto Mono", monospace;

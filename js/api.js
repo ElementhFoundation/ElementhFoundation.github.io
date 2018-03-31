@@ -1,4 +1,4 @@
-var apiUrl = 'https://api.elementh.io/'
+var apiUrl = 'http://testapi.elementh.io/'
 
 var isCrowdAddressesLoaded = null
 if(typeof Web3 !=='undefined') {
@@ -162,6 +162,31 @@ function getProfile (callback) {
 function cancelKYC (callback) {
   makeApiRequest('cancelKYC', 'GET', null, callback)
 }
+
+function getInvoiceList (callback) {
+  makeApiRequest('getInvoiceList', 'GET', null, callback)
+}
+
+function getTransactionList (callback) {
+  makeApiRequest('getTransactionList', 'GET', null, callback)
+}
+
+function createInvoice (data, callback) {
+  makeApiRequest('createInvoice', 'POST', data, callback)
+}
+
+function createWithdraw (data, callback) {
+  makeApiRequest('createWithdraw', 'POST', data, callback)
+}
+
+function getEventsList (callback) {
+  makeApiRequest('getEventsList', 'GET', null, callback)
+}
+
+function getICOStat (callback) {
+  makeApiRequest('getICOStat', 'GET', null, callback)
+}
+
 
 function makeApiRequest (url, method, data, callback) {
   var request = $.ajax({

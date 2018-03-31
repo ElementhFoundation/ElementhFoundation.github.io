@@ -142,7 +142,7 @@ $(function () {
     $('#close_wechat_qrcode').on('click', function () {
         $('#wechat_qrcode').addClass('disnone');
     });
-    $('.transaction_row').on('click', function () {
+    $('body').on('click', '.transaction_row', function () {
         var row = $(this).parent().children('.transaction_data')
         if (!row.hasClass('active')) {
             row.addClass('active');

@@ -700,6 +700,7 @@ ul.list
             text-align: right
             padding-right: 4px
             border-right: 1px solid $color_gray
+            z-index: 5
             &.check
                 color: $color_active
                 border-right-color: $color_active
@@ -729,7 +730,6 @@ ul.list
         &_plus
             position: relative
             top: 12px
-
 .timer
     max-width: 480px
     margin: 8px 0
@@ -1023,6 +1023,8 @@ button
         margin: 0 auto
         .data
             border: none
+        .primary_btn
+            margin-top: 16px
 #transaction_invoice_confirm,
 #transaction_withdraw_confirm
     .data
@@ -1049,8 +1051,10 @@ button
             position: absolute
             top: 24px
             right: 0
-            button#invoice_confirm_success,
-            button#withdraw_confirm_success
+            #invoice_confirm_back,
+            #invoice_confirm_success,
+            #withdraw_confirm_back,
+            #withdraw_confirm_success
                 width: 80px
                 height: 36px
                 font-family: 'Roboto Mono', monospace
