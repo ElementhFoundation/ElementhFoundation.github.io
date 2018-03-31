@@ -573,7 +573,7 @@ nav {
       nav ul li.subhead, nav ul li.devider {
         cursor: auto; }
         nav ul li.subhead:hover, nav ul li.devider:hover {
-          background-color: transparent; }
+          background-color: rgba(0, 0, 0, 0); }
       nav ul li.active {
         color: #00b0ff; }
       nav ul li .lngSelect {
@@ -712,7 +712,7 @@ ul.list {
       .link_block .primary_link.disabled:hover, .link_block .primary_link.disabled:active {
         color: #fff;
         border-color: #fff;
-        background-color: transparent; }
+        background-color: rgba(0, 0, 0, 0); }
   .link_block .secondary_link {
     border-bottom: 2px solid #fff; }
     .link_block .secondary_link:hover {
@@ -733,7 +733,7 @@ ul.list {
       .link_block.black .primary_link.disabled:hover, .link_block.black .primary_link.disabled:active {
         color: #212121;
         border-color: #212121;
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0);
         box-shadow: none; }
   .link_block.black .secondary_link {
     border-bottom: 2px solid #212121; }
@@ -1218,6 +1218,8 @@ button {
     font-size: 16px; }
 #transaction_withdraw form .data .link_block {
   top: 200px; }
+  #transaction_withdraw form .data .link_block.top {
+    top: 120px; }
 
 #transaction_history {
   margin-bottom: 24px; }
