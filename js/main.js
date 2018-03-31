@@ -422,7 +422,6 @@ function init () {
             obj.attr("id", 'i' + data[i].id)
             obj.find('.ico_link_input').val(data[i].wallet).attr("id", 'ili' + data[i].id)
             obj.find('.copy').data('clipboard-target', '#ili' + data[i].id).attr("data-clipboard-target", '#ili' + data[i].id).attr("id", 'copy_' + data[i].id)
-
             newClass = 'new'
             if(data[i].status === 1){
               newClass = 'payed'
@@ -438,6 +437,7 @@ function init () {
             obj.attr("id", 't' + data[i].id)
             obj.find('.transaction_row_description_address.from').html(data[i].from)
             obj.find('.transaction_row_description_address.to').html(data[i].to)
+            obj.find('.transaction_row_number').html(data[i].type).addClass(data[i].type)
             newClass = 'pending'
             if(data[i].status === 1){
               newClass = 'confirmed'
@@ -761,6 +761,8 @@ function init () {
         }
       })
     } else {
+
+      $('#transaction').removeClass('disnone')
       $('#forAdopters').removeClass('disnone')
       if (balance > 0) {
         $('#howToWatchEEE').removeClass('disnone')
