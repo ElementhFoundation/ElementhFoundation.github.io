@@ -1,4 +1,4 @@
-var countDownDate = 1522540800000
+var countDownDate = 1525132800000
 var btcWalllet = null
 var balance = 0
 var user = null
@@ -111,7 +111,7 @@ function init () {
     var curDate = new Date().getTime();
     updateProgressBar()
     if (curDate < countDownDate) {
-      $('#timerTitle').html('ICO starts in:')
+      $('#timerTitle').html('ICO ends in:')
       //$('#preico').removeClass('disnone')
     } else {
       countDownDate = null;
