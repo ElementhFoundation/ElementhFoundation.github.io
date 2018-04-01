@@ -100,7 +100,7 @@ function updateProgressBar () {
       width: (Number(data.totalRaised) / 30000 * 100) + "%"
     }, 300)
     $('#nowETH').html(Number(data.totalRaisedETH).toFixed(2) + ' ETH')
-    $('#nowBTC').html(data.totalRaisedBTC + ' BTC')
+    $('#nowBTC').html(Number(data.totalRaisedBTC).toFixed(2) + ' BTC')
     $('#total').html(Number(data.totalRaised).toFixed(2) + ' ETH')
   })
 }
