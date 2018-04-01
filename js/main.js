@@ -99,9 +99,9 @@ function updateProgressBar () {
     $('#progress_line_current').animate({
       width: (Number(data.totalRaised) / 30000 * 100) + "%"
     }, 300)
-    $('#nowETH').html(data.totalRaisedETH + ' ETH')
+    $('#nowETH').html(Number(data.totalRaisedETH).toFixed(2) + ' ETH')
     $('#nowBTC').html(data.totalRaisedBTC + ' BTC')
-    $('#total').html(data.totalRaised + ' ETH')
+    $('#total').html(Number(data.totalRaised).toFixed(2) + ' ETH')
   })
 }
 
