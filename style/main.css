@@ -573,7 +573,7 @@ nav {
       nav ul li.subhead, nav ul li.devider {
         cursor: auto; }
         nav ul li.subhead:hover, nav ul li.devider:hover {
-          background-color: transparent; }
+          background-color: rgba(0, 0, 0, 0); }
       nav ul li.active {
         color: #00b0ff; }
       nav ul li .lngSelect {
@@ -712,7 +712,7 @@ ul.list {
       .link_block .primary_link.disabled:hover, .link_block .primary_link.disabled:active {
         color: #fff;
         border-color: #fff;
-        background-color: transparent; }
+        background-color: rgba(0, 0, 0, 0); }
   .link_block .secondary_link {
     border-bottom: 2px solid #fff; }
     .link_block .secondary_link:hover {
@@ -733,7 +733,7 @@ ul.list {
       .link_block.black .primary_link.disabled:hover, .link_block.black .primary_link.disabled:active {
         color: #212121;
         border-color: #212121;
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0);
         box-shadow: none; }
   .link_block.black .secondary_link {
     border-bottom: 2px solid #212121; }
@@ -1110,9 +1110,9 @@ button {
   padding: 0;
   border: none; }
   #transaction_balance .data .data_name {
-    height: 32px;
-    font-size: 12px;
-    line-height: 16px; }
+    height: 40px;
+    font-size: 14px;
+    line-height: 20px; }
   #transaction_balance .data .data_user {
     display: flex;
     width: calc(100% - 96px);
@@ -1591,8 +1591,8 @@ button {
     #transaction_balance .data .data_user {
       position: absolute;
       top: 0;
-      width: calc(100% - 416px);
-      margin-left: 304px; }
+      width: calc(100% - 456px);
+      margin-left: 344px; }
     #transaction_balance .data .link_block {
       position: absolute;
       top: 0;
