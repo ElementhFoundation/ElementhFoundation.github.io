@@ -1,21 +1,25 @@
-<div id="tabs_container_profile" class="tabs_container disblock">
-    <form id="twofa_enable_form">
-        <button class="primary_btn" type="submit" form="twofa_enable_form" data-i18n="enable">
+<div id="tabs_container_profile" class="tabs_container">
+    <form id="twofa_enable_form" class="disnone">
+        <button id="twofa_enable_button" class="primary_btn" type="button" form="twofa_enable_form" data-i18n="enable">
             Enable 2FA
         </button>
     </form>
+    <div id="twofa_enabled" class="green disnone">
+        2FA Enabled
+    </div>
     <div id="twofa_qrcode" class="disnone data_block">
         <div class="data">
             <div class="qrcode_twofa margin_bottom">
-                <div class="qrcode_twofa_container"></div>
+                <div id="qrcode_twofa_container" class="qrcode_twofa_container"></div>
             </div>
-            <p id="" class="description">Secret text</p>
+            <p id="secret_2fa" class="description"></p>
             <div class="data_name">Input your authentication code:</div>
             <div class="data_user">
                 <form id="user_twofa_form" class="">
-                    <input id="user_twofa_input" name="username" type="password" value="" placeholder="Authentication code">
+                    <div class="error disnone"></div>
+                    <input id="user_twofa_input" name="username" type="text" value="" placeholder="Authentication code">
                     <div class="link_block black">
-                        <button id="user_twofa_ok" class="primary_link">OK</button>
+                        <input id="user_twofa_ok" class="primary_link" type="submit" value="OK">
                     </div>
                 </form>
             </div>
