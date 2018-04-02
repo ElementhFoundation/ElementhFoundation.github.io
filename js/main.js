@@ -279,7 +279,6 @@ function init () {
             user_email_edit_form.find(':input[type="submit"]').prop('disabled', true)
             e.preventDefault();
             user_email_edit_form.find('.error').addClass('disnone')
-            console.log(user_email_edit_form.serialize())
             setEmail(user_email_edit_form.serialize(), function (err, data) {
               if (err) {
                 user_email_edit_form.find('.error').html(err).removeClass('disnone')
@@ -411,6 +410,13 @@ function init () {
     $('#transaction_invoice_confirm_title').removeClass('active')
   })
 
+  if(user && user.tfa){
+    $('#ga2fa_div').removeClass('disnone')
+    $('#twofa_enabled').removeClass('disnone')
+  }else{
+    $('#twofa_enable_form').removeClass('disnone')
+  }
+
   if (transaction_invoice_send.length) {
     getEventsList(function (err, data) {
       if (Array.isArray(data)) {
@@ -430,6 +436,10 @@ function init () {
             } else if(data[i].status === 3){
               newClass = 'expired'
             }
+
+            if(data[i].status !== 0){
+              obj.find('.transaction_data').addClass('disnone')
+            }
             obj.find('.transaction_row_status').addClass(newClass)
             obj.find('.transaction_row_description_address').html(data[i].wallet)
           } else {
@@ -438,6 +448,11 @@ function init () {
             obj.find('.transaction_row_description_address.from').html(data[i].from)
             obj.find('.transaction_row_description_address.to').html(data[i].to)
             obj.find('.transaction_row_number').html(data[i].type).addClass(data[i].type)
+
+            if(data[i].type === 'exchange'){
+              obj.find('.transaction_row_description').html('Sent ' + data[i].amount + ' ' + data[i].currency)
+            }
+
             newClass = 'pending'
             if(data[i].status === 1){
               newClass = 'confirmed'
@@ -489,6 +504,7 @@ function init () {
       $('#withdraw_confirm_amount').html($('#withdraw_send_amount').val() + ' EEE')
       transaction_withdraw_send.addClass('disnone')
       transaction_withdraw_confirm.removeClass('disnone')
+
       $('#transaction_withdraw_confirm_title').addClass('active')
     })
 
@@ -525,7 +541,8 @@ function init () {
       transaction_withdraw_confirm.find(':input[type="submit"]').prop('disabled', true)
       createWithdraw({
         address: $('#withdraw_send_address').val(),
-        amount: $('#withdraw_send_amount').val()
+        amount: $('#withdraw_send_amount').val(),
+        code: $('#ga2fa_input').val()
       }, function (err, data) {
         transaction_withdraw_confirm.find(':input[type="submit"]').prop('disabled', false)
         if (err) {
@@ -638,6 +655,27 @@ function init () {
     parent.parent().find('.verify').addClass('disnone')
   })
 
+  $('#twofa_enable_button').on('click', function () {
+    initTFA(function (err, data) {
+      $('#twofa_enable_button').parent().addClass('disnone')
+      $('#twofa_qrcode').removeClass('disnone')
+      $('#secret_2fa').html(data.secret)
+      $('#qrcode_twofa_container').append("<img src='"+ data.url +"'/>")
+    })
+  })
+  $('#user_twofa_form').submit(function (e) {
+    e.preventDefault()
+    enableTFA({
+      code: $('#user_twofa_input').val()
+    }, function (err, data) {
+      if(err) {
+        $('#user_twofa_form').find('.error').html(err).removeClass('disnone')
+      }else{
+        window.location.href = '/profile'
+        location.reload()
+      }
+    })
+  })
   $('.ajaxForm').submit(function (e) {
     e.preventDefault()
     var action = $(this).attr('action')

@@ -1,11 +1,355 @@
-var apiUrl = 'http://testapi.elementh.io/'
+var apiUrl = 'https://api.elementh.io/'
 
 var isCrowdAddressesLoaded = null
-if(typeof Web3 !=='undefined') {
+if (typeof Web3 !== 'undefined') {
   var web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/XQF4D1KpJZSQXYZOZxIX'))
 }
-var jsonInterface = [{"constant":true,"inputs":[{"name":"","type":"bytes16"}],"name":"BTCTransactions","outputs":[{"name":"amount","type":"uint256"},{"name":"hash","type":"bytes16"},{"name":"wallet","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_BTCRate","type":"uint256"}],"name":"setBTCRate","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_goalETH","type":"uint256"}],"name":"setGoalETH","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"bonusStage2FirstDay","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"satoshiRaised","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"toRemove","type":"address"}],"name":"removeOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"rate","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_bonusStage1","type":"uint256"},{"name":"_bonusStage2FirstDay","type":"uint256"},{"name":"_bonusStage2SecondDay","type":"uint256"}],"name":"setBonuses","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"endTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_rate","type":"uint256"}],"name":"setRate","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"cap","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"withdraw","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_startTime","type":"uint256"}],"name":"setStartTime","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"goal","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"weiRaised","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_amountSatoshi","type":"uint256"},{"name":"_hashTransaction","type":"bytes16"},{"name":"_walletETH","type":"address"}],"name":"addBTCTransaction","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"finalize","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"wallet","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_capETH","type":"uint256"}],"name":"setCapETH","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newAllowed","type":"address"}],"name":"addOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"startTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"goalReached","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"bonusStage1","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isFinalized","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isOwner","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"bonusStage2SecondDay","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"claimRefund","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_weiAmount","type":"uint256"}],"name":"getTokenAmount","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_endTime","type":"uint256"}],"name":"setEndTime","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_stage","type":"uint8"}],"name":"setStage","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"deposit","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":false,"inputs":[{"name":"_wallet","type":"address"}],"name":"setWallet","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"beneficiary","type":"address"}],"name":"buyTokens","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"hasEnded","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"token","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"BTCRate","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_startTime","type":"uint256"},{"name":"_endTime","type":"uint256"},{"name":"_rate","type":"uint256"},{"name":"_capETH","type":"uint256"},{"name":"_goalETH","type":"uint256"},{"name":"_wallet","type":"address"},{"name":"_BTCRate","type":"uint256"},{"name":"_token","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"holder","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"Refunded","type":"event"},{"anonymous":false,"inputs":[],"name":"Finalized","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"purchaser","type":"address"},{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"value","type":"uint256"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"TokenPurchase","type":"event"}]
+var jsonInterface = [{
+  "constant": true,
+  "inputs": [{"name": "", "type": "bytes16"}],
+  "name": "BTCTransactions",
+  "outputs": [{"name": "amount", "type": "uint256"}, {"name": "hash", "type": "bytes16"}, {
+    "name": "wallet",
+    "type": "address"
+  }],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "_BTCRate", "type": "uint256"}],
+  "name": "setBTCRate",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "_goalETH", "type": "uint256"}],
+  "name": "setGoalETH",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "bonusStage2FirstDay",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "satoshiRaised",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "toRemove", "type": "address"}],
+  "name": "removeOwner",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "rate",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "_bonusStage1", "type": "uint256"}, {
+    "name": "_bonusStage2FirstDay",
+    "type": "uint256"
+  }, {"name": "_bonusStage2SecondDay", "type": "uint256"}],
+  "name": "setBonuses",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "endTime",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "_rate", "type": "uint256"}],
+  "name": "setRate",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "cap",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [],
+  "name": "withdraw",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "_startTime", "type": "uint256"}],
+  "name": "setStartTime",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "goal",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "weiRaised",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "_amountSatoshi", "type": "uint256"}, {
+    "name": "_hashTransaction",
+    "type": "bytes16"
+  }, {"name": "_walletETH", "type": "address"}],
+  "name": "addBTCTransaction",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [],
+  "name": "finalize",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "wallet",
+  "outputs": [{"name": "", "type": "address"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "_capETH", "type": "uint256"}],
+  "name": "setCapETH",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "newAllowed", "type": "address"}],
+  "name": "addOwner",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "startTime",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "goalReached",
+  "outputs": [{"name": "", "type": "bool"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "bonusStage1",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "isFinalized",
+  "outputs": [{"name": "", "type": "bool"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "isOwner",
+  "outputs": [{"name": "", "type": "bool"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "bonusStage2SecondDay",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [],
+  "name": "claimRefund",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "stage",
+  "outputs": [{"name": "", "type": "uint8"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [{"name": "_weiAmount", "type": "uint256"}],
+  "name": "getTokenAmount",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "_endTime", "type": "uint256"}],
+  "name": "setEndTime",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "_stage", "type": "uint8"}],
+  "name": "setStage",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [],
+  "name": "deposit",
+  "outputs": [],
+  "payable": true,
+  "stateMutability": "payable",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "_wallet", "type": "address"}],
+  "name": "setWallet",
+  "outputs": [],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "constant": false,
+  "inputs": [{"name": "beneficiary", "type": "address"}],
+  "name": "buyTokens",
+  "outputs": [],
+  "payable": true,
+  "stateMutability": "payable",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "hasEnded",
+  "outputs": [{"name": "", "type": "bool"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "token",
+  "outputs": [{"name": "", "type": "address"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "constant": true,
+  "inputs": [],
+  "name": "BTCRate",
+  "outputs": [{"name": "", "type": "uint256"}],
+  "payable": false,
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{"name": "_startTime", "type": "uint256"}, {"name": "_endTime", "type": "uint256"}, {
+    "name": "_rate",
+    "type": "uint256"
+  }, {"name": "_capETH", "type": "uint256"}, {"name": "_goalETH", "type": "uint256"}, {
+    "name": "_wallet",
+    "type": "address"
+  }, {"name": "_BTCRate", "type": "uint256"}, {"name": "_token", "type": "address"}],
+  "payable": false,
+  "stateMutability": "nonpayable",
+  "type": "constructor"
+}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {
+  "anonymous": false,
+  "inputs": [{"indexed": true, "name": "holder", "type": "address"}, {
+    "indexed": false,
+    "name": "amount",
+    "type": "uint256"
+  }],
+  "name": "Refunded",
+  "type": "event"
+}, {"anonymous": false, "inputs": [], "name": "Finalized", "type": "event"}, {
+  "anonymous": false,
+  "inputs": [{"indexed": true, "name": "previousOwner", "type": "address"}, {
+    "indexed": true,
+    "name": "newOwner",
+    "type": "address"
+  }],
+  "name": "OwnershipTransferred",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{"indexed": true, "name": "purchaser", "type": "address"}, {
+    "indexed": true,
+    "name": "beneficiary",
+    "type": "address"
+  }, {"indexed": false, "name": "value", "type": "uint256"}, {"indexed": false, "name": "amount", "type": "uint256"}],
+  "name": "TokenPurchase",
+  "type": "event"
+}]
 var myContract = null
+
 function getBalance (addrToken, addr, callback) {
   var tknAddress = (addr).substring(2)
   var contractData = ('0x70a08231000000000000000000000000' + tknAddress)
@@ -32,10 +376,10 @@ function initContract (contractAddr) {
 
 function getCollected (callback) {
   myContract.methods.weiRaised().call(function (err, value) {
-    if(err){
+    if (err) {
       callback(err, null)
     }
-    if(value) {
+    if (value) {
       callback(null, parseFloat(web3.utils.fromWei(value, 'ether')).toFixed(2))
     }
   })
@@ -43,15 +387,14 @@ function getCollected (callback) {
 
 function getCap (callback) {
   myContract.methods.cap().call(function (err, value) {
-    if(err){
+    if (err) {
       callback(err, null)
     }
-    if(value) {
+    if (value) {
       callback(null, parseFloat(web3.utils.fromWei(value, 'ether')).toFixed(2))
     }
   })
 }
-
 
 function checkAddress (callback) {
   makeApiRequest('checkAddress', 'GET', null, callback)
@@ -84,6 +427,7 @@ function getAddress (callback) {
 function getInit (callback) {
   makeApiRequest('init', 'GET', null, callback)
 }
+
 function setPassword (data, callback) {
   makeApiRequest('setPassword', 'POST', data, callback)
 }
@@ -97,14 +441,15 @@ function setCountry (data, callback) {
 }
 
 function checkAirdrop (callback) {
-  makeApiRequest('checkAirdrop', 'GET',null, callback)
+  makeApiRequest('checkAirdrop', 'GET', null, callback)
 }
 
 function getReferralsInfo (callback) {
-  makeApiRequest('getReferralsInfo', 'GET',null, callback)
+  makeApiRequest('getReferralsInfo', 'GET', null, callback)
 }
+
 function getPrefundTokens (callback) {
-  makeApiRequest('getPrefundTokens', 'GET',null, callback)
+  makeApiRequest('getPrefundTokens', 'GET', null, callback)
 }
 
 function setWalletETH (data, callback) {
@@ -135,7 +480,7 @@ function getToken (callback) {
   makeApiRequest('getToken', 'GET', null, callback)
 }
 
-function setApplicant (data,callback) {
+function setApplicant (data, callback) {
   makeApiRequest('setApplicant', 'POST', data, callback)
 }
 
@@ -187,8 +532,25 @@ function getICOStat (callback) {
   makeApiRequest('getICOStat', 'GET', null, callback)
 }
 
+function initTFA (callback) {
+  makeApiRequest('initTFA', 'GET', null, callback)
+}
+
+function enableTFA (data, callback) {
+  makeApiRequest('enableTFA', 'POST', data, callback)
+}
 
 function makeApiRequest (url, method, data, callback) {
+  if (data) {
+    if (typeof data === 'string') {
+      data += '&_token=' + getCookie('X-CSRF-TOKEN')
+    } else {
+      data._token = getCookie('X-CSRF-TOKEN')
+    }
+  } else {
+    data = {}
+    data._token = getCookie('X-CSRF-TOKEN')
+  }
   var request = $.ajax({
     url: apiUrl + url,
     method: method,

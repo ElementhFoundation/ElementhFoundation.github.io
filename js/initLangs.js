@@ -9,6 +9,13 @@ function setCookie(key, value) {
   document.cookie = key + '=' + value + ';expires=' + expires.toUTCString()+';domain=.elementh.io';
 }
 
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ))
+  return matches ? decodeURIComponent(matches[1]) : undefined
+}
+
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, "\\$&");

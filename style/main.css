@@ -573,7 +573,7 @@ nav {
       nav ul li.subhead, nav ul li.devider {
         cursor: auto; }
         nav ul li.subhead:hover, nav ul li.devider:hover {
-          background-color: rgba(0, 0, 0, 0); }
+          background-color: transparent; }
       nav ul li.active {
         color: #00b0ff; }
       nav ul li .lngSelect {
@@ -712,7 +712,7 @@ ul.list {
       .link_block .primary_link.disabled:hover, .link_block .primary_link.disabled:active {
         color: #fff;
         border-color: #fff;
-        background-color: rgba(0, 0, 0, 0); }
+        background-color: transparent; }
   .link_block .secondary_link {
     border-bottom: 2px solid #fff; }
     .link_block .secondary_link:hover {
@@ -733,12 +733,19 @@ ul.list {
       .link_block.black .primary_link.disabled:hover, .link_block.black .primary_link.disabled:active {
         color: #212121;
         border-color: #212121;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: transparent;
         box-shadow: none; }
   .link_block.black .secondary_link {
     border-bottom: 2px solid #212121; }
     .link_block.black .secondary_link:hover {
       border-bottom-color: #00b0ff; }
+  .link_block.blue .primary_link {
+    border-color: #00b0ff;
+    background-color: #00b0ff;
+    color: #fff; }
+    .link_block.blue .primary_link:active {
+      background-color: #0081cb;
+      border-color: #0081cb; }
 
 .primary_btn {
   display: block;
@@ -1236,7 +1243,13 @@ button {
 #transaction_withdraw form .data .link_block {
   top: 200px; }
   #transaction_withdraw form .data .link_block.top {
-    top: 120px; }
+    position: relative;
+    top: 0;
+    margin-top: 16px; }
+    #transaction_withdraw form .data .link_block.top #withdraw_confirm_success,
+    #transaction_withdraw form .data .link_block.top #withdraw_confirm_back {
+      width: 96px;
+      height: 36px; }
 
 #transaction_history {
   margin-bottom: 24px; }
@@ -1557,11 +1570,10 @@ button {
       margin: 0; }
       .tabs li.active {
         width: calc(20% - 2px);
-        height: 55px;
+        height: 54px;
         color: #212121;
         line-height: 54px;
         border: 1px solid #212121;
-        border-bottom: none;
         background-color: #fff; }
         .tabs li.active:hover {
           background-color: #fff; }
