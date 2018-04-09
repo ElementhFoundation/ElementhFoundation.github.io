@@ -376,7 +376,7 @@ header ul li span, nav ul li, .link_block .primary_link,
   background-size: 56px 56px !important; }
 
 /* TEAM */
-.photo, .ryabov, .bereznitskiy, .mengeshev, .vasilev, .morozov, .prigornitskiy, .miheev, .gashitsky, .kholodnykh, .kirillov, .bruk, .yannam, .aurel, .averbach, .fradkov {
+.photo, .ryabov, .bereznitskiy, .mengeshev, .vasilev, .morozov, .prigornitskiy, .miheev, .gashitsky, .kholodnykh, .kirillov, .bruk, .yannam, .aurel, .anikin, .averbach, .fradkov {
   background: center center no-repeat;
   background-size: cover; }
 
@@ -419,6 +419,9 @@ header ul li span, nav ul li, .link_block .primary_link,
 
 .aurel {
   background-image: url("../img/advisors/aurel.png"); }
+
+.anikin {
+  background-image: url("../img/advisors/anikin.jpg"); }
 
 .averbach {
   background-image: url("../img/advisors/averbach.png"); }
@@ -918,7 +921,7 @@ ul.list {
   width: 100%;
   border-bottom: 2px dotted #fff;
   margin: 32px 0; }
-.person_block .photo, .person_block .ryabov, .person_block .bereznitskiy, .person_block .mengeshev, .person_block .vasilev, .person_block .morozov, .person_block .prigornitskiy, .person_block .miheev, .person_block .gashitsky, .person_block .kholodnykh, .person_block .kirillov, .person_block .bruk, .person_block .yannam, .person_block .aurel, .person_block .averbach, .person_block .fradkov {
+.person_block .photo, .person_block .ryabov, .person_block .bereznitskiy, .person_block .mengeshev, .person_block .vasilev, .person_block .morozov, .person_block .prigornitskiy, .person_block .miheev, .person_block .gashitsky, .person_block .kholodnykh, .person_block .kirillov, .person_block .bruk, .person_block .yannam, .person_block .aurel, .person_block .anikin, .person_block .averbach, .person_block .fradkov {
   width: 288px;
   height: 288px; }
 .person_block .name {

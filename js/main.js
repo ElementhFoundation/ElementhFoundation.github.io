@@ -802,9 +802,6 @@ function init () {
 
       $('#transaction').removeClass('disnone')
       $('#forAdopters').removeClass('disnone')
-      if (balance > 0) {
-        $('#howToWatchEEE').removeClass('disnone')
-      }
     }
   }
   var wallet_btc_sent_form = $('#wallet_btc_sent_form')
