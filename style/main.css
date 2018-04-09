@@ -330,7 +330,7 @@ header ul li span, nav ul li, .link_block .primary_link,
   background-image: url("../img/rating/icobench.svg"); }
 
 /* PARTNERS */
-.partners_logo, .sap, .bitrewards, .sberbank, .gmtlegal {
+.partners_logo, .sap, .bitrewards, .sberbank, .gmtlegal, .bancor {
   background: center center no-repeat; }
 
 .sap {
@@ -346,6 +346,10 @@ header ul li span, nav ul li, .link_block .primary_link,
 .gmtlegal {
   background-size: contain;
   background-image: url("../img/partners/gmtlegal.png"); }
+
+.bancor {
+  background-size: contain;
+  background-image: url("../img/partners/bancor.png"); }
 
 /* REWARDS */
 .winner {
@@ -850,13 +854,13 @@ ul.list {
 
 .partners_list {
   width: 100%; }
-  .partners_list .partners_block .partners_logo, .partners_list .partners_block .sap, .partners_list .partners_block .bitrewards, .partners_list .partners_block .sberbank, .partners_list .partners_block .gmtlegal {
+  .partners_list .partners_block .partners_logo, .partners_list .partners_block .sap, .partners_list .partners_block .bitrewards, .partners_list .partners_block .sberbank, .partners_list .partners_block .gmtlegal, .partners_list .partners_block .bancor {
     display: block;
     width: 284px;
     height: 84px;
     border: 2px solid #fff;
     margin-bottom: 8px; }
-    .partners_list .partners_block .partners_logo:hover, .partners_list .partners_block .sap:hover, .partners_list .partners_block .bitrewards:hover, .partners_list .partners_block .sberbank:hover, .partners_list .partners_block .gmtlegal:hover {
+    .partners_list .partners_block .partners_logo:hover, .partners_list .partners_block .sap:hover, .partners_list .partners_block .bitrewards:hover, .partners_list .partners_block .sberbank:hover, .partners_list .partners_block .gmtlegal:hover, .partners_list .partners_block .bancor:hover {
       border-color: #00b0ff;
       background-color: #00b0ff; }
   .partners_list .partners_block p {
