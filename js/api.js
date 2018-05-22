@@ -540,6 +540,10 @@ function enableTFA (data, callback) {
   makeApiRequest('enableTFA', 'POST', data, callback)
 }
 
+function subscribe (data, callback) {
+  makeApiRequest('subscribe', 'POST', data, callback)
+}
+
 function makeApiRequest (url, method, data, callback) {
   if (data) {
     if (typeof data === 'string') {

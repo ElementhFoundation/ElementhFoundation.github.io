@@ -192,6 +192,25 @@ function init () {
           $('#transaction_balance_withdraw').removeClass('disnone')
         }
 
+
+        var form_subscribe = $('#form_subscribe')
+        if (form_subscribe.length) {
+          form_subscribe.submit(function (e) {
+            e.preventDefault();
+            form_subscribe.find(':input[type="submit"]').prop('disabled', true)
+            subscribe($(this).serialize(), function (err, data) {
+              if (err) {
+                $('#error_subscribe').removeClass('disnone')
+                form_subscribe.find(':input[type="submit"]').prop('disabled', false)
+              } else {
+                $('#form_subscribe').addClass('disnone')
+                $('#error_subscribe').addClass('disnone')
+                $('#success_subscribe').removeClass('disnone')
+              }
+            })
+          })
+        }
+
         var questionnaire_form = $('#questionnaire_form')
         if (questionnaire_form.length) {
           questionnaire_form.submit(function (e) {
