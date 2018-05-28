@@ -479,6 +479,23 @@ header
                     background-color: rgba(0,0,0,.05)
                 &:active
                     background-color: rgba(0,0,0,.1)
+            &.buy_eee
+                height: 44px
+                margin: 6px
+                a
+                    height: 40px
+                    border: 2px solid $color_white
+                    border-radius: 8px
+                    line-height: 40px !important
+                    &:hover
+                        background-color: rgba(255,255,255,1)
+                        color: $color_active
+                        box-shadow: 0 5px 8px rgba(0,0,0,.2)
+                    &:active
+                        border-color: rgba(255,255,255,.8)
+                        background-color: rgba(255,255,255,.8)
+            &.header_nav
+                display: none
 nav
     position: absolute
     width: 100%
@@ -1359,6 +1376,10 @@ button
                 span
                     line-height: 72px !important
                     padding: 0 16px
+                &.buy_eee
+                    margin: 14px 6px
+                &.header_nav
+                    display: block
     nav
         position: fixed
         width: 256px
@@ -1376,6 +1397,8 @@ button
             li
                 padding: 0 72px
                 line-height: 56px
+                &.header_nav
+                    display: none
             .userblock
                 display: none
     .bnr_top
@@ -1755,6 +1778,8 @@ button
                         margin-left: 200px
     header
         height: 88px
+        ul li.buy_eee
+            margin: 22px 14px
         .logo
             top: 22px
         ul

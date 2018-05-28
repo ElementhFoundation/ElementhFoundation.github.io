@@ -549,6 +549,23 @@ header {
         header ul li a:active,
         header ul li span:active {
           background-color: rgba(0, 0, 0, 0.1); }
+      header ul li.buy_eee {
+        height: 44px;
+        margin: 6px; }
+        header ul li.buy_eee a {
+          height: 40px;
+          border: 2px solid #fff;
+          border-radius: 8px;
+          line-height: 40px !important; }
+          header ul li.buy_eee a:hover {
+            background-color: white;
+            color: #00b0ff;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2); }
+          header ul li.buy_eee a:active {
+            border-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.8); }
+      header ul li.header_nav {
+        display: none; }
 
 nav {
   position: absolute;
@@ -1456,6 +1473,10 @@ button {
     header ul li span {
       line-height: 72px !important;
       padding: 0 16px; }
+    header ul li.buy_eee {
+      margin: 14px 6px; }
+    header ul li.header_nav {
+      display: block; }
 
   nav {
     position: fixed;
@@ -1473,6 +1494,8 @@ button {
     nav ul li {
       padding: 0 72px;
       line-height: 56px; }
+      nav ul li.header_nav {
+        display: none; }
     nav ul .userblock {
       display: none; }
 
@@ -1869,6 +1892,8 @@ button {
 
   header {
     height: 88px; }
+    header ul li.buy_eee {
+      margin: 22px 14px; }
     header .logo {
       top: 22px; }
     header ul li .lngSelect {
